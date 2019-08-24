@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
+    @user = current_user
   end
 
   def show
@@ -12,6 +13,7 @@ class UsersController < ApplicationController
   end
   
   def carts
+    @user = User.find(params[:id])
   end
 
   def update
@@ -20,6 +22,7 @@ class UsersController < ApplicationController
   end
 
   def unsubscribe
+    @user = User.find(params[:id])
   end
 
   private

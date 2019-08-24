@@ -4,6 +4,7 @@ class AlbumsController < ApplicationController
 
   def index
     @albums = Album.all
+    @user = User.find(params[:id])
   end
 
   def show

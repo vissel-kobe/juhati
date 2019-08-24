@@ -59,6 +59,10 @@ header {
   display:flex;
 }
 
+.header-ul div {
+  margin:5px
+}
+
 .header-ul li {
   color:white;
   list-style:none;
@@ -68,3 +72,8 @@ header {
   line-height:80px;
   margin:0 auto;
 }
+
+.field-box {
+  display:flex;
+}
+

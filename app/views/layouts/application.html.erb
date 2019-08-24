@@ -17,13 +17,25 @@
       <nav class="nav navbar-nav navbar-right">
         <ul class="header-ul">
 	  <% if user_signed_in? %>
-	    <li><%= link_to "商品一覧", albums_path %></li>
-	    <li><%= link_to "#{@user.name}", user_path(current_user.id)%></li>
-	    <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+	    <div class="">
+	      <li><%= link_to "商品一覧", albums_path %></li>
+	    </div>
+	    <div class="">  
+	      <li><%= link_to "#{@user.first_name}", user_path(current_user.id)%></li>
+	    </div>
+	    <div class="">
+	      <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+	    </div>
 	  <% else %>
-	    <li><%= link_to "商品一覧", albums_path %></li>
-            <li><%= link_to "新規登録", new_user_registration_path %></li>
-            <li><%= link_to "ログイン", new_user_session_path %></li>
+	    <div class="">
+	      <li><%= link_to "商品一覧", albums_path %></li>
+	    </div>
+	    <div class="">
+              <li><%= link_to "新規登録", new_user_registration_path %></li>
+	    </div>
+	    <div class="">
+              <li><%= link_to "ログイン", new_user_session_path %></li>
+	    </div>
 	  <% end %>
 	</ul>
       </nav>

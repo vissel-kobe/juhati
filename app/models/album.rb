@@ -1,6 +1,5 @@
 class Album < ApplicationRecord
 
-	mount_uploader :album_image, AlbumImageUploader
 
 	belongs_to :label
 	belongs_to :genre

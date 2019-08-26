@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
   end
-  
+
   def carts
     @user = User.find(params[:id])
   end

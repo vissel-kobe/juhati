@@ -1,3 +1,61 @@
-<div class="content">
-  <h1>会員情報</h1>
-</div>
+<main>
+  <div class="content clearfix">
+    <h1>会員情報</h1>
+    <div class="field-box">
+      <div class="field-name">
+        <span>氏名</span>
+      </div>
+      <div class="field">
+        <label>（姓）</label>
+        <%= @user.family_name %>
+      </div>
+      <div class="field">
+        <label>（名）</label>
+        <%= @user.first_name %>
+      </div>
+    </div>
+    <div class="field-box">
+      <div class="field-name">
+        <span>氏名（フリガナ）</span>
+      </div>
+      <div class="field">
+        <label>（姓）</label>
+        <%= @user.kana_family_name %>
+      </div>
+      <div class="field">
+        <label>（名）</label>
+        <%= @user.kana_first_name %>
+      </div>
+    </div>
+    <div class="field-box">
+      <div class="field-name">
+        <span>郵便番号</span>
+      </div>
+      <div class="field">
+        <%= @user.postcode %>
+      </div>
+    </div>
+    <div class="field-box">
+      <div class="field-name">
+        <span>電話番号</span>
+      </div>
+      <div class="field">
+        <%= @user.telephone %>
+      </div>
+    </div>
+    <div class="field-box">
+      <div class="field-name">
+        <span>メールアドレス</span>
+      </div>
+      <div class="field">
+        <%= @user.email %>
+      </div>
+    </div>
+    <div class="submit">
+      <%= link_to "編集する", edit_user_path(current_user.id) %>
+    </div>
+  </div>
+</main>
+<footer>
+  <h1>Footer</h1>
+</footer>

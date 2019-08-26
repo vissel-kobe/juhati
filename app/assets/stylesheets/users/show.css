@@ -1,0 +1,26 @@
+.content {
+  width:800px;
+  margin:0 auto;
+  height:700px;
+}
+
+.field-box {
+  height:120px;
+  line-height:120px;
+}
+
+.field {
+
+}
+
+.submit {
+  height:40px;
+  width:70px;
+  float:right;
+}
+
+footer {
+  background-color:black;
+  text-align:center;
+  color:white; !important
+}

@@ -4807,3 +4807,392 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 220ms (Views: 202.7ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/user/a" for 10.0.2.2 at 2019-08-27 07:49:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/user/a"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/albums/new" for 10.0.2.2 at 2019-08-27 07:49:54 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 1814ms (Views: 1799.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-08-27 07:51:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (10.3ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    10: 						<td class="text-center table-margin">購入回数</td>
+    11: 						<td class="text-center table-margin"></td>
+    12: 					</tr>
+    13: 					<% @users.each do |user| %>
+    14: 						<tr class="table-margin">
+    15: 							<td  class="text-center"><%= user.id %></td>
+    16: 							<td  class="text-center table-margin"><%= user.first_name %> <%= user.family_name %></td>
+  
+app/views/albums/new.html.erb:13:in `_app_views_albums_new_html_erb__311195948689804785_69857343804500'
+Started GET "/albums/new" for 10.0.2.2 at 2019-08-27 07:52:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 252ms (Views: 235.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-08-27 08:22:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (10.7ms)
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    3: 		<div class="content">
+    4: 			<h2 class="title">商品追加</h2>
+    5: 			<div class="margin">
+    6: 				<%= form_for @album do |f| %>
+    7: 					<p>タイトル</p>
+    8: 					<%= f.text_field :title %>
+    9: 				<% end %>
+  
+app/views/albums/new.html.erb:6:in `_app_views_albums_new_html_erb__311195948689804785_69857348213160'
+Started GET "/albums/new" for 10.0.2.2 at 2019-08-27 08:25:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (14.1ms)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    3: 		<div class="content">
+    4: 			<h2 class="title">商品追加</h2>
+    5: 			<div class="margin">
+    6: 				<%= form_for @album do |f| %>
+    7: 					<p>タイトル</p>
+    8: 					<%= f.text_field :title %>
+    9: 				<% end %>
+  
+app/views/albums/new.html.erb:6:in `_app_views_albums_new_html_erb__311195948689804785_69857347788260'
+Started GET "/albums/new" for 10.0.2.2 at 2019-08-27 08:26:15 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (8.4ms)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    3: 		<div class="content">
+    4: 			<h2 class="title">商品追加</h2>
+    5: 			<div class="margin">
+    6: 				<%= form_for(@album) do |f| %>
+    7: 					<p>タイトル</p>
+    8: 					<%= f.text_field :title %>
+    9: 				<% end %>
+  
+app/views/albums/new.html.erb:6:in `_app_views_albums_new_html_erb__311195948689804785_69857221904100'
+Started GET "/albums/new" for 10.0.2.2 at 2019-08-27 08:27:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (13.9ms)
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    3: 		<div class="content">
+    4: 			<h2 class="title">商品追加</h2>
+    5: 			<div class="margin">
+    6: 				<%= form_for @album do |f| %>
+    7: 					<p>タイトル</p>
+    8: 					<%= f.text_field :title %>
+    9: 				<% end %>
+  
+app/views/albums/new.html.erb:6:in `_app_views_albums_new_html_erb__311195948689804785_69857348344120'
+Started GET "/albums/new" for 10.0.2.2 at 2019-08-27 08:27:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (10.5ms)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    3: 		<div class="content">
+    4: 			<h2 class="title">商品追加</h2>
+    5: 			<div class="margin">
+    6: 				<%= form_for @album do |f| %>
+    7: 					<p>タイトル</p>
+    8: 					<%= f.text_field :title %>
+    9: 				<% end %>
+  
+app/views/albums/new.html.erb:6:in `_app_views_albums_new_html_erb__311195948689804785_69857346423160'
+Started GET "/albums/new" for 10.0.2.2 at 2019-08-27 08:27:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (12.8ms)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    3: 		<div class="content">
+    4: 			<h2 class="title">商品追加</h2>
+    5: 			<div class="margin">
+    6: 				<%= form_for @album do |f| %>
+    7: 					<p>タイトル</p>
+    8: 					<%= f.text_field :title %>
+    9: 				<% end %>
+  
+app/views/albums/new.html.erb:6:in `_app_views_albums_new_html_erb__311195948689804785_69857217567380'
+Started GET "/albums/new" for 10.0.2.2 at 2019-08-27 08:27:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (13.5ms)
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    3: 		<div class="content">
+    4: 			<h2 class="title">商品追加</h2>
+    5: 			<div class="margin">
+    6: 				<%= form_for @album do |f| %>
+    7: 					<p>タイトル</p>
+    8: 					<%= f.text_field :title %>
+    9: 				<% end %>
+  
+app/views/albums/new.html.erb:6:in `_app_views_albums_new_html_erb__311195948689804785_69857274210900'
+Started GET "/albums/new" for 10.0.2.2 at 2019-08-27 08:28:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (10.9ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    3: 		<div class="content">
+    4: 			<h2 class="title">商品追加</h2>
+    5: 			<div class="margin">
+    6: 				<%= form_for @album do |f| %>
+    7: 					<p>タイトル</p>
+    8: 					<%= f.text_field :title %>
+    9: 				<% end %>
+  
+app/views/albums/new.html.erb:6:in `_app_views_albums_new_html_erb__311195948689804785_69857222290580'
+Started GET "/albums/new" for 10.0.2.2 at 2019-08-27 08:34:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (10.8ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    3: 		<div class="content">
+    4: 			<h2 class="title">商品追加</h2>
+    5: 			<div class="margin">
+    6: 				<%= form_for @album do |f| %>
+    7: 					<p>タイトル</p>
+    8: 					<%= f.text_field :title %>
+    9: 					<%= f.submit "追加" %>
+  
+app/views/albums/new.html.erb:6:in `_app_views_albums_new_html_erb__311195948689804785_69857348654180'
+Started GET "/albums/new" for 10.0.2.2 at 2019-08-27 08:35:06 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 792ms (Views: 743.5ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-08-27 08:35:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (14.1ms)
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    3: 		<div class="content">
+    4: 			<h2 class="title">商品追加</h2>
+    5: 			<div class="margin">
+    6: 				<%= form_for @album do |f| %>
+    7: 					<p>タイトル</p>
+    8: 					<%= f.text_field :title %>
+    9: 					<%= f.submit "追加" %>
+  
+app/views/albums/new.html.erb:6:in `_app_views_albums_new_html_erb___4171147813564868097_47113485839460'
+Started GET "/albums/new" for 10.0.2.2 at 2019-08-27 08:35:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 846ms (Views: 801.8ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-08-27 08:39:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 328ms (Views: 312.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-08-27 09:30:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 398ms (Views: 371.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-08-27 11:36:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 756ms (Views: 709.9ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-08-27 11:36:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 325ms (Views: 310.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-08-27 11:42:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/vagrant/juhati/app/views/albums/new.html.erb:16: syntax error, unexpected ']', expecting ')'
+..., ["レゲエ", 3], ["EDM", 4]]] );@output_buffer.safe_appen...
+...                              ^
+/vagrant/juhati/app/views/albums/new.html.erb:17: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;				 end 
+         				 ^~~
+/vagrant/juhati/app/views/albums/new.html.erb:23: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/vagrant/juhati/app/views/albums/new.html.erb:25: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/albums/new.html.erb:16: syntax error, unexpected ']', expecting ')'
+app/views/albums/new.html.erb:17: syntax error, unexpected keyword_end, expecting ')'
+app/views/albums/new.html.erb:23: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/albums/new.html.erb:25: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/albums/new" for 10.0.2.2 at 2019-08-27 11:42:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/vagrant/juhati/app/views/albums/new.html.erb:16: syntax error, unexpected ']', expecting ')'
+..., ["レゲエ", 3], ["EDM", 4]] );@output_buffer.safe_append...
+...                              ^
+/vagrant/juhati/app/views/albums/new.html.erb:17: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;				 end 
+         				 ^~~
+/vagrant/juhati/app/views/albums/new.html.erb:23: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/vagrant/juhati/app/views/albums/new.html.erb:25: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/albums/new.html.erb:16: syntax error, unexpected ']', expecting ')'
+app/views/albums/new.html.erb:17: syntax error, unexpected keyword_end, expecting ')'
+app/views/albums/new.html.erb:23: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/albums/new.html.erb:25: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/albums/new" for 10.0.2.2 at 2019-08-27 11:43:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 333ms (Views: 316.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-08-27 11:44:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 277ms (Views: 262.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-08-27 11:59:09 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 256ms (Views: 229.4ms | ActiveRecord: 0.0ms)
+
+

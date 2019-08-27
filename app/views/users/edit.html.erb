@@ -1,2 +1,77 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div class="container">
+  <div class="content">
+    <h1>会員情報編集</h1>
+    <%= form_for(@user) do |f| %>
+      <div class="field-box">
+        <div class="field-name">
+          <span>氏名</span>
+        </div>
+        <div class="field-form name-box">
+          <div class="field-child">
+            <%= f.label :（姓） %>
+            <%= f.text_field :family_name %>
+          </div>
+          <div class="field-child">
+            <%= f.label :（名） %>
+            <%= f.text_field :first_name %>
+          </div>
+        </div>
+      </div>
+      <div class="field-box">
+        <div class="field-name">
+          <span>氏名（フリガナ）</span>
+        </div>
+        <div class="field-form name-box">
+          <div class="field-child">
+            <%= f.label :（姓） %>
+            <%= f.text_field :kana_family_name %>
+          </div>
+          <div class="field-child">
+            <%= f.label :（名） %>
+            <%= f.text_field :kana_first_name %>
+          </div>
+        </div>
+      </div>
+      <div class="field-box">
+        <div class="field-name">
+          <span>郵便番号</span>
+        </div>
+        <div class="field-form">
+          <%= f.text_field :postcode %>
+        </div>
+      </div>
+      <div class="field-box">
+        <div class="field-name">
+          <span>住所</span>
+        </div>
+        <div class="field-form">
+          <%= f.text_field :address %>
+        </div>
+      </div>
+      <div class="field-box">
+        <div class="field-name">
+          <span>電話番号</span>
+        </div>
+        <div class="field-form">
+          <%= f.text_field :telephone %>
+        </div>
+      </div>
+      <div class="field-box">
+        <div class="field-name">
+          <span>メールアドレス</span>
+        </div>
+        <div class="field-form">
+          <%= f.email_field :email %>
+        </div>
+      </div>
+      <div class="submit-box">
+        <div class="actions">
+          <%= link_to "戻る", user_path(current_user.id) %>
+        </div>
+        <div class="actions">
+          <%= f.submit "保存する" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

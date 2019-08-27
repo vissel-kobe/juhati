@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  before_action :authenticate_user!
+
   def index
     @users = User.all
     @user = current_user
@@ -18,7 +21,8 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.update
+    @user.update(user_params)
+    redirect_to user_path(@user)
   end
 
   def unsubscribe
@@ -27,6 +31,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit()
+    params.require(:user).permit(:family_name, :first_name, :kana_family_name, :kana_first_name, :postcode, :assress, :telephone, :email)
   end
 end

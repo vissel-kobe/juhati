@@ -1,8 +1,10 @@
 class SaleHistoriesController < ApplicationController
   def index
+    @user = current_user
   end
 
-  def user_history
+  def show
+    @user = current_user
   end
 
   def create

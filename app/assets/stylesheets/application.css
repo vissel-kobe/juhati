@@ -77,10 +77,6 @@ header {
   margin:0 auto;
 }
 
-.field-box {
-  display:flex;
-}
-
 .login-container {
   padding-top:30px;
   width:800px;

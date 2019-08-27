@@ -1,7 +1,4 @@
 .content {
-  width:800px;
-  margin:0 auto;
-  height:700px;
 }
 
 .field-box {
@@ -22,5 +19,5 @@
 footer {
   background-color:black;
   text-align:center;
-  color:white; !important
+  color:white!important;
 }

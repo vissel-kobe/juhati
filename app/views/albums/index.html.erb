@@ -2,7 +2,7 @@
 <p>Find me in app/views/albums/index.html.erb</p>
 
 <%= @albums.each do |album| %>
-  <%= attachment_image_tag @user, album_image, size:"60x60" %>
+  <%= attachment_image_tag album, album_image, size:"60x60" %>
   <%= album.title %>
-  <%= album.name %>
+  <%= album.artist.name %>
 <% end %>

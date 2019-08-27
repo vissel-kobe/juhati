@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources:labels, only:[:index, :edit, :create, :update, :destroy]
   resources:genres, only:[:index, :edit, :create, :update, :destroy]
   resources:orders, only:[:create, :update, :destroy]
-  resources:sale_histories, only:[:index, :user_history, :create]
+  resources:sale_histories, only:[:index, :show, :create]
   
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

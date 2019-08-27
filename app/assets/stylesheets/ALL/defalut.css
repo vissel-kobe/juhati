@@ -1,0 +1,30 @@
+.background-image {
+
+}
+
+.center-box {
+	width: 800px;
+	margin: 0 auto;
+	border-right: solid 1px;
+	border-left: solid 1px;
+}
+
+.border {
+	border: solid 1px;
+	padding: 5px 100px;
+}
+
+.title {
+	margin:0px 10px;
+	padding: 50px 0;
+}
+
+.btn {
+	padding: 10px 30px;
+	border: solid 1px;
+	border-radius: 10%;
+}
+
+.text-center {
+	text-align: center;
+}

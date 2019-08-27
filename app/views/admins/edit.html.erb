@@ -1,2 +1,13 @@
-<h1>Admins#edit</h1>
-<p>Find me in app/views/admins/edit.html.erb</p>
+<div class="background">
+	<div class="center-box">
+		<h2 class="title">管理者情報</h2>
+		<%= form_for @admin do |f| %>
+			<div class="content">
+				<span class="mail">メールアドレス</span>
+				<span class="border"><%= f.text_field :email %></span>
+			</div>
+			<p class="show-btn clearfix"><%= f.submit "保存", class: "btn" %></p>
+		<% end %>
+		 Z<p><%= link_to "戻る", admin_path(@admin), class: "btn" %></p>
+	</div>
+</div>

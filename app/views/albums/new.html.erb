@@ -1,2 +1,21 @@
-<h1>Albums#new</h1>
-<p>Find me in app/views/albums/new.html.erb</p>
+<div class="background">
+	<div class="center-box">
+		<div class="content">
+			<h2 class="title">商品追加</h2>
+			<div class="margin">
+				<%= form_for @album do |f| %>
+					<p>タイトル</p>
+					<%= f.text_field :title %>
+					<p>ステータス</p>
+					<%= f.select :status, [["販売中", 1], ["販売停止", 2]] %>
+					<p>価格（税込み）</p>
+					<%= f.number_field :price %>
+					<span>円</span>
+					<p>ジャンル</p>
+					<%= f.select :genre_id, [["J-POP", 1], ["K-POP", 2], ["レゲエ", 3], ["EDM", 4]] %>
+					<%= f.submit "追加する" %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

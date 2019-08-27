@@ -1,2 +1,11 @@
-<h1>Admins#show</h1>
-<p>Find me in app/views/admins/show.html.erb</p>
+<div class="background">
+	<div class="center-box">
+		<h2 class="title">管理者情報</h2>
+		<div class="content">
+			<span class="mail">メールアドレス</span>
+			<span class="border"><%= @admin.email %></span>
+		</div>
+		<p class="show-btn clearfix"><%= link_to "編集する", edit_admin_path(@admin), class: "btn" %></p>
+		<p> a</p>
+	</div>
+</div>

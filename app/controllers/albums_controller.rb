@@ -1,5 +1,11 @@
 class AlbumsController < ApplicationController
   def new
+    @album = Album.new
+  end
+
+  def create
+    @album = Album.new(album_params)
+    @album
   end
 
   def index
@@ -14,9 +20,6 @@ class AlbumsController < ApplicationController
   def edit
   end
 
-  def create
-  end
-
   def update
   end
 
@@ -26,6 +29,6 @@ class AlbumsController < ApplicationController
   private
 
   def album_params
-    params.require(:album).permit()
+    params.require(:album).permit(:title, :status, :album_image, :price, :label_id, :genre_id, :stock)
   end
 end

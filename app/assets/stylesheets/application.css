@@ -82,12 +82,15 @@ header {
 }
 
 .login-container {
+  padding-top:30px;
   width:800px;
   margin:0 auto;
 }
 
 .login-field {
   display:flex;
+  height:100px;
+  margin-top:50px;
 }
 
 .email-box {
@@ -95,5 +98,11 @@ header {
 }
 
 .password-box {
-  margin-left:65px;
+  margin-left:132px;
+}
+
+.actions {
+  text-align:center;
+  height:50px;
+  line-height:50px;
 }

@@ -1,0 +1,104 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration:none;
+}
+
+a{
+  color: black;
+text-decoration; none;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+header {
+  background-color:black;
+  height:100px;
+}
+
+.vissel {
+  font-size:40px;
+  margin-left:30px;
+  line-height:100px;
+  background-color:white;
+  border-radius:10px;
+  padding:5px;
+}
+
+.nav {
+  color:white;
+  margin-right:40px;
+}
+
+.navbar-left {
+  float:left;
+}
+
+.navbar-right {
+  float:right;
+}
+
+.header-ul {
+  display:flex;
+}
+
+.header-ul div {
+  margin:5px
+}
+
+.header-ul li {
+  color:white;
+  list-style:none;
+  font-size:20px;
+  background-color:white;
+  height:80px;
+  line-height:80px;
+  margin:0 auto;
+}
+
+.login-container {
+  padding-top:30px;
+  width:800px;
+  margin:0 auto;
+}
+
+.login-field {
+  display:flex;
+  height:100px;
+  margin-top:50px;
+}
+
+.email-box {
+  margin-left:100px;
+}
+
+.password-box {
+  margin-left:132px;
+}
+
+.actions {
+  text-align:center;
+  height:50px;
+  line-height:50px;
+}

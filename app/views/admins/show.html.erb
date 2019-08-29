@@ -5,7 +5,10 @@
 			<span class="mail">メールアドレス</span>
 			<span class="border"><%= @admin.email %></span>
 		</div>
-		<p class="show-btn clearfix"><%= link_to "編集する", edit_admin_path(@admin), class: "btn" %></p>
-		<p> a</p>
+		<div class="float">
+			<p class="show-btn"><%= link_to "編集する", edit_admin_path(@admin), class: "btn" %></p>
+		</div>
+
+
 	</div>
 </div>

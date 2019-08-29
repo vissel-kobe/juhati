@@ -1,6 +1,6 @@
 <div class="background">
 	<div class="center-box">
-		<h2 class="title">管理者情報</h2>
+		<h2 class="title">管理者情報編集</h2>
 		<%= form_for @admin do |f| %>
 			<div class="content">
 				<span class="mail">メールアドレス</span>
@@ -8,6 +8,7 @@
 			</div>
 			<p class="show-btn clearfix"><%= f.submit "保存", class: "btn" %></p>
 		<% end %>
-		 Z<p><%= link_to "戻る", admin_path(@admin), class: "btn" %></p>
+		<p><%= link_to "戻る", admin_path(@admin), class: "btn" %></p>
+		<p>a</p>
 	</div>
 </div>

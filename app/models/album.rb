@@ -15,5 +15,7 @@ class Album < ApplicationRecord
 	has_many :discs, -> {order("disc_number")}, dependent: :destroy
 	accepts_nested_attributes_for :discs, allow_destroy: true
 
+	attachment :album_image
+
 
 end

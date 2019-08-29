@@ -20,13 +20,40 @@
 	    <div class="">
 	      <li><%= link_to "商品一覧", albums_path %></li>
 	    </div>
-	    <div class="">  
+	    <div class="">
 	      <li><%= link_to "#{@user.first_name}", user_path(current_user.id)%></li>
 	    </div>
 	    <div class="">
 	      <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
 	    </div>
+
+    <% elsif admin_signed_in? %>
+
+      <div class="">
+        <li>
+          <%= link_to admin_path(current_admin) do %>
+            <p>AAA</p>
+          <% end %>
+        </li>
+      </div>
+      <div class="">
+        <li><%= link_to "商品一覧", albums_path %></li>
+      </div>
+      <div class="">
+        <li><%= link_to "商品追加", new_album_path %></li>
+      </div>
+      <div class="">
+        <li><%= link_to "会員一覧", users_path %></li>
+      </div>
+      <div class="">
+        <li><%= link_to "販売履歴一覧", users_path %></li>
+      </div>
+      <div class="">
+        <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
+      </div>
+
 	  <% else %>
+
 	    <div class="">
 	      <li><%= link_to "商品一覧", albums_path %></li>
 	    </div>

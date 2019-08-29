@@ -7,12 +7,9 @@ class LabelsController < ApplicationController
   end
 
   def create
-<<<<<<< HEAD
-=======
     @label = Label.new(label_params)
     @label.save
     redirect_to new_album_path
->>>>>>> 2a25276abc2d59aed0de30757b1a82181406839b
   end
 
   def update
@@ -21,8 +18,6 @@ class LabelsController < ApplicationController
   def destroy
   end
 
-<<<<<<< HEAD
-=======
   def new
     @label = Label.new
   end
@@ -32,5 +27,4 @@ class LabelsController < ApplicationController
     params.require(:label).permit(:name)
   end
 
->>>>>>> 2a25276abc2d59aed0de30757b1a82181406839b
 end

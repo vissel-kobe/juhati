@@ -7,12 +7,9 @@ class GenresController < ApplicationController
   end
 
   def create
-<<<<<<< HEAD
-=======
     @genre = Genre.new(genre_params)
     @genre.save
     redirect_to new_album_path
->>>>>>> 2a25276abc2d59aed0de30757b1a82181406839b
   end
 
   def update
@@ -21,8 +18,6 @@ class GenresController < ApplicationController
   def destroy
   end
 
-<<<<<<< HEAD
-=======
   def new
     @genre = Genre.new
   end
@@ -32,5 +27,4 @@ class GenresController < ApplicationController
     params.require(:genre).permit(:name)
   end
 
->>>>>>> 2a25276abc2d59aed0de30757b1a82181406839b
 end

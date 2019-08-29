@@ -1,4 +1,3 @@
 # README
 
-# とりあえずメモ代わり
-# 08/18 admin以外のモデル作成
+# 2019/08/29 21:20 merge from master

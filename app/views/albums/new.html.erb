@@ -39,10 +39,25 @@
 					</div>
 					<div class="field-box">
 						<div class="field-name">
+<<<<<<< HEAD
 							<span>ジャンル</span>
 						</div>
 						<div class="field">
 							<%= f.select :genre_id, [["J-POP", 1], ["K-POP", 2], ["レゲエ", 3], ["EDM", 4]] %>
+=======
+							<span>レーベル</span>
+						</div>
+						<div class="field">
+							<%= f.collection_select :label_id, Label.all, :id, :name %>
+						</div>
+					</div>
+					<div class="field-box">
+						<div class="field-name">
+							<span>ジャンル</span>
+						</div>
+						<div class="field">
+							<%= f.collection_select :genre_id, Genre.all, :id, :name %>
+>>>>>>> 2a25276abc2d59aed0de30757b1a82181406839b
 						</div>
 					</div>
 					<div class="field-box">

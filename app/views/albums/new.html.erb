@@ -1,0 +1,70 @@
+<div class="background">
+	<div class="center-box">
+		<div class="content">
+			<h2 class="title">商品追加</h2>
+			<div class="margin">
+				<%= form_for @album do |f| %>
+					<div class="field-box">
+						<div class="field-name">
+							<span>タイトル</span>
+						</div>
+						<div class="field">
+							<%= f.text_field :title %>
+						</div>
+					</div>
+					<div class="field-box">
+						<div class="field-name">
+							<span>画像</span>
+						</div>
+						<div class="field">
+							<%= f.attachment_field :album_image %>
+						</div>
+					</div>
+					<div class="field-box">
+						<div class="field-name">
+							<span>ステータス</span>
+						</div>
+						<div class="field">
+							<%= f.select :status, [["販売中", 1], ["販売停止", 2]] %>
+						</div>
+					</div>
+					<div class="field-box">
+						<div class="field-name">
+							<span>価格（税込み）</span>
+						</div>
+						<div class="field">
+							<%= f.number_field :price %>
+							<span>円</span>
+						</div>
+					</div>
+					<div class="field-box">
+						<div class="field-name">
+							<span>ジャンル</span>
+						</div>
+						<div class="field">
+							<%= f.select :genre_id, [["J-POP", 1], ["K-POP", 2], ["レゲエ", 3], ["EDM", 4]] %>
+						</div>
+					</div>
+					<div class="field-box">
+						<div class="field-name">
+							<span>シングル/アルバム内</span>
+						</div>
+						<div class="field">
+							
+						</div>
+					</div>
+					<div class="field-box">
+						<div class="field-name">
+							<span>在庫</span>
+						</div>
+						<div class="field">
+							<%= f.number_field :stock %>
+						</div>
+					</div>
+
+					<%= f.submit "追加する", class: "btn" %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,12 @@
+ja:
+  enums:
+    sales_history:
+      status:
+        ordered: 購入済み
+        preparing: 発送準備中
+        shipped: 発送済み
+        hidden: エンドユーザによる履歴削除
+    album:
+      status:
+        suspended: 販売停止中
+        selling: 販売中

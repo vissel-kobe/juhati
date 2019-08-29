@@ -5,7 +5,7 @@ class AlbumsController < ApplicationController
 
   def create
     @album = Album.new(album_params)
-    @album
+    @label = Label.all
   end
 
   def index

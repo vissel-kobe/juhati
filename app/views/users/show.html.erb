@@ -52,8 +52,8 @@
           <%= @user.email %>
         </div>
       </div>
-      <div class="submit">
-        <%= link_to "編集する", edit_user_path(current_user.id) %>
+      <div class="action">
+        <%= link_to "編集する", edit_user_path(@user) %>
       </div>
     </div>
     <div class="side-bar">

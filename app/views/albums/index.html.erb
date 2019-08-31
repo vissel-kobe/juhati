@@ -1,8 +1,6 @@
-<h1>Albums#index</h1>
-<p>Find me in app/views/albums/index.html.erb</p>
-
-<%= @albums.each do |album| %>
-  <%= attachment_image_tag album, album_image, size:"60x60" %>
-  <%= album.title %>
-  <%= album.artist.name %>
+<% @albums.each do |album| %>
+  <div class="album-box">
+    <%= attachment_image_tag album, :album_image, size:"100x100", format:"jpeg", class:"album-img" %>
+    <%= link_to "#{album.title}", album_path(album) %>
+  </div>
 <% end %>

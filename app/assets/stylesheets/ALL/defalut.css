@@ -27,6 +27,21 @@
 	text-align: center;
 }
 
+.field-box {
+  height:120px;
+  line-height:120px;
+  display:flex;
+}
+
+.submit-box {
+  display:flex;
+}
+
+.submit {
+  width:50%;
+  text-align:center;
+}
+
 .btn {
 	padding: 10px 30px;
 	border: solid 1px;
@@ -37,8 +52,6 @@
 <<<<<<< HEAD
 }
 =======
-}
-
 
 .vissel {
   font-size:40px;

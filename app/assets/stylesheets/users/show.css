@@ -11,19 +11,8 @@
   border-left:solid 1px black;
 }
 
-.field-box {
-  height:120px;
-  line-height:120px;
-}
-
 .fields {
   width:200px;
-}
-
-.submit {
-  height:40px;
-  width:70px;
-  float:right;
 }
 
 .side-bar {

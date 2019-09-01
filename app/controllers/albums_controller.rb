@@ -5,7 +5,8 @@ class AlbumsController < ApplicationController
 
   def create
     @album = Album.new(album_params)
-    @album
+    @album.save
+    redirect_to albums_path
   end
 
   def index
@@ -14,7 +15,7 @@ class AlbumsController < ApplicationController
   end
 
   def show
-    # @album = Album.find(params[:id])
+    @album = Album.find(params[:id])
   end
 
   def edit
@@ -29,6 +30,8 @@ class AlbumsController < ApplicationController
   private
 
   def album_params
-    params.require(:album).permit(:title, :status, :album_image, :price, :label_id, :genre_id, :stock)
+    pp = params.require(:album).permit(:title, :status, :album_image, :price, :label_id, :genre_id, :stock)
+    pp[:status] = params[:album][:status].to_i
+    return pp
   end
 end

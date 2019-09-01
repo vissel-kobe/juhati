@@ -5,7 +5,7 @@ class AlbumsController < ApplicationController
 
   def create
     @album = Album.new(album_params)
-    @album.save
+    @album.save!
     redirect_to albums_path
   end
 
@@ -16,6 +16,7 @@ class AlbumsController < ApplicationController
 
   def show
     @album = Album.find(params[:id])
+    @user = current_user
   end
 
   def edit

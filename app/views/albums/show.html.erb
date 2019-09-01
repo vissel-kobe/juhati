@@ -1,2 +1,44 @@
-<h1>Albums#show</h1>
-<p>Find me in app/views/albums/show.html.erb</p>
+<div class="background-image">
+  <div class="center-box">
+    <h2 class="title">商品詳細</h2>
+    <div class="flex-box">
+      <div class="title-box">
+        <%= @album.title %>
+      </div>
+      <div class="price-box">
+        <div><p>ここにイイねのボタン</p></div>
+        <div class="price">
+          <p><%= @album.price %>円 (税込み)</p>
+        </div>
+      </div>
+    </div>
+    <div class="flex-box">
+      <div class="album-box">
+        <%= attachment_image_tag @album, :album_image, size:"100x100", format:"jpeg",     class:"album-img" %>
+      </div>
+      <div class="details">
+        <div class="flex-box">
+          <div class="status">
+            <%= @album.status %>
+          </div>
+          <div class="stock">
+            <p>在庫:<%= @album.stock %>枚</p>
+          </div>
+        </div>
+        <div class="genre">
+          <p>ジャンル:   <%= @album.genre.name %></p>
+        </div>
+        <div class="label">
+          <p>レーベル名:   <%= @album.label.name %></p>
+        </div>
+      </div>
+      <div class="cart-box">
+        <div class="cart-picture">
+        </div>
+        <div class="actions">
+          <p>カートへ追加</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

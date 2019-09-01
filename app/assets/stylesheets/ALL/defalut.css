@@ -8,6 +8,7 @@
 	border-right: solid 1px;
 	border-left: solid 1px;
 	min-height:200px;
+  padding:10px 10px;
 }
 
 .border {
@@ -16,7 +17,6 @@
 }
 
 .title {
-	margin:10px 10px;
 	width:200px;
 	text-align: center;
 	background-color: #008080;
@@ -33,8 +33,9 @@
   display:flex;
 }
 
-.submit-box {
+.flex-box {
   display:flex;
+  margin-bottom:20px;
 }
 
 .submit {
@@ -49,9 +50,7 @@
 	text-align: center;
 	background-color: #FFCCFF;
   	border-radius:  5px;
-<<<<<<< HEAD
 }
-=======
 
 .vissel {
   font-size:40px;
@@ -118,4 +117,3 @@
   height:50px;
   line-height:50px;
 }
->>>>>>> 2a25276abc2d59aed0de30757b1a82181406839b

@@ -1,6 +1,7 @@
-<div class="background">
-	<div class="center-box">
-		<h2 class="title">管理者情報</h2>
+<div class="admins-show">
+	<div class="leftside"></div>
+	<main class="main">
+		<h2 class="page-title">管理者情報</h2>
 		<div class="content">
 			<span class="mail">メールアドレス</span>
 			<span class="border"><%= @admin.email %></span>
@@ -8,5 +9,6 @@
 		<div class="float">
 			<p class="show-btn"><%= link_to "編集する", edit_admin_path(@admin), class: "btn" %></p>
 		</div>
-	</div>
+	</main>
+	<div class="rightside"></div>
 </div>

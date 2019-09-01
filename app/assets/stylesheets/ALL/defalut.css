@@ -2,12 +2,22 @@
 
 }
 
-.center-box {
-	width: 800px;
-	margin: 0 auto;
-	border-right: solid 1px;
-	border-left: solid 1px;
-	min-height:200px;
+.leftside,
+.rightside {
+  width: 15%;
+  padding: 50px 10px;
+  background-color: #fdd;
+}
+.rightside {
+  background-color: #ddf;
+}
+.main {
+  width: 100%;
+  padding: 50px 20px;
+}
+.inner {
+  width: 700px;
+  margin: 0 auto;
 }
 
 .border {
@@ -15,23 +25,117 @@
 	padding: 5px 100px;
 }
 
-.title {
-	margin:10px 10px;
-	width:200px;
+.page-title {
+  display: block;
+	margin: 0 0 20px 20px;
+	width: 200px;
 	text-align: center;
 	background-color: #008080;
-  	border-radius:  5px;
+  border-radius: 5px;
+  color: #fff;
 }
-
+.flex {
+  display: flex;
+}
+.is-between {
+  justify-content: space-between;
+}
 .text-center {
-	text-align: center;
+  text-align: center;
+}
+.vertical-center {
+  align-items: center;
+}
+.inline-space {
+  display: inline-block;
+  width: 30px;
 }
 
+.header {
+  padding: 0 15%;
+  height: 100px;
+  background-color: #888;
+  padding-top: 10px;
+}
+.header-logo {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  font-size: 24px;
+  background-color: #fff;
+}
+.header-right {
+  width: 400px;
+}
+.header-nav ul {
+  list-style: none;
+  padding-inline-start: 0;
+}
+.search-section {
+  margin-top: 10px;
+}
+.search-box {
+  width: 200px;
+  height: 20px;
+  margin-top: 10px;
+  background-color: #fff;
+  border: 1px solid #333;
+}
+.search-btn {
+  margin-left: 10px;
+}
 .btn {
-	padding: 10px 30px;
-	border: solid 1px;
-	width:200px;
-	text-align: center;
-	background-color: #FFCCFF;
-  	border-radius:  5px;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 5px 10px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: rgba(255,255,255,0.7);
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+
+.field {
+    display: flex;
+    margin-bottom: 20px;
+}
+.label {
+  display: inline-block;
+  width: 170px;
+}
+.ml54px {
+  margin-left: 54px;
+}
+
+.footer {
+  height: 40px;
+  background-color: #bbb;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+}
+.footer-txt {
+  line-height: 40px;
 }

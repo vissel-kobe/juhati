@@ -12133,3 +12133,621 @@ Processing by AlbumsController#new as HTML
 Completed 200 OK in 321ms (Views: 291.9ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/" for 10.0.2.2 at 2019-08-29 12:33:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 11482ms (Views: 11385.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admins" for 10.0.2.2 at 2019-08-29 12:33:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for AdminsController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/admins/1" for 10.0.2.2 at 2019-08-29 12:33:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering admins/show.html.erb within layouts/application
+  Rendered admins/show.html.erb within layouts/application (67.5ms)
+Completed 500 Internal Server Error in 308ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `email' for nil:NilClass):
+    3: 		<h2 class="title">管理者情報</h2>
+    4: 		<div class="content">
+    5: 			<span class="mail">メールアドレス</span>
+    6: 			<span class="border"><%= @admin.email %></span>
+    7: 		</div>
+    8: 		<div class="float">
+    9: 			<p class="show-btn"><%= link_to "編集する", edit_admin_path(@admin), class: "btn" %></p>
+  
+app/views/admins/show.html.erb:6:in `_app_views_admins_show_html_erb__4371148306667041489_70183228032480'
+Started GET "/albums/new" for 10.0.2.2 at 2019-08-29 12:33:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (23.1ms)
+Completed 200 OK in 1686ms (Views: 1561.3ms | ActiveRecord: 14.7ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-08-30 03:08:16 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 4444ms (Views: 4323.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-08-30 03:19:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (1.7ms)
+  Rendered template/_header.html.erb (3.4ms)
+  Rendered template/_footer.html.erb (0.4ms)
+Completed 200 OK in 5902ms (Views: 5830.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-09-01 00:56:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (7.6ms)
+  Rendered template/_header.html.erb (3.4ms)
+  Rendered template/_footer.html.erb (0.8ms)
+Completed 200 OK in 5618ms (Views: 5513.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-09-01 00:57:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.5ms)
+  Rendered template/_header.html.erb (3.9ms)
+  Rendered template/_footer.html.erb (0.7ms)
+Completed 200 OK in 1457ms (Views: 1412.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-09-01 00:59:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (1.0ms)
+  Rendered template/_header.html.erb (2.6ms)
+  Rendered template/_footer.html.erb (0.4ms)
+Completed 200 OK in 1226ms (Views: 1167.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/albums" for 10.0.2.2 at 2019-09-01 00:59:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (2.3ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/albums/index.html.erb:4
+  Rendered albums/index.html.erb within layouts/application (14.9ms)
+  Rendered template/_header.html.erb (2.1ms)
+  Rendered template/_footer.html.erb (0.5ms)
+Completed 200 OK in 1409ms (Views: 1335.9ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/albums" for 10.0.2.2 at 2019-09-01 01:02:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (2.8ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/albums/index.html.erb:6
+  Rendered albums/index.html.erb within layouts/application (5.2ms)
+  Rendered template/_header.html.erb (3.0ms)
+  Rendered template/_footer.html.erb (0.5ms)
+Completed 200 OK in 1395ms (Views: 1335.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/albums" for 10.0.2.2 at 2019-09-01 01:03:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (2.6ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/albums/index.html.erb:5
+  Rendered albums/index.html.erb within layouts/application (5.5ms)
+  Rendered template/_header.html.erb (2.0ms)
+  Rendered template/_footer.html.erb (0.5ms)
+Completed 200 OK in 1352ms (Views: 1292.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/albums" for 10.0.2.2 at 2019-09-01 01:04:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (2.1ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/albums/index.html.erb:5
+  Rendered albums/index.html.erb within layouts/application (5.9ms)
+  Rendered template/_header.html.erb (3.0ms)
+  Rendered template/_footer.html.erb (0.5ms)
+Completed 200 OK in 1775ms (Views: 1691.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/albums" for 10.0.2.2 at 2019-09-01 01:05:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (3.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Album Load (0.0ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Album Load (0.1ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendered albums/index.html.erb within layouts/application (709.3ms)
+Completed 500 Internal Server Error in 934ms (ActiveRecord: 3.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `album_image' for #<#<Class:0x00007f0022876288>:0x00007f00216f8ce0>):
+    4: 		<h2>商品詳細</h2>
+    5: 		<% @albums = [0,1,2,3,4,5,6,7,8,9,10,11] %>
+    6: 		<%= @albums.each do |album| %>
+    7: 			<%= attachment_image_tag album, album_image, size:"60x60" %>
+    8: 			<%= album.title %>
+    9: 			<%= album.artist.name %>
+   10: 		<% end %>
+  
+app/views/albums/index.html.erb:7:in `block in _app_views_albums_index_html_erb___1533911701733597614_69819268846020'
+app/views/albums/index.html.erb:6:in `each'
+app/views/albums/index.html.erb:6:in `_app_views_albums_index_html_erb___1533911701733597614_69819268846020'
+Started GET "/albums" for 10.0.2.2 at 2019-09-01 01:10:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  Rendered albums/index.html.erb within layouts/application (61.8ms)
+Completed 500 Internal Server Error in 258ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for 0:Integer):
+     5: 		<% @albums = [0,1,2,3,4,5,6,7,8,9,10,11] %>
+     6: 		<%= @albums.each do |album| %>
+     7: 			<div class="album-item text-center">
+     8: 			<%= link_to album_path(album.id) do %>
+     9: 				<div class="album-item-img"></div>
+    10: 				<!-- attachment_image_tag album, album_image, size:"150x150", class: "album-item-img" -->
+    11: 				<p class="album-item-txt">album.title</p>
+  
+app/views/albums/index.html.erb:8:in `block in _app_views_albums_index_html_erb___1533911701733597614_69819273150860'
+app/views/albums/index.html.erb:6:in `each'
+app/views/albums/index.html.erb:6:in `_app_views_albums_index_html_erb___1533911701733597614_69819273150860'
+Started GET "/albums" for 10.0.2.2 at 2019-09-01 01:11:09 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  Rendered albums/index.html.erb within layouts/application (3.1ms)
+  Rendered template/_header.html.erb (3.2ms)
+  Rendered template/_footer.html.erb (0.6ms)
+Completed 200 OK in 2045ms (Views: 1969.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/albums" for 10.0.2.2 at 2019-09-01 01:12:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  Rendered albums/index.html.erb within layouts/application (2.9ms)
+  Rendered template/_header.html.erb (3.2ms)
+  Rendered template/_footer.html.erb (0.5ms)
+Completed 200 OK in 1554ms (Views: 1468.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/albums" for 10.0.2.2 at 2019-09-01 01:15:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  Rendered albums/index.html.erb within layouts/application (2.2ms)
+  Rendered template/_header.html.erb (1.9ms)
+  Rendered template/_footer.html.erb (0.6ms)
+Completed 200 OK in 1209ms (Views: 1165.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/albums" for 10.0.2.2 at 2019-09-01 01:15:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  Rendered albums/index.html.erb within layouts/application (2.3ms)
+  Rendered template/_header.html.erb (2.5ms)
+  Rendered template/_footer.html.erb (0.5ms)
+Completed 200 OK in 1501ms (Views: 1440.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/albums" for 10.0.2.2 at 2019-09-01 01:16:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  Rendered albums/index.html.erb within layouts/application (2.8ms)
+  Rendered template/_header.html.erb (2.1ms)
+  Rendered template/_footer.html.erb (0.6ms)
+Completed 200 OK in 1262ms (Views: 1211.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/albums" for 10.0.2.2 at 2019-09-01 01:17:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  Rendered albums/index.html.erb within layouts/application (3.0ms)
+  Rendered template/_header.html.erb (3.3ms)
+  Rendered template/_footer.html.erb (0.5ms)
+Completed 200 OK in 1363ms (Views: 1307.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/albums" for 10.0.2.2 at 2019-09-01 01:17:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  Rendered albums/index.html.erb within layouts/application (3.8ms)
+  Rendered template/_header.html.erb (2.7ms)
+  Rendered template/_footer.html.erb (0.5ms)
+Completed 200 OK in 1304ms (Views: 1247.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/albums/1" for 10.0.2.2 at 2019-09-01 01:18:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAlbum Load (1.7ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:17
+Completed 404 Not Found in 95ms (ActiveRecord: 10.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Album with 'id'=1):
+  
+app/controllers/albums_controller.rb:17:in `show'
+Started GET "/albums/1" for 10.0.2.2 at 2019-09-01 01:18:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering albums/show.html.erb within layouts/application
+  Rendered albums/show.html.erb within layouts/application (1.2ms)
+  Rendered template/_header.html.erb (5.6ms)
+  Rendered template/_footer.html.erb (0.6ms)
+Completed 200 OK in 5047ms (Views: 4977.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/albums/1" for 10.0.2.2 at 2019-09-01 01:19:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering albums/show.html.erb within layouts/application
+  Rendered albums/show.html.erb within layouts/application (0.7ms)
+  Rendered template/_header.html.erb (4.3ms)
+  Rendered template/_footer.html.erb (0.4ms)
+Completed 200 OK in 1246ms (Views: 1190.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/albums/1" for 10.0.2.2 at 2019-09-01 01:19:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering albums/show.html.erb within layouts/application
+  Rendered albums/show.html.erb within layouts/application (0.7ms)
+  Rendered template/_header.html.erb (2.4ms)
+  Rendered template/_footer.html.erb (0.8ms)
+Completed 200 OK in 1231ms (Views: 1184.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2019-09-01 01:20:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (245.8ms)
+  Rendered template/_header.html.erb (3.3ms)
+  Rendered template/_footer.html.erb (0.6ms)
+Completed 200 OK in 1589ms (Views: 1533.9ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2019-09-01 01:25:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 342ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/vagrant/juhati/app/views/users/sessions/new.html.erb:35: syntax error, unexpected tIDENTIFIER, expecting ')'
+...ass: "link_to-signup-btn" style:"float:right; margin-bottom:...
+...                          ^~~~~):
+  
+app/views/users/sessions/new.html.erb:35: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/users/sign_in" for 10.0.2.2 at 2019-09-01 01:25:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (6.7ms)
+  Rendered template/_header.html.erb (3.0ms)
+  Rendered template/_footer.html.erb (0.6ms)
+Completed 200 OK in 1460ms (Views: 1457.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2019-09-01 01:28:20 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (5.1ms)
+  Rendered template/_header.html.erb (2.7ms)
+  Rendered template/_footer.html.erb (0.4ms)
+Completed 200 OK in 1258ms (Views: 1256.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2019-09-01 01:31:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (3.2ms)
+  Rendered template/_header.html.erb (3.4ms)
+  Rendered template/_footer.html.erb (0.6ms)
+Completed 200 OK in 1472ms (Views: 1469.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2019-09-01 01:33:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (5.3ms)
+  Rendered template/_header.html.erb (3.1ms)
+  Rendered template/_footer.html.erb (0.6ms)
+Completed 200 OK in 1490ms (Views: 1487.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2019-09-01 01:34:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (3.2ms)
+  Rendered template/_header.html.erb (2.5ms)
+  Rendered template/_footer.html.erb (0.5ms)
+Completed 200 OK in 1583ms (Views: 1581.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2019-09-01 01:35:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (4.9ms)
+  Rendered template/_header.html.erb (2.7ms)
+  Rendered template/_footer.html.erb (0.5ms)
+Completed 200 OK in 1446ms (Views: 1444.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2019-09-01 01:40:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (3.3ms)
+  Rendered template/_header.html.erb (2.6ms)
+  Rendered template/_footer.html.erb (0.6ms)
+Completed 200 OK in 1355ms (Views: 1352.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2019-09-01 01:40:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (4.8ms)
+  Rendered template/_header.html.erb (2.9ms)
+  Rendered template/_footer.html.erb (0.5ms)
+Completed 200 OK in 1401ms (Views: 1398.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2019-09-01 01:41:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (4.4ms)
+  Rendered template/_header.html.erb (2.9ms)
+  Rendered template/_footer.html.erb (0.5ms)
+Completed 200 OK in 1416ms (Views: 1413.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2019-09-01 01:44:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (3.1ms)
+  Rendered template/_header.html.erb (2.9ms)
+  Rendered template/_footer.html.erb (0.7ms)
+Completed 200 OK in 1496ms (Views: 1493.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2019-09-01 01:47:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (3.8ms)
+  Rendered template/_header.html.erb (3.1ms)
+  Rendered template/_footer.html.erb (0.5ms)
+Completed 200 OK in 1590ms (Views: 1588.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 10.0.2.2 at 2019-09-01 01:48:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/registrations/new.html.erb within layouts/application (6.1ms)
+  Rendered template/_header.html.erb (4.3ms)
+  Rendered template/_footer.html.erb (0.4ms)
+Completed 200 OK in 1818ms (Views: 1814.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 10.0.2.2 at 2019-09-01 01:58:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/registrations/new.html.erb within layouts/application (8.2ms)
+  Rendered template/_header.html.erb (3.0ms)
+  Rendered template/_footer.html.erb (0.5ms)
+Completed 200 OK in 1536ms (Views: 1533.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 10.0.2.2 at 2019-09-01 01:59:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/registrations/new.html.erb within layouts/application (7.4ms)
+  Rendered template/_header.html.erb (2.3ms)
+  Rendered template/_footer.html.erb (0.6ms)
+Completed 200 OK in 1442ms (Views: 1439.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 10.0.2.2 at 2019-09-01 01:59:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/registrations/new.html.erb within layouts/application (7.0ms)
+  Rendered template/_header.html.erb (2.1ms)
+  Rendered template/_footer.html.erb (0.7ms)
+Completed 200 OK in 1300ms (Views: 1298.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 10.0.2.2 at 2019-09-01 02:00:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/registrations/new.html.erb within layouts/application (9.0ms)
+  Rendered template/_header.html.erb (2.0ms)
+  Rendered template/_footer.html.erb (0.5ms)
+Completed 200 OK in 1398ms (Views: 1396.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 10.0.2.2 at 2019-09-01 02:01:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/registrations/new.html.erb within layouts/application (5.5ms)
+  Rendered template/_header.html.erb (2.8ms)
+  Rendered template/_footer.html.erb (0.5ms)
+Completed 200 OK in 1437ms (Views: 1435.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 10.0.2.2 at 2019-09-01 02:02:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/registrations/new.html.erb within layouts/application (8.2ms)
+  Rendered template/_header.html.erb (2.8ms)
+  Rendered template/_footer.html.erb (0.6ms)
+Completed 200 OK in 1482ms (Views: 1480.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 10.0.2.2 at 2019-09-01 02:03:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/registrations/new.html.erb within layouts/application (5.3ms)
+  Rendered template/_header.html.erb (2.2ms)
+  Rendered template/_footer.html.erb (0.7ms)
+Completed 200 OK in 1262ms (Views: 1260.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 10.0.2.2 at 2019-09-01 02:04:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/registrations/new.html.erb within layouts/application (7.8ms)
+  Rendered template/_header.html.erb (2.7ms)
+  Rendered template/_footer.html.erb (0.6ms)
+Completed 200 OK in 1470ms (Views: 1467.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 10.0.2.2 at 2019-09-01 02:05:09 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/registrations/new.html.erb within layouts/application (5.4ms)
+  Rendered template/_header.html.erb (3.8ms)
+  Rendered template/_footer.html.erb (0.6ms)
+Completed 200 OK in 1392ms (Views: 1390.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 10.0.2.2 at 2019-09-01 02:09:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/registrations/new.html.erb within layouts/application (6.5ms)
+  Rendered template/_header.html.erb (2.3ms)
+  Rendered template/_footer.html.erb (0.7ms)
+Completed 200 OK in 1613ms (Views: 1609.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 10.0.2.2 at 2019-09-01 02:10:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/registrations/new.html.erb within layouts/application (5.6ms)
+  Rendered template/_header.html.erb (3.3ms)
+  Rendered template/_footer.html.erb (0.6ms)
+Completed 200 OK in 1804ms (Views: 1801.8ms | ActiveRecord: 0.0ms)
+
+

@@ -15,13 +15,17 @@
     width: 150px;
     height: 150px;
     margin: 10px 25px;
-    background-color: #efe;
 }
 .album-item-txt {
     display: block;
 }
 
-
+.price-field {
+    width: 50px;
+}
+.stock-field {
+    width: 45px;
+}
 
 
 
@@ -29,6 +33,9 @@
 .album-content-first {
     margin-top: 20px;
     font-size: 18px;
+}
+.album-title {
+    font-size: 24px;
 }
 .fav-btn:hover {
     color: #faa;
@@ -39,7 +46,6 @@
 .album-content-img {
     width: 200px;
     height: 200px;
-    background-color: #efe;
 }
 .add-cart-btn {
     margin-top: 20px;

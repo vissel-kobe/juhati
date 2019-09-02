@@ -8,26 +8,18 @@
 
       <div class="field">
         <span class="label">氏名</span>
-        <div class="">
-          <%= f.label :（姓） %>
-          <%= f.text_field :family_name, autofocus: true, autocomplete: "family_name" %>
-        </div>
-        <div class="">
-          <%= f.label :（名） %>
-          <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
-        </div>
+        <%= f.label :（姓） %>
+        <%= f.text_field :family_name, autofocus: true, autocomplete: "family_name" %>
+        <%= f.label :（名） %>
+        <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
       </div>
 
       <div class="field">
         <span class="label">氏名(フリガナ)</span>
-        <div class="">
-          <%= f.label :（姓） %>
-          <%= f.text_field :kana_family_name, autofocus: true, autocomplete: "kana_family_name" %>
-        </div>
-        <div class="">
-          <%= f.label :（名） %>
-          <%= f.text_field :kana_first_name, autofocus: true, autocomplete: "kana_first_name" %>
-        </div>
+        <%= f.label :（姓） %>
+        <%= f.text_field :kana_family_name, autofocus: true, autocomplete: "kana_family_name" %>
+        <%= f.label :（名） %>
+        <%= f.text_field :kana_first_name, autofocus: true, autocomplete: "kana_first_name" %>
       </div>
 
       <div class="field">

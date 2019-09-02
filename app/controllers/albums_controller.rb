@@ -16,12 +16,19 @@ class AlbumsController < ApplicationController
 
   def show
     @album = Album.find(params[:id])
+    @album_genre = Genre.find_by(id: @album.genre_id)
+    @album_label = Label.find_by(id: @album.label_id)
+    @user = current_user
   end
 
   def edit
+    @album = Album.find(params[:id])
   end
 
   def update
+    album = Album.find(params[:id])
+    album.update(album_params)
+    redirect_to album_path(album.id)
   end
 
   def destroy

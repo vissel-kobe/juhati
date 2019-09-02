@@ -1,7 +1,7 @@
 <div class="albums-show flex">
 	<div class="leftside"></div>
 	<main class="main">
-		<h2 class="page-title">商品編集</h2>
+		<h2 class="page-title">商品情報編集</h2>
 		<div class="albums-new-form">
 			<%= form_for @album do |f| %>
 			<div class="field">
@@ -25,7 +25,7 @@
 			<div class="field">
 				<span class="label">価格（税込み）</span>
 				<div class="field-textbox">
-					<%= f.number_field :price %>
+					<%= f.number_field :price, class: "price-field" %>
 					<span>円</span>
 				</div>
 			</div>
@@ -50,7 +50,7 @@
 			<div class="field">
 				<span class="label">在庫</span>
 				<div class="field-textbox">
-					<%= f.number_field :stock %>
+					<%= f.number_field :stock, class: "stock-field" %>
 				</div>
 			</div>
 

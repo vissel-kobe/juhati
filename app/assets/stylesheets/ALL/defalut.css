@@ -135,6 +135,7 @@
 .header-hidden-nav {
   position: absolute;
   top: -200px;
+  padding-bottom: 10px;
   transition: 0.6s;
 }
 

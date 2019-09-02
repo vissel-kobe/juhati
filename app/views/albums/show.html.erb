@@ -4,17 +4,17 @@
 		<h2 class="page-title">商品詳細</h2>
 		<div class="inner">
 			<div class="album-content-first flex is-between">
-				<p class="album-title">@album.title</p>
+				<p class="album-title"><%= @album.title %></p>
 				<a href="" class="fav-btn"><i class="fas fa-heart"></i>いいね</a>
 			</div>
 			<div class="album-content-second flex is-between">
-				<div class="album-content-img"></div>
+				<%= attachment_image_tag @album, :album_image, format:"jpeg", class:"album-content-img", fallback: "no-image.jpg" %>
 				<div class="album-info">
-					<p class="album-content-status">販売中</p>
-					<p>108円 (税込み)</p>
-					<p>在庫: @album.stock枚</p>
-					<p>ジャンル: @genre.name</p>
-					<p>レーベル名: @label.name</p>
+					<p class="album-content-status"><%= @album.status %></p>
+					<p><%= @album.price %> 円(税込み)</p>
+					<p>在庫: <%= @album.stock %> 枚</p>
+					<p>ジャンル: <%= @album_genre.name %></p>
+					<p>レーベル名: <%= @album_label.name %></p>
 					<p>ディスク数: @album.discs.count</p>
 				</div>
 				<div class="second-left">

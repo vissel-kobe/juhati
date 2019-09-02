@@ -1,9 +1,9 @@
-<div class="genres-new flex">
+<div class="labels-new flex">
 	<div class="leftside"></div>
 	<main class="main">
-		<h2 class="page-title">ジャンル追加</h2>
-		<div class="genres-new-form">
-			<%= form_for @genre do |f| %>
+		<h2 class="page-title">レーベル追加</h2>
+		<div class="labels-new-form">
+			<%= form_for @label do |f| %>
 			<%= f.text_field :name %>
 			<%= f.submit "作成" %>
 			<% end %>

@@ -1,0 +1,9 @@
+.link_to-signup-btn {
+	display: inline-block;
+	float: right;
+	text-decoration-line: underline;
+}
+.remember_me-checkbox {
+	margin: 4px 10px 0 0;
+	line-height: normal;
+}

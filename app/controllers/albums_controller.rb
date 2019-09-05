@@ -5,7 +5,8 @@ class AlbumsController < ApplicationController
 
   def create
     @album = Album.new(album_params)
-    @label = Label.all
+    @album.save
+    redirect_to albums_path
   end
 
   def index
@@ -15,12 +16,19 @@ class AlbumsController < ApplicationController
 
   def show
     @album = Album.find(params[:id])
+    @album_genre = Genre.find_by(id: @album.genre_id)
+    @album_label = Label.find_by(id: @album.label_id)
+    @user = current_user
   end
 
   def edit
+    @album = Album.find(params[:id])
   end
 
   def update
+    album = Album.find(params[:id])
+    album.update(album_params)
+    redirect_to album_path(album.id)
   end
 
   def destroy
@@ -29,6 +37,8 @@ class AlbumsController < ApplicationController
   private
 
   def album_params
-    params.require(:album).permit(:title, :status, :album_image, :price, :label_id, :genre_id, :stock)
+    pp = params.require(:album).permit(:title, :status, :album_image, :price, :label_id, :genre_id, :stock)
+    pp[:status] = params[:album][:status].to_i
+    return pp
   end
 end

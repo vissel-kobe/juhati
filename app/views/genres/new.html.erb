@@ -1,4 +1,13 @@
-<%= form_for @genre do |f| %>
-	<%= f.text_field :name %>
-	<%= f.submit "作成" %>
-<% end %>
+<div class="genres-new flex">
+	<div class="leftside"></div>
+	<main class="main">
+		<h2 class="page-title">ジャンル追加</h2>
+		<div class="genres-new-form">
+			<%= form_for @genre do |f| %>
+			<%= f.text_field :name %>
+			<%= f.submit "作成" %>
+			<% end %>
+		</div>
+	</main>
+	<div class="rightside"></div>
+</div>

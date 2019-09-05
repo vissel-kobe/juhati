@@ -1,0 +1,25 @@
+<div class="shipping_addresses-new flex">
+	<div class="leftside"></div>
+	<main class="main">
+		<h2 class="page-title">配送先追加</h2>
+		<div class="shipping_addresses-new-form">
+			<%= form_for [@user, @shipping_address] do |f| %>
+				<div class="field">
+					<span class="label">郵便番号</span>
+					<div class="field-textbox ml54px">
+						<%= f.text_field :postcode, autofocus: true, autocomplete: "postcode" %>
+					</div>
+				</div>
+
+				<div class="field">
+					<span class="label">住所</span>
+					<div class="field-textbox ml54px">
+						<%= f.text_field :address, autofocus: true, autocomplete: "address" %>
+					</div>
+				</div>
+				<%= f.submit "作成", class: "actions btn btn-success" %>
+			<% end %>
+		</div>
+	</main>
+	<div class="rightside"></div>
+</div>

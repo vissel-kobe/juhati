@@ -14301,3 +14301,609 @@ Processing by AlbumsController#index as HTML
 Completed 200 OK in 1743ms (Views: 1691.5ms | ActiveRecord: 2.6ms)
 
 
+Started GET "/users/sign_in" for 10.0.2.2 at 2019-09-05 07:56:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (303.7ms)
+  Rendered template/_header.html.erb (3.4ms)
+  Rendered template/_footer.html.erb (0.4ms)
+Completed 200 OK in 4396ms (Views: 4319.2ms | ActiveRecord: 13.2ms)
+
+
+Started POST "/users/sign_in" for 10.0.2.2 at 2019-09-05 07:56:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jdL/9GdzI/kyV4HJYkg+DpTGlMA+Ui3ps7e23pW7Osl2idVyH7tEZLzVh/2+zn7Oc43kevaL/1Lv6UILgzgtNA==", "user"=>{"email"=>"kobe@soccer.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "kobe@soccer.com"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (18.0ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2019-09-05 07:56:51.940753"], ["last_sign_in_at", "2019-09-02 08:19:55.299755"], ["sign_in_count", 3], ["updated_at", "2019-09-05 07:56:51.943446"], ["id", 4]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 558ms (ActiveRecord: 30.1ms)
+
+
+Started GET "/users/4" for 10.0.2.2 at 2019-09-05 07:56:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:32
+  Rendered users/show.html.erb within layouts/application (9.0ms)
+  Rendered template/_header.html.erb (4.1ms)
+  Rendered template/_footer.html.erb (1.0ms)
+Completed 200 OK in 1673ms (Views: 1596.0ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/users/4" for 10.0.2.2 at 2019-09-05 07:58:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:36
+  Rendered users/show.html.erb within layouts/application (19.5ms)
+  Rendered template/_header.html.erb (3.5ms)
+  Rendered template/_footer.html.erb (0.5ms)
+Completed 200 OK in 1996ms (Views: 1837.3ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/users/4" for 10.0.2.2 at 2019-09-05 08:24:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:36
+  Rendered users/show.html.erb within layouts/application (11.6ms)
+  Rendered template/_header.html.erb (5.9ms)
+  Rendered template/_footer.html.erb (0.8ms)
+Completed 200 OK in 10141ms (Views: 9982.7ms | ActiveRecord: 20.7ms)
+
+
+Started GET "/users/4/shipping_addresses" for 10.0.2.2 at 2019-09-05 08:24:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ShippingAddressesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:31
+  Rendering shipping_addresses/index.html.erb within layouts/application
+  [1m[36mShippingAddress Load (2.7ms)[0m  [1m[34mSELECT "shipping_addresses".* FROM "shipping_addresses" WHERE "shipping_addresses"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/shipping_addresses/index.html.erb:7
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/shipping_addresses/index.html.erb:15
+  Rendered shipping_addresses/index.html.erb within layouts/application (693.3ms)
+Completed 500 Internal Server Error in 929ms (ActiveRecord: 12.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `new_user_shipping_path' for #<#<Class:0x00007f42f00143e0>:0x00005643f1d87878>):
+    12: 				<% i = i + 1 %>
+    13: 			<% end %>
+    14: 		</div>
+    15: 		<%= link_to "追加する", new_user_shipping_path(user_id: current_user.id) %>
+    16: 	</main>
+    17: 	<div class="rightside"></div>
+    18: </div>
+  
+app/views/shipping_addresses/index.html.erb:15:in `_app_views_shipping_addresses_index_html_erb___3704252243542949041_69962735594040'
+Started GET "/users/4/shipping_addresses" for 10.0.2.2 at 2019-09-05 08:25:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ShippingAddressesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:31
+  Rendering shipping_addresses/index.html.erb within layouts/application
+  [1m[36mShippingAddress Load (5.1ms)[0m  [1m[34mSELECT "shipping_addresses".* FROM "shipping_addresses" WHERE "shipping_addresses"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/shipping_addresses/index.html.erb:7
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/shipping_addresses/index.html.erb:15
+  Rendered shipping_addresses/index.html.erb within layouts/application (21.7ms)
+  Rendered template/_header.html.erb (3.4ms)
+  Rendered template/_footer.html.erb (0.7ms)
+Completed 200 OK in 2434ms (Views: 2310.7ms | ActiveRecord: 15.3ms)
+
+
+Started GET "/users/4/shipping_addresses/new" for 10.0.2.2 at 2019-09-05 08:25:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ShippingAddressesController#new as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:31
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:6
+  Rendering shipping_addresses/new.html.erb within layouts/application
+  Rendered shipping_addresses/new.html.erb within layouts/application (625.5ms)
+Completed 500 Internal Server Error in 959ms (ActiveRecord: 14.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `shipping_addresses_path' for #<#<Class:0x00007f42f00143e0>:0x00007f42c8263858>):
+    3: 	<main class="main">
+    4: 		<h2 class="page-title">配送先追加</h2>
+    5: 		<div class="shipping_addresses-new-form">
+    6: 			<%= form_for @shipping_address do |f| %>
+    7: 				<div class="field">
+    8: 					<span class="label">郵便番号</span>
+    9: 					<div class="field-textbox ml54px">
+  
+app/views/shipping_addresses/new.html.erb:6:in `_app_views_shipping_addresses_new_html_erb__1742081953409846559_69962401317480'
+Started GET "/users/4/shipping_addresses/new" for 10.0.2.2 at 2019-09-05 08:27:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ShippingAddressesController#new as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:31
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:6
+  Rendering shipping_addresses/new.html.erb within layouts/application
+  Rendered shipping_addresses/new.html.erb within layouts/application (55.0ms)
+Completed 500 Internal Server Error in 256ms (ActiveRecord: 6.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `model_name' for #<Hash:0x00007f42c89190a8>):
+    3: 	<main class="main">
+    4: 		<h2 class="page-title">配送先追加</h2>
+    5: 		<div class="shipping_addresses-new-form">
+    6: 			<%= form_for(model: [@user, @shipping_address] ) do |f| %>
+    7: 				<div class="field">
+    8: 					<span class="label">郵便番号</span>
+    9: 					<div class="field-textbox ml54px">
+  
+app/views/shipping_addresses/new.html.erb:6:in `_app_views_shipping_addresses_new_html_erb__1742081953409846559_69962404515780'
+Started GET "/users/4/shipping_addresses/new" for 10.0.2.2 at 2019-09-05 08:28:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ShippingAddressesController#new as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:31
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:6
+  Rendering shipping_addresses/new.html.erb within layouts/application
+  Rendered shipping_addresses/new.html.erb within layouts/application (100.7ms)
+  Rendered template/_header.html.erb (4.9ms)
+  Rendered template/_footer.html.erb (0.8ms)
+Completed 200 OK in 1939ms (Views: 1851.3ms | ActiveRecord: 8.9ms)
+
+
+Started POST "/users/4/shipping_addresses" for 10.0.2.2 at 2019-09-05 08:28:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ShippingAddressesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DZ8rES0mjATQTvmxf78mWa9NZsqGafuh8aXo/yxdh1OUZ6S2pgh11J5IYxPS93JzySda6zdba9qe2A+I2yx7Gw==", "shipping_address"=>{"postcode"=>"555-5555", "address"=>"ごごご"}, "commit"=>"作成", "user_id"=>"4"}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:31
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/shipping_addresses_controller.rb:15
+  [1m[36mShippingAddress Create (24.4ms)[0m  [1m[32mINSERT INTO "shipping_addresses" ("user_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["user_id", 4], ["created_at", "2019-09-05 08:28:45.958369"], ["updated_at", "2019-09-05 08:28:45.958369"]]
+  ↳ app/controllers/shipping_addresses_controller.rb:15
+  [1m[35m (17.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/shipping_addresses_controller.rb:15
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 86ms (ActiveRecord: 50.6ms)
+
+
+Started GET "/users/4" for 10.0.2.2 at 2019-09-05 08:28:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:36
+  Rendered users/show.html.erb within layouts/application (15.4ms)
+  Rendered template/_header.html.erb (5.1ms)
+  Rendered template/_footer.html.erb (0.7ms)
+Completed 200 OK in 1994ms (Views: 1885.9ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/users/4/shipping_addresses" for 10.0.2.2 at 2019-09-05 08:29:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ShippingAddressesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:31
+  Rendering shipping_addresses/index.html.erb within layouts/application
+  [1m[36mShippingAddress Load (2.9ms)[0m  [1m[34mSELECT "shipping_addresses".* FROM "shipping_addresses" WHERE "shipping_addresses"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/shipping_addresses/index.html.erb:7
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/shipping_addresses/index.html.erb:11
+  Rendered shipping_addresses/index.html.erb within layouts/application (15.2ms)
+  Rendered template/_header.html.erb (5.3ms)
+  Rendered template/_footer.html.erb (0.9ms)
+Completed 200 OK in 1788ms (Views: 1711.8ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/users/4/shipping_addresses" for 10.0.2.2 at 2019-09-05 08:30:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ShippingAddressesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (10.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:31
+  Rendering shipping_addresses/index.html.erb within layouts/application
+  [1m[36mShippingAddress Load (6.1ms)[0m  [1m[34mSELECT "shipping_addresses".* FROM "shipping_addresses" WHERE "shipping_addresses"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/shipping_addresses/index.html.erb:7
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/shipping_addresses/index.html.erb:11
+  Rendered shipping_addresses/index.html.erb within layouts/application (24.0ms)
+  Rendered template/_header.html.erb (10.9ms)
+  Rendered template/_footer.html.erb (2.9ms)
+Completed 200 OK in 2198ms (Views: 2054.1ms | ActiveRecord: 20.7ms)
+
+
+Started GET "/users/4/shipping_addresses/1/edit" for 10.0.2.2 at 2019-09-05 08:31:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ShippingAddressesController#edit as HTML
+  Parameters: {"user_id"=>"4", "id"=>"1"}
+  [1m[36mUser Load (14.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:31
+  [1m[36mShippingAddress Load (13.9ms)[0m  [1m[34mSELECT  "shipping_addresses".* FROM "shipping_addresses" WHERE "shipping_addresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:20
+  Rendering shipping_addresses/edit.html.erb within layouts/application
+  Rendered shipping_addresses/edit.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:9
+  Rendered template/_header.html.erb (33.5ms)
+  Rendered template/_footer.html.erb (0.9ms)
+Completed 200 OK in 2196ms (Views: 1985.2ms | ActiveRecord: 33.7ms)
+
+
+Started PATCH "/users/4/shipping_addresses/1" for 10.0.2.2 at 2019-09-05 08:32:20 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ShippingAddressesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TG+TRZ4WXFfa3UInW/BJTtxYrdUiYAFqfctU97videULvbB1FuTiBBZHrhX6iK2pRyOxFokXzeu4x6zXgrEwwQ==", "shipping_address"=>{"postcode"=>"555-5555", "address"=>"ごごご"}, "commit"=>"更新", "user_id"=>"4", "id"=>"1"}
+  [1m[36mUser Load (7.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:31
+  [1m[36mShippingAddress Load (9.2ms)[0m  [1m[34mSELECT  "shipping_addresses".* FROM "shipping_addresses" WHERE "shipping_addresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:24
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/shipping_addresses_controller.rb:25
+  [1m[36mUser Load (7.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:25
+  [1m[36mShippingAddress Update (29.6ms)[0m  [1m[33mUPDATE "shipping_addresses" SET "postcode" = ?, "address" = ?, "updated_at" = ? WHERE "shipping_addresses"."id" = ?[0m  [["postcode", "555-5555"], ["address", "ごごご"], ["updated_at", "2019-09-05 08:32:20.289248"], ["id", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:25
+  [1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/shipping_addresses_controller.rb:25
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:26
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 122ms (ActiveRecord: 67.3ms)
+
+
+Started GET "/users/4" for 10.0.2.2 at 2019-09-05 08:32:20 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:36
+  Rendered users/show.html.erb within layouts/application (6.5ms)
+  Rendered template/_header.html.erb (3.0ms)
+  Rendered template/_footer.html.erb (0.4ms)
+Completed 200 OK in 1722ms (Views: 1633.8ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/users/4/shipping_addresses" for 10.0.2.2 at 2019-09-05 08:32:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ShippingAddressesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:31
+  Rendering shipping_addresses/index.html.erb within layouts/application
+  [1m[36mShippingAddress Load (2.7ms)[0m  [1m[34mSELECT "shipping_addresses".* FROM "shipping_addresses" WHERE "shipping_addresses"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/shipping_addresses/index.html.erb:7
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/shipping_addresses/index.html.erb:11
+  Rendered shipping_addresses/index.html.erb within layouts/application (16.0ms)
+  Rendered template/_header.html.erb (4.4ms)
+  Rendered template/_footer.html.erb (0.7ms)
+Completed 200 OK in 1561ms (Views: 1482.4ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/users/4/shipping_addresses" for 10.0.2.2 at 2019-09-05 08:37:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ShippingAddressesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:31
+  Rendering shipping_addresses/index.html.erb within layouts/application
+  [1m[36mShippingAddress Load (3.2ms)[0m  [1m[34mSELECT "shipping_addresses".* FROM "shipping_addresses" WHERE "shipping_addresses"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/shipping_addresses/index.html.erb:15
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/shipping_addresses/index.html.erb:20
+  Rendered shipping_addresses/index.html.erb within layouts/application (16.3ms)
+  Rendered template/_header.html.erb (20.3ms)
+  Rendered template/_footer.html.erb (0.7ms)
+Completed 200 OK in 2036ms (Views: 1936.4ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/users/4/shipping_addresses" for 10.0.2.2 at 2019-09-05 08:44:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ShippingAddressesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:31
+  Rendering shipping_addresses/index.html.erb within layouts/application
+  [1m[36mShippingAddress Load (4.3ms)[0m  [1m[34mSELECT "shipping_addresses".* FROM "shipping_addresses" WHERE "shipping_addresses"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/shipping_addresses/index.html.erb:15
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/shipping_addresses/index.html.erb:20
+  Rendered shipping_addresses/index.html.erb within layouts/application (21.7ms)
+  Rendered template/_header.html.erb (3.2ms)
+  Rendered template/_footer.html.erb (0.6ms)
+Completed 200 OK in 2345ms (Views: 2265.0ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/users/4/shipping_addresses" for 10.0.2.2 at 2019-09-05 08:45:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ShippingAddressesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:31
+  Rendering shipping_addresses/index.html.erb within layouts/application
+  [1m[36mShippingAddress Load (3.0ms)[0m  [1m[34mSELECT "shipping_addresses".* FROM "shipping_addresses" WHERE "shipping_addresses"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/shipping_addresses/index.html.erb:15
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/shipping_addresses/index.html.erb:20
+  Rendered shipping_addresses/index.html.erb within layouts/application (16.0ms)
+  Rendered template/_header.html.erb (3.7ms)
+  Rendered template/_footer.html.erb (0.8ms)
+Completed 200 OK in 1999ms (Views: 1911.9ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/users/4" for 10.0.2.2 at 2019-09-05 08:46:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (9.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (8.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:36
+  Rendered users/show.html.erb within layouts/application (18.2ms)
+  Rendered template/_header.html.erb (3.6ms)
+  Rendered template/_footer.html.erb (0.5ms)
+Completed 200 OK in 2726ms (Views: 2573.6ms | ActiveRecord: 17.8ms)
+
+
+Started GET "/users/4" for 10.0.2.2 at 2019-09-05 08:50:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (13.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (59.5ms)
+Completed 500 Internal Server Error in 443ms (ActiveRecord: 13.9ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"shipping_addresses", :id=>"4"}, missing required keys: [:user_id]):
+    28:         </div>
+    29:       </div>
+    30:       <div class="rightbox">
+    31:         <%= link_to "配送先一覧", user_shipping_addresses_path, class: "actions btn btn-primary"%>
+    32:         <%= link_to "配送先追加", new_user_shipping_addresses_path, class: "actions btn btn-success"%>
+    33:       </div>
+    34:     </div>
+  
+app/views/users/show.html.erb:31:in `_app_views_users_show_html_erb___2141564175864455198_69962417919160'
+Started GET "/users/4" for 10.0.2.2 at 2019-09-05 08:51:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (577.7ms)
+Completed 500 Internal Server Error in 788ms (ActiveRecord: 5.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `new_user_shipping_addresses_path' for #<#<Class:0x00007f42c819cf28>:0x00007f42ca939ba8>):
+    29:       </div>
+    30:       <div class="rightbox">
+    31:         <%= link_to "配送先一覧", user_shipping_addresses_path(user_id: @user.id), class: "actions btn btn-primary"%>
+    32:         <%= link_to "配送先追加", new_user_shipping_addresses_path(user_id: @user.id), class: "actions btn btn-success"%>
+    33:       </div>
+    34:     </div>
+    35:     <div class="field">
+  
+app/views/users/show.html.erb:32:in `_app_views_users_show_html_erb___2141564175864455198_69962421621340'
+Started GET "/users/4" for 10.0.2.2 at 2019-09-05 08:51:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:44
+  Rendered users/show.html.erb within layouts/application (7.7ms)
+  Rendered template/_header.html.erb (5.4ms)
+  Rendered template/_footer.html.erb (0.7ms)
+Completed 200 OK in 1692ms (Views: 1619.6ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/users/4/shipping_addresses" for 10.0.2.2 at 2019-09-05 08:51:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ShippingAddressesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:31
+  Rendering shipping_addresses/index.html.erb within layouts/application
+  [1m[36mShippingAddress Load (2.5ms)[0m  [1m[34mSELECT "shipping_addresses".* FROM "shipping_addresses" WHERE "shipping_addresses"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/shipping_addresses/index.html.erb:15
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/shipping_addresses/index.html.erb:20
+  Rendered shipping_addresses/index.html.erb within layouts/application (13.9ms)
+  Rendered template/_header.html.erb (7.1ms)
+  Rendered template/_footer.html.erb (1.8ms)
+Completed 200 OK in 1876ms (Views: 1798.8ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/users/4/shipping_addresses" for 10.0.2.2 at 2019-09-05 08:55:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ShippingAddressesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (9.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:31
+  Rendering shipping_addresses/index.html.erb within layouts/application
+  [1m[36mShippingAddress Load (6.5ms)[0m  [1m[34mSELECT "shipping_addresses".* FROM "shipping_addresses" WHERE "shipping_addresses"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/shipping_addresses/index.html.erb:15
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/shipping_addresses/index.html.erb:20
+  Rendered shipping_addresses/index.html.erb within layouts/application (34.4ms)
+  Rendered template/_header.html.erb (4.3ms)
+  Rendered template/_footer.html.erb (0.6ms)
+Completed 200 OK in 2332ms (Views: 2209.4ms | ActiveRecord: 20.3ms)
+
+
+Started GET "/users/4" for 10.0.2.2 at 2019-09-05 08:55:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:44
+  Rendered users/show.html.erb within layouts/application (20.3ms)
+  Rendered template/_header.html.erb (4.2ms)
+  Rendered template/_footer.html.erb (0.5ms)
+Completed 200 OK in 2542ms (Views: 2402.3ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/users/4/shipping_addresses/new" for 10.0.2.2 at 2019-09-05 08:58:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ShippingAddressesController#new as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:31
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:6
+  Rendering shipping_addresses/new.html.erb within layouts/application
+  Rendered shipping_addresses/new.html.erb within layouts/application (11.7ms)
+  Rendered template/_header.html.erb (3.6ms)
+  Rendered template/_footer.html.erb (0.4ms)
+Completed 200 OK in 10798ms (Views: 10537.0ms | ActiveRecord: 34.6ms)
+
+
+Started POST "/users/4/shipping_addresses" for 10.0.2.2 at 2019-09-05 08:59:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ShippingAddressesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N5g1nAEEoTp/2uffDrxZ9t452HHrKYnXbbyL5UqsHC+YdhqKL7hOXxN5XY/4s7uHPoCNLB3UeISYwErmfGSCqQ==", "shipping_address"=>{"postcode"=>"666-6666", "address"=>"ろく"}, "commit"=>"作成", "user_id"=>"4"}
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:31
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:14
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/shipping_addresses_controller.rb:15
+  [1m[36mShippingAddress Create (21.2ms)[0m  [1m[32mINSERT INTO "shipping_addresses" ("user_id", "postcode", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["postcode", "666-6666"], ["address", "ろく"], ["created_at", "2019-09-05 08:59:00.442479"], ["updated_at", "2019-09-05 08:59:00.442479"]]
+  ↳ app/controllers/shipping_addresses_controller.rb:15
+  [1m[35m (10.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/shipping_addresses_controller.rb:15
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 43.1ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"shipping_addresses", :user_id=>4}, missing required keys: [:id]):
+  
+app/controllers/shipping_addresses_controller.rb:16:in `create'
+Started GET "/users/4/shipping_addresses" for 10.0.2.2 at 2019-09-05 08:59:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ShippingAddressesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (8.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:31
+  Rendering shipping_addresses/index.html.erb within layouts/application
+  [1m[36mShippingAddress Load (4.7ms)[0m  [1m[34mSELECT "shipping_addresses".* FROM "shipping_addresses" WHERE "shipping_addresses"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/shipping_addresses/index.html.erb:15
+  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/shipping_addresses/index.html.erb:20
+  Rendered shipping_addresses/index.html.erb within layouts/application (43.1ms)
+  Rendered template/_header.html.erb (17.9ms)
+  Rendered template/_footer.html.erb (0.6ms)
+Completed 200 OK in 2373ms (Views: 2181.1ms | ActiveRecord: 20.4ms)
+
+
+Started GET "/users/4/shipping_addresses/2/edit" for 10.0.2.2 at 2019-09-05 08:59:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ShippingAddressesController#edit as HTML
+  Parameters: {"user_id"=>"4", "id"=>"2"}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:31
+  [1m[36mShippingAddress Load (4.1ms)[0m  [1m[34mSELECT  "shipping_addresses".* FROM "shipping_addresses" WHERE "shipping_addresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:20
+  Rendering shipping_addresses/edit.html.erb within layouts/application
+  Rendered shipping_addresses/edit.html.erb within layouts/application (16.1ms)
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:9
+  Rendered template/_header.html.erb (12.2ms)
+  Rendered template/_footer.html.erb (0.5ms)
+Completed 200 OK in 5117ms (Views: 4887.2ms | ActiveRecord: 44.4ms)
+
+
+Started PATCH "/users/4/shipping_addresses/2" for 10.0.2.2 at 2019-09-05 09:00:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ShippingAddressesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U/hoUscSiZK/DnLAM6XVBnq24gEEEo8eL8ztH3evdHemX62BjqjcgovR4mu2jywh3PHCB+t8XFLJGQZlUv+FBg==", "shipping_address"=>{"postcode"=>"666-6666", "address"=>"ろくろく"}, "commit"=>"更新", "user_id"=>"4", "id"=>"2"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:31
+  [1m[36mShippingAddress Load (2.7ms)[0m  [1m[34mSELECT  "shipping_addresses".* FROM "shipping_addresses" WHERE "shipping_addresses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:24
+  [1m[35m (1.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/shipping_addresses_controller.rb:25
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:25
+  [1m[36mShippingAddress Update (9.6ms)[0m  [1m[33mUPDATE "shipping_addresses" SET "address" = ?, "updated_at" = ? WHERE "shipping_addresses"."id" = ?[0m  [["address", "ろくろく"], ["updated_at", "2019-09-05 09:00:05.725270"], ["id", 2]]
+  ↳ app/controllers/shipping_addresses_controller.rb:25
+  [1m[35m (9.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/shipping_addresses_controller.rb:25
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:26
+Redirected to http://localhost:3000/users/4/shipping_addresses
+Completed 302 Found in 97ms (ActiveRecord: 31.4ms)
+
+
+Started GET "/users/4/shipping_addresses" for 10.0.2.2 at 2019-09-05 09:00:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ShippingAddressesController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:31
+  Rendering shipping_addresses/index.html.erb within layouts/application
+  [1m[36mShippingAddress Load (2.6ms)[0m  [1m[34mSELECT "shipping_addresses".* FROM "shipping_addresses" WHERE "shipping_addresses"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/shipping_addresses/index.html.erb:15
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/shipping_addresses/index.html.erb:20
+  Rendered shipping_addresses/index.html.erb within layouts/application (20.1ms)
+  Rendered template/_header.html.erb (3.6ms)
+  Rendered template/_footer.html.erb (0.6ms)
+Completed 200 OK in 1728ms (Views: 1658.4ms | ActiveRecord: 9.7ms)
+
+

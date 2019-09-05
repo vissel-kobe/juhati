@@ -1,35 +1,37 @@
-<div class="login-container clearfix">
-  <h2>管理者ログイン</h2>
+<div class="admins-sessions-new flex">
+  <div class="leftside"></div>
+  <main class="main">
+    <h2 class="page-title">管理者ログイン</h2>
 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="login-field">
-      <div class="login-name">
-        <span>メールアドレス</span>
-      </div>
-      <div class="login-box">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"email-box" %>
-      </div>
+    <div class="admins-login-form">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field">
+          <div class="label">
+            <span>メールアドレス</span>
+          </div>
+          <div class="field-textbox">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"email-box" %>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="label">
+            <span>パスワード</span>
+          </div>
+          <div class="field-textbox">
+            <%= f.password_field :password, autocomplete: "off", class:"password-box" %>
+          </div>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="field">
+            <%= f.check_box :remember_me, class: "remember_me-checkbox" %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
+        <%= f.submit "ログイン", class: "actions btn btn-primary" %>
+      <% end %>
     </div>
-
-    <div class="login-field">
-      <div class="login-name">
-        <span>パスワード</span>
-      </div>
-      <div class="login-box">
-        <%= f.password_field :password, autocomplete: "off", class:"password-box" %>
-      </div>
-    </div>
-
-    <% if devise_mapping.rememberable? -%>
-      <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
-      </div>
-    <% end -%>
-
-    <div class="actions">
-      <%= f.submit "ログイン" %>
-    </div>
-  <% end %>
-
+  </main>
+  <div class="leftside"></div>
 </div>

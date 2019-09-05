@@ -1,64 +1,36 @@
-<main>
-  <div class="users-show">
-    <div class="user-content clearfix">
-      <h1>会員情報</h1>
-      <div class="field-box">
-        <div class="field-name">
-          <span>氏名</span>
-        </div>
-        <div class="fields">
-          <label>（姓）</label>
-          <%= @user.family_name %>
-        </div>
-        <div class="fields">
-          <label>（名）</label>
-          <%= @user.first_name %>
-        </div>
-      </div>
-      <div class="field-box">
-        <div class="field-name">
-          <span>氏名（フリガナ）</span>
-        </div>
-        <div class="fields">
-          <label>（姓）</label>
-          <%= @user.kana_family_name %>
-        </div>
-        <div class="fields">
-          <label>（名）</label>
-          <%= @user.kana_first_name %>
-        </div>
-      </div>
-      <div class="field-box">
-        <div class="field-name">
-          <span>郵便番号</span>
-        </div>
-        <div class="fields">
-          <%= @user.postcode %>
-        </div>
-      </div>
-      <div class="field-box">
-        <div class="field-name">
-          <span>電話番号</span>
-        </div>
-        <div class="fields">
-          <%= @user.telephone %>
-        </div>
-      </div>
-      <div class="field-box">
-        <div class="field-name">
-          <span>メールアドレス</span>
-        </div>
-        <div class="fields">
-          <%= @user.email %>
-        </div>
-      </div>
-      <div class="submit">
-        <%= link_to "編集する", edit_user_path(current_user.id) %>
-      </div>
+<div class="users-show flex">
+  <div class="leftside"></div>
+  <main class="main clearfix">
+    <h2 class="page-title">会員情報</h2>
+    <div class="field">
+      <span class="label">氏名</span>
+      <label>（姓）</label>
+      <%= @user.family_name %>
+      <label>（名）</label>
+      <%= @user.first_name %>
     </div>
-    <div class="side-bar">
-      <p>いいねした商品（まだリンク貼ってません）</p>
-      <%= link_to "購入履歴", sale_history_path(@user) %>
+    <div class="field">
+      <span class="label">氏名（フリガナ）</span>
+      <label>（姓）</label>
+      <%= @user.kana_family_name %>
+      <label>（名）</label>
+      <%= @user.kana_first_name %>
+    </div>
+    <div class="field">
+      <span class="label">郵便番号</span>
+      <%= @user.postcode %>
+    </div>
+    <div class="field">
+      <span class="label">電話番号</span>
+      <%= @user.telephone %>
+    </div>
+    <div class="field">
+      <span  class="label">メールアドレス</span>
+      <%= @user.email %>
+    </div>
+    <div class="submit">
+      <%= link_to "編集する", edit_user_path(current_user.id), class: "actions btn btn-success" %>
     </div>
   </main>
+  <div class="rightside"></div>
 </div>

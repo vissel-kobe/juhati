@@ -6,9 +6,8 @@
 			<% @albums.each do |album| %>
 				<div class="album-item text-center">
 				<%= link_to album_path(album) do %>
-					<%= attachment_image_tag album, :album_image, format:"jpeg", class:"album-item-img", fallback: "no-image.jpg" %>
-					<%= album.title, class: "album-item-txt" %>
-					<!-- album.title -->
+					<%= attachment_image_tag album, :album_image, format:"jpeg", class: "album-item-img", fallback: "no-image.jpg" %>
+					<p class="album-item-txt"><%= album.title %></p>
 					<!-- album_firstdisc = album.discs[0] -->
 					<!-- album_mainartist = Artist.find_by(id: album_firstdisc.artist_id) -->
 					<p class="album-item-txt">アーティスト名</p>

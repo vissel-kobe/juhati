@@ -14161,3 +14161,143 @@ Processing by AlbumsController#show as HTML
 Completed 200 OK in 1673ms (Views: 1608.7ms | ActiveRecord: 12.0ms)
 
 
+Started GET "/" for 10.0.2.2 at 2019-09-05 07:33:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (7.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (3.0ms)
+  Rendered template/_header.html.erb (4.5ms)
+  Rendered template/_footer.html.erb (2.4ms)
+Completed 200 OK in 9660ms (Views: 9557.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/albums" for 10.0.2.2 at 2019-09-05 07:33:20 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  Rendered albums/index.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 218ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/vagrant/juhati/app/views/albums/index.html.erb:10: syntax error, unexpected tLABEL, expecting '='
+...er.append=( album.title, class: "album-item-txt" );@output_b...
+...                         ^~~~~~):
+  
+app/views/albums/index.html.erb:10: syntax error, unexpected tLABEL, expecting '='
+Started GET "/albums/1" for 10.0.2.2 at 2019-09-05 07:34:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAlbum Load (9.8ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:18
+  [1m[36mGenre Load (4.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:19
+  [1m[36mLabel Load (3.5ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:20
+  Rendering albums/show.html.erb within layouts/application
+  Rendered albums/show.html.erb within layouts/application (33.0ms)
+  Rendered template/_header.html.erb (4.8ms)
+  Rendered template/_footer.html.erb (1.1ms)
+Completed 200 OK in 2340ms (Views: 1666.4ms | ActiveRecord: 100.2ms)
+
+
+Started GET "/albums/1" for 10.0.2.2 at 2019-09-05 07:35:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAlbum Load (11.7ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:18
+  [1m[36mGenre Load (16.7ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:19
+  [1m[36mLabel Load (6.7ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:20
+  Rendering albums/show.html.erb within layouts/application
+  Rendered albums/show.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 519ms (ActiveRecord: 35.2ms)
+
+
+  
+SyntaxError (/vagrant/juhati/app/views/albums/show.html.erb:7: syntax error, unexpected tLABEL, expecting '='
+....append=( @album.title , class: "album-title" );@output_buff...
+...                         ^~~~~~):
+  
+app/views/albums/show.html.erb:7: syntax error, unexpected tLABEL, expecting '='
+Started GET "/albums/1" for 10.0.2.2 at 2019-09-05 07:35:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAlbum Load (4.0ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:18
+  [1m[36mGenre Load (2.9ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:19
+  [1m[36mLabel Load (5.0ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:20
+  Rendering albums/show.html.erb within layouts/application
+  Rendered albums/show.html.erb within layouts/application (64.6ms)
+Completed 500 Internal Server Error in 328ms (ActiveRecord: 11.9ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    4: 		<h2 class="page-title">商品詳細</h2>
+    5: 		<div class="inner">
+    6: 			<div class="album-content-first flex is-between">
+    7: 				<%= @album.title class: "album-title" %>
+    8: 				<a href="" class="fav-btn"><i class="fas fa-heart"></i>いいね</a>
+    9: 			</div>
+   10: 			<div class="album-content-second flex is-between">
+  
+app/views/albums/show.html.erb:7:in `_app_views_albums_show_html_erb___2360626300054596540_70227287357640'
+Started GET "/albums/1" for 10.0.2.2 at 2019-09-05 07:36:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAlbum Load (1.9ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:18
+  [1m[36mGenre Load (1.9ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:19
+  [1m[36mLabel Load (7.6ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:20
+  Rendering albums/show.html.erb within layouts/application
+  Rendered albums/show.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 180ms (ActiveRecord: 11.5ms)
+
+
+  
+SyntaxError (/vagrant/juhati/app/views/albums/show.html.erb:7: syntax error, unexpected tLABEL, expecting '='
+....append=( @album.title , class: "album-title" );@output_buff...
+...                         ^~~~~~):
+  
+app/views/albums/show.html.erb:7: syntax error, unexpected tLABEL, expecting '='
+Started GET "/albums/1" for 10.0.2.2 at 2019-09-05 07:38:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAlbum Load (3.5ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:18
+  [1m[36mGenre Load (1.9ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:19
+  [1m[36mLabel Load (2.2ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:20
+  Rendering albums/show.html.erb within layouts/application
+  Rendered albums/show.html.erb within layouts/application (24.3ms)
+  Rendered template/_header.html.erb (3.9ms)
+  Rendered template/_footer.html.erb (0.4ms)
+Completed 200 OK in 1426ms (Views: 1349.3ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/albums" for 10.0.2.2 at 2019-09-05 07:38:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (2.6ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/albums/index.html.erb:6
+  Rendered albums/index.html.erb within layouts/application (31.2ms)
+  Rendered template/_header.html.erb (3.6ms)
+  Rendered template/_footer.html.erb (0.6ms)
+Completed 200 OK in 1743ms (Views: 1691.5ms | ActiveRecord: 2.6ms)
+
+

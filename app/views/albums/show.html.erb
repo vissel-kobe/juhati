@@ -8,7 +8,7 @@
 				<a href="" class="fav-btn"><i class="fas fa-heart"></i>いいね</a>
 			</div>
 			<div class="album-content-second flex is-between">
-				<%= attachment_image_tag @album, :album_image, format:"jpeg", class:"album-content-img", fallback: "no-image.jpg" %>
+				<%= attachment_image_tag @album, :album_image, format:"jpeg", class: "album-content-img", fallback: "no-image.jpg" %>
 				<div class="album-info">
 					<p class="album-content-status"><%= @album.status %></p>
 					<p><%= @album.price %> 円(税込み)</p>

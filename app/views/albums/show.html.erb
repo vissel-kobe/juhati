@@ -6,7 +6,28 @@
         <%= @album.title %>
       </div>
       <div class="price-box">
-        <div><p>ここにイイねのボタン</p></div>
+        <div class="many-box">
+          <div class="edit-path">
+            <%= link_to "編集する", edit_album_path(@album) %>
+          </div>
+          <div class="favorite-box">
+            <% if @album.favorited_by?(current_user) %>
+              <li style="list-style:none;">
+                <%= link_to album_favorites_path(@album), method: :delete do %>
+                  <i class="fa fa-heart" aria-hidden="true" style="color:red;"></i>
+                  <%= @album.favorites.count %>いいね
+                <% end %>  
+              </li>
+            <% else %>
+              <li style:"list-style:none;>
+                <%= link_to album_favorites_path(@album), method: :post do %>
+                  <i class="fa fa-heart-o" aria-hidden:="true"></i>
+                  <%= @album.favorites.count %>いいね
+                <% end %>
+              </li>
+            <% end %>
+          </div>  
+        </div>
         <div class="price">
           <p><%= @album.price %>円 (税込み)</p>
         </div>
@@ -40,5 +61,6 @@
         </div>
       </div>
     </div>
+    <%= render 'reviews/form', user: @user, album: @album, review: @review %>
   </div>
 </div>

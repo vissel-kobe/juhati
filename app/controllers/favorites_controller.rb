@@ -1,10 +1,16 @@
 class FavoritesController < ApplicationController
   def create
-    @album = Album.find(params[:id])
+    @album = Album.find(params[:album_id])
+    @favorite = current_user.favorites.new(album_id: @album.id)
+    @favorite.save
+    redirect_to album_path(@album)
   end
 
   def destroy
-    @album = Album.find(params[:id]) 
+    @album = Album.find(params[:album_id]) 
+    favorite = current_user.favorites.find_by(album_id: @album.id)
+    favorite.destroy
+    redirect_to album_path(@album)
   end
 
   private

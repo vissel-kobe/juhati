@@ -1,2 +1,80 @@
-<h1>Albums#edit</h1>
-<p>Find me in app/views/albums/edit.html.erb</p>
+<div class="background">
+	<div class="center-box">
+		<div class="content clearfix">
+			<h2 class="title">商品情報編集</h2>
+			<div class="margin">
+				<%= form_for @album do |f| %>
+					<div class="field-box">
+						<div class="field-name">
+							<span>タイトル</span>
+						</div>
+						<div class="field">
+							<%= f.text_field :title %>
+						</div>
+					</div>
+					<div class="field-box">
+						<div class="field-name">
+							<span>画像</span>
+						</div>
+						<div class="field">
+							<%= f.attachment_field :album_image %>
+						</div>
+					</div>
+					<div class="field-box">
+						<div class="field-name">
+							<span>ステータス</span>
+						</div>
+						<div class="field">
+							<%= f.select :status, [["販売中", 0], ["販売停止", 1]] %>
+						</div>
+					</div>
+					<div class="field-box">
+						<div class="field-name">
+							<span>価格（税込み）</span>
+						</div>
+						<div class="field">
+							<%= f.number_field :price %>
+							<span>円</span>
+						</div>
+					</div>
+					<div class="field-box">
+						<div class="field-name">
+							<span>ジャンル</span>
+						</div>
+						<div class="field">
+							<%= f.collection_select :genre_id, Genre.all, :id, :name %>
+						</div>
+					</div>
+					<div class="field-box">
+						<div class="field-name">
+							<span>レーベル</span>
+						</div>
+						<div class="field">
+							<%= f.collection_select :label_id, Label.all, :id, :name %>
+						</div>
+					</div>
+					<div class="field-box">
+						<div class="field-name">
+							<span>シングル/アルバム内</span>
+						</div>
+						<div class="field">
+							
+						</div>
+					</div>
+					<div class="field-box">
+						<div class="field-name">
+							<span>在庫</span>
+						</div>
+						<div class="field">
+							<%= f.number_field :stock %>
+						</div>
+					</div>
+
+					<%= f.submit "変更を保存する！", class: "btn", style:"float:right;" %>
+				<% end %>
+        <%= link_to "戻る", album_path(@album), style:"float:left;" %>
+			</div>
+		</div>
+	</div>
+</div>
+

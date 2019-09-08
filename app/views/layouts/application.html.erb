@@ -8,67 +8,10 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <header class="clearfix">
-      <nav class="nav navbar-nav navbar-left">
-        <%= link_to "VISSEL", root_path, class:"vissel" %>
-      </nav>
-      <nav class="nav navbar-nav navbar-right">
-        <ul class="header-ul">
-	  <% if user_signed_in? %>
-	    <div class="">
-	      <li><%= link_to "商品一覧", albums_path %></li>
-	    </div>
-	    <div class="">
-	      <li><%= link_to "#{@user.first_name}", user_path(current_user.id)%></li>
-	    </div>
-	    <div class="">
-	      <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-	    </div>
-
-    <% elsif admin_signed_in? %>
-
-      <div class="">
-        <li>
-          <%= link_to admin_path(current_admin) do %>
-            <p>AAA</p>
-          <% end %>
-        </li>
-      </div>
-      <div class="">
-        <li><%= link_to "商品一覧", albums_path %></li>
-      </div>
-      <div class="">
-        <li><%= link_to "商品追加", new_album_path %></li>
-      </div>
-      <div class="">
-        <li><%= link_to "会員一覧", users_path %></li>
-      </div>
-      <div class="">
-        <li><%= link_to "販売履歴一覧", users_path %></li>
-      </div>
-      <div class="">
-        <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
-      </div>
-
-	  <% else %>
-
-	    <div class="">
-	      <li><%= link_to "商品一覧", albums_path %></li>
-	    </div>
-	    <div class="">
-              <li><%= link_to "新規登録", new_user_registration_path %></li>
-	    </div>
-	    <div class="">
-              <li><%= link_to "ログイン", new_user_session_path %></li>
-	    </div>
-	  <% end %>
-	</ul>
-      </nav>
-    </header>
-    <%= yield %>
-    <footer>
-      <h1>Footer</h1>
-    </footer>
-  </body>
+<body>
+  <%= render "template/header" %>
+  <div class="space-height-40px"></div>
+  <%= yield %>
+  <%= render "template/footer" %>
+</body>
 </html>

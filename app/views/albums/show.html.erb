@@ -1,66 +1,30 @@
-<div class="background-image">
-  <div class="center-box">
-    <h2 class="title">商品詳細</h2>
-    <div class="flex-box">
-      <div class="title-box">
-        <%= @album.title %>
-      </div>
-      <div class="price-box">
-        <div class="many-box">
-          <div class="edit-path">
-            <%= link_to "編集する", edit_album_path(@album) %>
-          </div>
-          <div class="favorite-box">
-            <% if @album.favorited_by?(current_user) %>
-              <li style="list-style:none;">
-                <%= link_to album_favorites_path(@album), method: :delete do %>
-                  <i class="fa fa-heart" aria-hidden="true" style="color:red;"></i>
-                  <%= @album.favorites.count %>いいね
-                <% end %>  
-              </li>
-            <% else %>
-              <li style:"list-style:none;>
-                <%= link_to album_favorites_path(@album), method: :post do %>
-                  <i class="fa fa-heart-o" aria-hidden:="true"></i>
-                  <%= @album.favorites.count %>いいね
-                <% end %>
-              </li>
-            <% end %>
-          </div>  
-        </div>
-        <div class="price">
-          <p><%= @album.price %>円 (税込み)</p>
-        </div>
-      </div>
-    </div>
-    <div class="flex-box">
-      <div class="album-box">
-        <%= attachment_image_tag @album, :album_image, size:"100x100", format:"jpeg",     class:"album-img" %>
-      </div>
-      <div class="details">
-        <div class="flex-box">
-          <div class="status">
-            <%= @album.status %>
-          </div>
-          <div class="stock">
-            <p>在庫:<%= @album.stock %>枚</p>
-          </div>
-        </div>
-        <div class="genre">
-          <p>ジャンル:   <%= @album.genre.name %></p>
-        </div>
-        <div class="label">
-          <p>レーベル名:   <%= @album.label.name %></p>
-        </div>
-      </div>
-      <div class="cart-box">
-        <div class="cart-picture">
-        </div>
-        <div class="actions">
-          <p>カートへ追加</p>
-        </div>
-      </div>
-    </div>
-    <%= render 'reviews/form', user: @user, album: @album, review: @review %>
-  </div>
+<div class="albums-show flex">
+	<div class="leftside"></div>
+	<main class="main">
+		<h2 class="page-title">商品詳細</h2>
+		<div class="inner">
+			<div class="album-content-first flex is-between">
+				<p class="album-title"><%= @album.title %></p>
+				<a href="" class="fav-btn"><i class="fas fa-heart"></i>いいね</a>
+			</div>
+			<div class="album-content-second flex is-between">
+				<%= attachment_image_tag @album, :album_image, format:"jpeg", class: "album-content-img", fallback: "no-image.jpg" %>
+				<div class="album-info">
+					<p class="album-content-status"><%= @album.status %></p>
+					<p><%= @album.price %> 円(税込み)</p>
+					<p>在庫: <%= @album.stock %> 枚</p>
+					<p>ジャンル: <%= @album_genre.name %></p>
+					<p>レーベル名: <%= @album_label.name %></p>
+					<p>ディスク数: @album.discs.count</p>
+				</div>
+				<div class="second-left">
+					<a class="add-cart-btn text-center" href="">
+						<div class="cart-img"></div>
+						<p>カートに追加</p>
+					</a>
+				</div>
+			</div>
+		</div>
+	</main>
+	<div class="rightside"></div>
 </div>

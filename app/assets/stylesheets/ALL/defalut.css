@@ -2,13 +2,25 @@
 
 }
 
-.center-box {
-	width: 800px;
-	margin: 0 auto;
-	border-right: solid 1px;
-	border-left: solid 1px;
-	min-height:200px;
-  padding:10px 10px;
+.leftside,
+.rightside {
+  width: 15%;
+  padding: 50px 10px;
+  background-color: #fdd;
+}
+.rightside {
+  background-color: #ddf;
+}
+.main {
+  width: 100%;
+  padding: 50px 20px;
+}
+.inner {
+  width: 700px;
+  margin: 0 auto;
+}
+.column {
+  flex-direction: column;
 }
 
 .border {
@@ -16,104 +28,173 @@
 	padding: 5px 100px;
 }
 
-.title {
-	width:200px;
+.page-title {
+  display: block;
+	margin: 0 0 20px 20px;
+	width: 200px;
 	text-align: center;
 	background-color: #008080;
-  	border-radius:  5px;
+  border-radius: 5px;
+  color: #fff;
 }
-
+.flex {
+  display: flex;
+}
+.is-between {
+  justify-content: space-between;
+}
 .text-center {
-	text-align: center;
+  text-align: center;
 }
-
-.field-box {
-  height:120px;
-  line-height:120px;
-  display:flex;
+.vertical-center {
+  align-items: center;
 }
-
-.flex-box {
-  display:flex;
-  margin-bottom:20px;
-}
-
-.submit {
-  width:50%;
-  text-align:center;
+.inline-space {
+  display: inline-block;
+  width: 30px;
 }
 
 .btn {
-	padding: 10px 30px;
-	border: solid 1px;
-	width:200px;
-	text-align: center;
-	background-color: #FFCCFF;
-  	border-radius:  5px;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 5px 10px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: rgba(255,255,255,0.7);
 }
 
-.vissel {
-  font-size:40px;
-  margin-left:30px;
-  line-height:100px;
-  background-color:white;
-  border-radius:10px;
-  padding:5px;
+.btn-success {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
 }
 
-.nav {
-  color:white;
-  margin-right:40px;
+.field {
+    display: flex;
+    margin-bottom: 20px;
+}
+.label {
+  display: inline-block;
+  width: 170px;
 }
 
-.navbar-left {
-  float:left;
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 0 15%;
+  background-color: rgba(50,50,50,0.7);
+  z-index: 10;
+}
+.header *{
+  position: relative;
+  z-index: 10;
+}
+.header-logo {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  font-size: 24px;
+  background-color: rgba(255,255,255,0.7);
+}
+.header-right {
+  width: 400px;
+}
+.header-nav ul {
+  list-style: none;
+  padding-inline-start: 0;
+}
+.header-nav-btn,
+.header-hidden-nav-btn {
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 120px;
+  color: #333;
+  background-color: rgba(235,235,235,0.7);
+}
+.header-hidden-nav {
+  position: absolute;
+  top: -200px;
+  padding-bottom: 10px;
+  transition: 0.6s;
 }
 
-.navbar-right {
-  float:right;
+.header-hidden-nav,
+.header-hidden-nav  *{
+  z-index: 3;
+}
+.header-hidden-nav-btn{
+  background-color: #22a;
+  color: #fff;
+  margin-top: 10px;
 }
 
-.header-ul {
-  display:flex;
+.header-nav-btn:hover {
+  background-color: #fff;
+}
+.header-hidden-nav-btn:hover {
+  background-color: #adf;
+}
+.has-hidden-nav:hover .header-nav-btn {
+  background-color: #fff;
+}
+.has-hidden-nav:hover .header-hidden-nav {
+  top: 40px;
 }
 
-.header-ul div {
-  margin:5px
+
+
+
+.search-section {
+  margin-top: 10px;
+}
+.search-box {
+  width: 200px;
+  height: 20px;
+  margin-top: 10px;
+  background-color: #fff;
+  border: 1px solid #333;
+}
+.search-btn {
+  margin-left: 10px;
 }
 
-.header-ul li {
-  color:white;
-  list-style:none;
-  font-size:20px;
-  background-color:white;
-  height:80px;
-  line-height:80px;
-  margin:0 auto;
+.ml54px {
+  margin-left: 54px;
+}
+.space-height-40px {
+  width: 100%;
+  height: 40px;
+  background-color: #fff;
 }
 
-.login-container {
-  padding-top:30px;
-  width:800px;
-  margin:0 auto;
+.footer {
+  height: 40px;
+  background-color: #bbb;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
 }
-
-.login-field {
-  display:flex;
-  height:100px;
-  margin-top:50px;
-}
-
-.email-box {
-  margin-left:100px;
-}
-
-.password-box {
-  margin-left:132px;
-}
-
-.actions {
-  text-align:center;
-  height:50px;
-  line-height:50px;
+.footer-txt {
+  line-height: 40px;
 }

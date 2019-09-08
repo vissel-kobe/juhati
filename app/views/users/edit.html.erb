@@ -1,61 +1,52 @@
+<<<<<<< HEAD
 <div class="container">
   <div class="center-box">
     <h1>会員情報編集</h1>
+=======
+<div class="users-regisitations-new flex">
+  <div class="leftside"></div>
+  <main class="main">
+    <h2 class="page-title">会員情報編集</h2>
+
+>>>>>>> 0bdf999d4f0b5d02e4ead69374e16f20e85dbcc8
     <%= form_for(@user) do |f| %>
-      <div class="field-box">
-        <div class="field-name">
-          <span>氏名</span>
-        </div>
-        <div class="field-form name-box">
-          <div class="field-child">
-            <%= f.label :（姓） %>
-            <%= f.text_field :family_name %>
-          </div>
-          <div class="field-child">
-            <%= f.label :（名） %>
-            <%= f.text_field :first_name %>
-          </div>
+      <div class="field">
+        <span class="label">氏名</span>
+        <%= f.label :（姓） %>
+        <%= f.text_field :family_name, autofocus: true, autocomplete: "family_name" %>
+        <%= f.label :（名） %>
+        <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
+      </div>
+
+      <div class="field">
+        <span class="label">氏名(フリガナ)</span>
+        <%= f.label :（姓） %>
+        <%= f.text_field :kana_family_name, autofocus: true, autocomplete: "kana_family_name" %>
+        <%= f.label :（名） %>
+        <%= f.text_field :kana_first_name, autofocus: true, autocomplete: "kana_first_name" %>
+      </div>
+
+      <div class="field">
+        <span class="label">郵便番号</span>
+        <div class="field-textbox ml54px">
+          <%= f.text_field :postcode, autofocus: true, autocomplete: "postcode" %>
         </div>
       </div>
-      <div class="field-box">
-        <div class="field-name">
-          <span>氏名（フリガナ）</span>
-        </div>
-        <div class="field-form name-box">
-          <div class="field-child">
-            <%= f.label :（姓） %>
-            <%= f.text_field :kana_family_name %>
-          </div>
-          <div class="field-child">
-            <%= f.label :（名） %>
-            <%= f.text_field :kana_first_name %>
-          </div>
+
+      <div class="field">
+        <span class="label">住所</span>
+        <div class="field-textbox ml54px">
+          <%= f.text_field :address, autofocus: true, autocomplete: "address" %>
         </div>
       </div>
-      <div class="field-box">
-        <div class="field-name">
-          <span>郵便番号</span>
-        </div>
-        <div class="field-form">
-          <%= f.text_field :postcode %>
-        </div>
-      </div>
-      <div class="field-box">
-        <div class="field-name">
-          <span>住所</span>
-        </div>
-        <div class="field-form">
-          <%= f.text_field :address %>
+
+      <div class="field">
+        <span class="label">電話番号</span>
+        <div class="field-textbox ml54px">
+          <%= f.text_field :telephone, autofocus: true, autocomplete: "telephone" %>
         </div>
       </div>
-      <div class="field-box">
-        <div class="field-name">
-          <span>電話番号</span>
-        </div>
-        <div class="field-form">
-          <%= f.text_field :telephone %>
-        </div>
-      </div>
+<<<<<<< HEAD
       <div class="field-box">
         <div class="field-name">
           <span>メールアドレス</span>
@@ -70,8 +61,20 @@
         </div>
         <div class="submit">
           <%= f.submit "保存する" %>
+=======
+
+      <div class="field">
+        <span class="label">メールアドレス</span>
+        <div class="field-textbox ml54px">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+>>>>>>> 0bdf999d4f0b5d02e4ead69374e16f20e85dbcc8
         </div>
       </div>
+
+      <%= f.submit "保存する", class: "actions btn btn-success" %>
+
     <% end %>
-  </div>
+
+  </main>
+  <div class="rightside"></div>
 </div>

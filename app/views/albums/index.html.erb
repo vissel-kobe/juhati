@@ -1,10 +1,22 @@
-<div class="background-image">
-  <div class="center-box clearfix">
-    <% @albums.each do |album| %>
-      <div class="album-box">
-        <%= attachment_image_tag album, :album_image, size:"100x100", format:"jpeg", class:"album-img" %><br>
-        <%= link_to "#{album.title}", album_path(album) %>
-      </div>
-    <% end %>
-  </div>
+<div class="albums-index flex">
+	<div class="leftside"></div>
+	<main class="main">
+		<h2 class="page-title">商品一覧</h2>
+		<div class="album-index inner flex">
+			<% @albums.each do |album| %>
+				<div class="album-item text-center">
+				<%= link_to album_path(album) do %>
+					<%= attachment_image_tag album, :album_image, format:"jpeg", class: "album-item-img", fallback: "no-image.jpg" %>
+					<p class="album-item-txt"><%= album.title %></p>
+					<!-- album_firstdisc = album.discs[0] -->
+					<!-- album_mainartist = Artist.find_by(id: album_firstdisc.artist_id) -->
+					<p class="album-item-txt">アーティスト名</p>
+					<!-- album_mainartist.name -->
+				<% end %>
+				</div>
+			<% end %>
+		</div>
+		<p class="text-center"> &lt; 1 2 3 &gt;</p>
+	</main>
+	<div class="rightside"></div>
 </div>

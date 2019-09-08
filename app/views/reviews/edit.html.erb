@@ -1,24 +1,10 @@
-<div class="background-image">
-  <div class="center-box">
-    <div class="flex-box">
-      <div>
-        <h2 class="title">レビュー編集</h2>
-      </div>
-      <div class="title-box">
-        <%= @album.title %>
-      </div>
-    </div>
-    <div class="main-box">
-      <span>レビュー内容</span>
-      <%= form_for [@album, @review] do |f| %>
-        <div class="form-box">
-          <%= f.text_area :body, row:'3' %>
-        </div>
-        <div class="submit">
-          <p><%= link_to "delete", album_review_path(@album, f), method: :delete %></p>
-          <p><%= f.submit "どんなもんじゃい！！" %></p>
-        </div>
-      <% end %>
-    </div>
-  </div>
+<div class="reviews-edit flex">
+	<div class="leftside"></div>
+	<main class="main">
+		<h2 class="page-title"><%= @album.title %>のレビュー編集</h2>
+		<div class="review-edit-form">
+			<%= render "reviews/review-form", album: @album, review: @review %>
+		</div>
+	</main>
+	<div class="rightside"></div>
 </div>

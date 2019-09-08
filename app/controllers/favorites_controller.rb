@@ -1,4 +1,7 @@
 class FavoritesController < ApplicationController
+
+  before_action :set_album
+
   def create
     @album = Album.find(params[:album_id])
     @favorite = current_user.favorites.new(album_id: @album.id)
@@ -14,6 +17,10 @@ class FavoritesController < ApplicationController
   end
 
   private
+  def set_album
+    @album = Album.find(params[:album_id])
+  end
+
   def favorite_params
     params.require(favorite).permit(:user_id, :album_id)
   end

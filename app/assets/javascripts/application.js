@@ -16,3 +16,14 @@
  //= require jquery
  //= require cocoon
  //= require_tree .
+
+$(function(){
+  
+$(document).on('ajax:success', '#new_review', function(e){
+  console.log(e);
+  $('#review_body').val('');
+  $('.review_box').prepend('<p>' + e.detail[0]['body'] + '</p>');
+  
+})
+   
+})

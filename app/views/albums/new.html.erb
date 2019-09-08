@@ -54,9 +54,32 @@
 				</div>
 			</div>
 
-			<%= f.submit "追加する", class: "btn btn-success" %>
+			<%= f.submit "入力待ち", class: "btn btn-success", id: "submit", disabled: true %>
+
 			<% end %>
 		</div>
 	</main>
 	<div class="rightside"></div>
 </div>
+
+<script defer>
+  //nameが空のとき、submitを押せないようにする
+  //nameに何か入力されていたら、押せるようにする。
+  //submitはすでにdisabledなので、入力したらdisabledを解除すればいい
+  const title = document.querySelector('#title');
+  const price = document.querySelector('#price');
+  const stock = document.querySelector('#stock');
+  const submit = document.querySelector('#submit');
+  title.addEventListener('keyup',function(){
+  	if (title.value.length >= 1){
+  		submit.disabled = false;
+  		$('#submit').addClass("submit_color");
+  		submit.value = "追加する";
+  	}else{
+  		submit.disabled = true;
+  		$('#submit').removeClass("submit_color");
+  		submit.value = "追加不能";
+  	};
+  });
+  console.log(title);
+</script>

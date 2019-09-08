@@ -1,0 +1,13 @@
+<table class="review-table">
+	<thead>
+		<th class="th-username"></th>
+		<th class="th-review"></th>
+		<th class="th-review-editbtn"></th>
+	</thead>
+	<tbody>
+		<%= render reviews %>
+	</tbody>
+
+</table>
+
+<%= render "reviews/review-form", album: album, review: review %>

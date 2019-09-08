@@ -89,6 +89,10 @@
   background-color: #888;
 }
 
+.red-icon {
+  color: red;
+}
+
 .field {
     display: flex;
     margin-bottom: 20px;

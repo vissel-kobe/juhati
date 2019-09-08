@@ -1,0 +1,14 @@
+.shipping_addresses-index table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.th-number {
+  width: 5%;
+}
+.th-postcode,
+.th-editbtn {
+  width: 15%;
+}
+.th-address {
+  width: 65%;
+}

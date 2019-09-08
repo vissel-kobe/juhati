@@ -5,7 +5,9 @@
 		<div class="inner">
 			<div class="album-content-first flex is-between">
 				<p class="album-title"><%= @album.title %></p>
-				<a href="" class="fav-btn"><i class="fas fa-heart"></i>いいね</a>
+				<div class="fav-btn">
+					<%= render "favorites/favorite-btn", album: @album %>
+				</div>
 			</div>
 			<div class="album-content-second flex is-between">
 				<%= attachment_image_tag @album, :album_image, format:"jpeg", class: "album-content-img", fallback: "no-image.jpg" %>
@@ -23,6 +25,10 @@
 						<p>カートに追加</p>
 					</a>
 				</div>
+			</div>
+			<div class="review-section">
+				<% @reviews = @album.reviews %>
+				<%= render "reviews/review-section", reviews: @reviews, album: @album, review: Review.new %>
 			</div>
 		</div>
 	</main>

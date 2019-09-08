@@ -17,6 +17,9 @@ Rails.application.routes.draw do
     resources:reviews, only:[:edit, :create, :update, :destroy]
     resource:favorites, only:[:create, :destroy]
   end
+  resources:users do
+    resources:shipping_addresses
+  end
   resources:labels
   resources:genres
   resources:orders, only:[:create, :update, :destroy]

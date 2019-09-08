@@ -14994,3 +14994,357 @@ Processing by AlbumsController#new as HTML
 Completed 200 OK in 520ms (Views: 501.4ms | ActiveRecord: 1.9ms)
 
 
+Started GET "/albums/new" for 10.0.2.2 at 2019-09-08 05:17:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mLabel Load (1.4ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/albums/new.html.erb:45
+  Rendered albums/_disc_fields.html.erb (0.5ms)
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/new.html.erb within layouts/application (51.1ms)
+  [1m[36mAdmin Load (0.8ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:38
+  Rendered template/_header.html.erb (16.8ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 3133ms (Views: 3062.2ms | ActiveRecord: 22.6ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-09-08 05:18:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mLabel Load (0.9ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/albums/new.html.erb:45
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/new.html.erb within layouts/application (30.4ms)
+  [1m[36mAdmin Load (1.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:38
+  Rendered template/_header.html.erb (3.8ms)
+  Rendered template/_footer.html.erb (0.2ms)
+Completed 200 OK in 478ms (Views: 458.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-09-08 05:18:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mLabel Load (0.7ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/albums/new.html.erb:45
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/_disc_fields.html.erb (0.7ms)
+  Rendered albums/new.html.erb within layouts/application (37.6ms)
+  [1m[36mAdmin Load (0.7ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:38
+  Rendered template/_header.html.erb (3.2ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 601ms (Views: 573.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-09-08 05:19:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mLabel Load (2.5ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/albums/new.html.erb:45
+  Rendered albums/_disc_fields.html.erb (0.7ms)
+  Rendered albums/_disc_fields.html.erb (1.1ms)
+  Rendered albums/new.html.erb within layouts/application (67.4ms)
+  [1m[36mAdmin Load (0.7ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:38
+  Rendered template/_header.html.erb (3.3ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 791ms (Views: 754.7ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-09-08 05:20:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mLabel Load (1.1ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/albums/new.html.erb:45
+  Rendered albums/_disc_fields.html.erb (0.7ms)
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/new.html.erb within layouts/application (36.5ms)
+  [1m[36mAdmin Load (1.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:38
+  Rendered template/_header.html.erb (4.3ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 543ms (Views: 514.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-09-08 05:20:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mLabel Load (1.2ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/albums/new.html.erb:45
+  Rendered albums/_disc_fields.html.erb (0.5ms)
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/new.html.erb within layouts/application (31.6ms)
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:38
+  Rendered template/_header.html.erb (4.0ms)
+  Rendered template/_footer.html.erb (0.2ms)
+Completed 200 OK in 487ms (Views: 466.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-09-08 05:20:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mLabel Load (4.9ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/albums/new.html.erb:45
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/_disc_fields.html.erb (0.5ms)
+  Rendered albums/new.html.erb within layouts/application (45.0ms)
+  [1m[36mAdmin Load (2.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:38
+  Rendered template/_header.html.erb (5.3ms)
+  Rendered template/_footer.html.erb (0.4ms)
+Completed 200 OK in 583ms (Views: 560.3ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-09-08 05:21:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mLabel Load (1.6ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/albums/new.html.erb:45
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/new.html.erb within layouts/application (56.1ms)
+  [1m[36mAdmin Load (0.8ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:38
+  Rendered template/_header.html.erb (3.5ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 578ms (Views: 544.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-09-08 05:21:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mLabel Load (1.1ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/albums/new.html.erb:45
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/new.html.erb within layouts/application (33.9ms)
+  [1m[36mAdmin Load (0.9ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:38
+  Rendered template/_header.html.erb (3.8ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 579ms (Views: 551.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-09-08 05:21:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mLabel Load (1.1ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/albums/new.html.erb:45
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/new.html.erb within layouts/application (38.8ms)
+  [1m[36mAdmin Load (0.8ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:38
+  Rendered template/_header.html.erb (3.9ms)
+  Rendered template/_footer.html.erb (0.2ms)
+Completed 200 OK in 554ms (Views: 536.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-09-08 05:23:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mLabel Load (1.7ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/albums/new.html.erb:45
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/_disc_fields.html.erb (0.7ms)
+  Rendered albums/new.html.erb within layouts/application (46.9ms)
+  [1m[36mAdmin Load (0.9ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:38
+  Rendered template/_header.html.erb (4.0ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 608ms (Views: 583.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-09-08 05:25:06 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mLabel Load (0.9ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/albums/new.html.erb:45
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/new.html.erb within layouts/application (38.6ms)
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:38
+  Rendered template/_header.html.erb (4.3ms)
+  Rendered template/_footer.html.erb (0.4ms)
+Completed 200 OK in 716ms (Views: 693.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-09-08 05:25:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mLabel Load (1.1ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/albums/new.html.erb:45
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/_disc_fields.html.erb (0.5ms)
+  Rendered albums/new.html.erb within layouts/application (36.4ms)
+  [1m[36mAdmin Load (1.5ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:38
+  Rendered template/_header.html.erb (4.8ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 688ms (Views: 668.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-09-08 05:25:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mLabel Load (0.8ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/albums/new.html.erb:45
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/new.html.erb within layouts/application (36.3ms)
+  [1m[36mAdmin Load (0.9ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:38
+  Rendered template/_header.html.erb (3.4ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 585ms (Views: 552.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-09-08 05:26:15 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mLabel Load (1.7ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/albums/new.html.erb:45
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/new.html.erb within layouts/application (50.2ms)
+  [1m[36mAdmin Load (0.7ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:38
+  Rendered template/_header.html.erb (3.2ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 565ms (Views: 544.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-09-08 05:26:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mLabel Load (1.3ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/albums/new.html.erb:45
+  Rendered albums/_disc_fields.html.erb (0.7ms)
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/new.html.erb within layouts/application (37.7ms)
+  [1m[36mAdmin Load (1.7ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:38
+  Rendered template/_header.html.erb (4.9ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 555ms (Views: 534.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-09-08 05:27:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mLabel Load (0.9ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/albums/new.html.erb:45
+  Rendered albums/_disc_fields.html.erb (0.9ms)
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/new.html.erb within layouts/application (36.1ms)
+  [1m[36mAdmin Load (1.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:38
+  Rendered template/_header.html.erb (5.1ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 648ms (Views: 623.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-09-08 05:27:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mLabel Load (0.8ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/albums/new.html.erb:45
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/new.html.erb within layouts/application (37.0ms)
+  [1m[36mAdmin Load (0.9ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:38
+  Rendered template/_header.html.erb (5.3ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 534ms (Views: 514.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-09-08 05:27:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mLabel Load (1.6ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/albums/new.html.erb:45
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/new.html.erb within layouts/application (53.6ms)
+  [1m[36mAdmin Load (1.7ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:38
+  Rendered template/_header.html.erb (5.9ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 790ms (Views: 765.4ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-09-08 05:28:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mLabel Load (1.2ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/albums/new.html.erb:45
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/new.html.erb within layouts/application (78.2ms)
+  [1m[36mAdmin Load (1.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:38
+  Rendered template/_header.html.erb (4.0ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 579ms (Views: 549.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-09-08 05:28:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mLabel Load (0.8ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/albums/new.html.erb:45
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/_disc_fields.html.erb (0.5ms)
+  Rendered albums/new.html.erb within layouts/application (36.6ms)
+  [1m[36mAdmin Load (2.9ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:38
+  Rendered template/_header.html.erb (9.3ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 652ms (Views: 629.3ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-09-08 05:29:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mLabel Load (1.2ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/albums/new.html.erb:45
+  Rendered albums/_disc_fields.html.erb (1.0ms)
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/new.html.erb within layouts/application (37.9ms)
+  [1m[36mAdmin Load (0.9ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:38
+  Rendered template/_header.html.erb (4.0ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 542ms (Views: 519.8ms | ActiveRecord: 2.1ms)
+
+

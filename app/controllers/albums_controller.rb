@@ -1,6 +1,7 @@
 class AlbumsController < ApplicationController
   def new
     @album = Album.new
+    @album.discs.build
   end
 
   def create
@@ -37,7 +38,7 @@ class AlbumsController < ApplicationController
   private
 
   def album_params
-    pp = params.require(:album).permit(:title, :status, :album_image, :price, :label_id, :genre_id, :stock)
+    pp = params.require(:album).permit(:title, :status, :album_image, :price, :label_id, :genre_id, :stock, tags_attributes: [:id, :disc_number, :_destroy])
     pp[:status] = params[:album][:status].to_i
     return pp
   end

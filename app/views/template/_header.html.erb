@@ -1,0 +1,78 @@
+<header class="header">
+  <div class="flex is-between vertical-center">
+    <div class="header-logo">
+      <%= link_to "VISSEL", root_path %>
+    </div>
+    <div class="header-right">
+      <nav class="header-nav text-center">
+        <ul class="flex is-between">
+          <% if user_signed_in? %>
+
+          <li class="has-hidden-nav">
+            <%= link_to "商品一覧", albums_path, class: "btn header-nav-btn" %>
+            <ul class="header-hidden-nav text-center flex column">
+              <!-- 以下リンク仮 -->
+              <li class="btn header-hidden-nav-btn">アーティスト</li>
+              <li class="">
+                <%= link_to "ジャンル追加", new_genre_path, class: "btn header-hidden-nav-btn" %>
+              </li>
+              <li class="">
+                <%= link_to "レーベル追加", new_label_path, class: "btn header-hidden-nav-btn" %>
+              </li>
+            </ul>
+          </li>
+          <li class="has-hidden-nav">
+            <%= link_to current_user.first_name, user_path(current_user.id) , class: "btn header-nav-btn"%>
+            <ul class="header-hidden-nav text-center flex column">
+              <!-- 以下リンク未実装 -->
+              <li class="btn header-hidden-nav-btn">購入履歴</li>
+              <li class="btn header-hidden-nav-btn">いいねした商品</li>
+              <li class="">
+                <%= link_to "会員情報編集", edit_user_path(current_user.id), class: "btn header-hidden-nav-btn" %>
+              </li>
+            </ul>
+          </li>
+          </li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn header-nav-btn" %></li>
+
+          <% elsif admin_signed_in? %>
+
+          <li><%= link_to "AAA", admin_path(current_admin), class: "btn header-nav-btn" %></li>
+          <li>
+            <%= link_to "商品一覧", albums_path, class: "btn header-nav-btn" %>
+            <ul class="header-hidden-nav text-center flex column">
+              <!-- 以下リンク未実装 -->
+              <li class="btn header-hidden-nav-btn">アーティスト</li>
+              <li class="">
+                <%= link_to "ジャンル追加", new_genre_path, class: "btn header-hidden-nav-btn" %>
+              </li>
+              <li class="">
+                <%= link_to "レーベル追加", new_label_path, class: "btn header-hidden-nav-btn" %>
+              </li>
+            </ul>
+          </li>
+          <li><%= link_to "商品追加", new_album_path, class: "btn header-nav-btn" %></li>
+          <li><%= link_to "会員一覧", users_path, class: "btn header-nav-btn" %></li>
+          <li><%= link_to "販売履歴一覧", users_path, class: "btn header-nav-btn" %></li>
+          <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "btn header-nav-btn" %></li>
+
+          <% else %>
+
+          <li class="has-hidden-nav">
+            <%= link_to "商品一覧", albums_path, class: "btn header-nav-btn" %>
+            <ul class="header-hidden-nav text-center flex column">
+              <!-- 以下リンク未実装 -->
+              <li class="btn header-hidden-nav-btn">アーティスト</li>
+              <li class="btn header-hidden-nav-btn">ジャンル</li>
+              <li class="btn header-hidden-nav-btn">レーベル</li>
+            </ul>
+          </li>
+          <li><%= link_to "新規会員登録", new_user_registration_path, class: "btn header-nav-btn" %></li>
+          <li><%= link_to "ログイン", new_user_session_path, class: "btn header-nav-btn" %></li>
+
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

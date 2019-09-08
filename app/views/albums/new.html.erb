@@ -25,6 +25,7 @@
 			<div class="field">
 				<span class="label">価格（税込み）</span>
 				<div class="field-textbox">
+
 					<%= f.number_field :price, id:"price" %>
 					<span>円</span>
 				</div>
@@ -50,11 +51,13 @@
 			<div class="field">
 				<span class="label">在庫</span>
 				<div class="field-textbox">
+
 					<%= f.number_field :stock, id:"stock" %>
 				</div>
 			</div>
 
 			<%= f.submit "入力待ち", class: "btn btn-success", id: "submit", disabled: true %>
+
 			<% end %>
 		</div>
 	</main>
@@ -79,3 +82,4 @@ title.addEventListener('keyup',function(){
 });
 console.log(title);
 </script>
+

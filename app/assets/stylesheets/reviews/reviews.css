@@ -38,10 +38,11 @@
 	width: 20%;
 }
 .review-table .th-review {
-	width: 60%;
+	width: 50%;
 }
-.review-table .th-review-editbtn {
-	width: 10%;
+.review-table .th-review-editbtn,
+.review-table .th-review-deletebtn {
+	width: 15%;
 }
 .space-between-name {
 	width: 14px;

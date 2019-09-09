@@ -24,16 +24,16 @@
 }
 
 .border {
-	border: solid 1px;
-	padding: 5px 100px;
+  border: solid 1px;
+  padding: 5px 100px;
 }
 
 .page-title {
   display: block;
-	margin: 0 0 20px 20px;
-	width: 200px;
-	text-align: center;
-	background-color: #008080;
+  margin: 0 0 20px 20px;
+  width: 200px;
+  text-align: center;
+  background-color: #008080;
   border-radius: 5px;
   color: #fff;
 }

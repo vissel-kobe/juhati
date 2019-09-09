@@ -9,14 +9,21 @@ class ReviewsController < ApplicationController
     end
   end
 
+  before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
+
+  def ensure_correct_user
+    @review = Review.find_by(id: params[:id])
+    if current_user.id != @review.user_id
+      redirect_to album_path(@review.album_id)
+    end
+  end
+
   def edit
     @user = current_user
     @album = Album.find(params[:album_id])
-  end
-
   def create
     @album = Album.find(params[:album_id])
-    review = current_user.reviews.new(review_params)
+    review = Review.new(review_params)
     review.album_id = @album.id
     review.user_id = current_user.id
     review.save

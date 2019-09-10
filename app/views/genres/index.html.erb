@@ -4,6 +4,7 @@
     <div class="genres">
       <% @genres.each do |genre| %>
         <%= genre.name %>
+        <%= link_to "削除", genre_path(genre), method: :delete, "data-confirm" => "本当に消しますか？", class: "btn btn-danger" %>
       <% end %>
     </div>
     <div class="link">

@@ -49,16 +49,14 @@
       </div>
       <div class="flex-box">
         <div class="submit">
-          <%= link_to "戻る", user_path(f) %>
-        </div>
-        <div class="submit">
-          <%= f.submit "保存する" %>
+          <%= f.submit "保存する", class: "actions btn btn-success" %>
         </div>
       </div>
 
-      <%= f.submit "保存する", class: "actions btn btn-success" %>
-
     <% end %>
+    <div class="submit">
+      <%= link_to "戻る", user_path(@user) %>
+    </div>
 
   </main>
   <div class="rightside"></div>

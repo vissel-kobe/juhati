@@ -1,14 +1,20 @@
-<div class="background-image">
-  <div class="center-box">
-  <h2>ジャンル一覧<h2>
-    <div class="genres">
+<div class="albums-index flex">                                                          
+  <div class="leftside"></div>
+  <main class="main">
+    <h2 class="page-title">ジャンル一覧</h2>
+    <div class="album-index inner flex">
       <% @genres.each do |genre| %>
-        <%= genre.name %>
-        <%= link_to "削除", genre_path(genre), method: :delete, "data-confirm" => "本当に消しますか？", class: "btn btn-danger" %>
+        <div class="album-item text-center">
+          <%= genre.name %>
+          <%= link_to "削除", genre_path(genre), method: :delete, "data-confirm" => "本当に消しますか？", class: "btn btn-danger" %>
+        </div>
       <% end %>
+      <div class="link">
+        <%= link_to "ジャンルを追加する✔️", new_genre_path, class: "link_to-signup-btn" %>
+      </div>
     </div>
-    <div class="link">
-      <%= link_to "ジャンルを追加する✔️", new_genre_path %>
-    </div>
-  </div>
+    <p class="text-center"> &lt; 1 2 3 &gt;</p>
+  </main>
+  <div class="rightside"></div>
 </div>
+

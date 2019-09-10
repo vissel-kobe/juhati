@@ -21453,3 +21453,186 @@ Completed 200 OK in 1772ms (Views: 1725.8ms | ActiveRecord: 9.2ms)
   [1m[36mGenre Load (3.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" LIMIT ?[0m  [["LIMIT", 11]]
   [1m[36mGenre Load (1.1ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
   [1m[36mGenre Load (2.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Started GET "/genres" for 10.0.2.2 at 2019-09-10 04:18:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by GenresController#index as HTML
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (3.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/genres/index.html.erb:5
+  Rendered genres/index.html.erb within layouts/application (27.2ms)
+  [1m[36mAdmin Load (3.8ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:38
+  Rendered template/_header.html.erb (55.5ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 5555ms (Views: 5416.1ms | ActiveRecord: 33.1ms)
+
+
+Started DELETE "/admins/sign_out" for 10.0.2.2 at 2019-09-10 04:19:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"TgqJi9mtw0IMrwER6g4mrNI2X3NNo9tocuq+W4Jmgb6t+dpfY5qeHKKrxHAr0cjNMYYt5/nZvUK8HyLXbALsZA=="}
+  [1m[36mAdmin Load (4.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 111ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-09-10 04:19:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.5ms)
+  Rendered template/_header.html.erb (2.2ms)
+  Rendered template/_footer.html.erb (1.1ms)
+Completed 200 OK in 1907ms (Views: 1857.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2019-09-10 04:19:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (16.7ms)
+  Rendered template/_header.html.erb (2.7ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 2076ms (Views: 2045.6ms | ActiveRecord: 6.2ms)
+
+
+Started POST "/users/sign_in" for 10.0.2.2 at 2019-09-10 04:19:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YlyeaAvBMdVa2xMUj5SLeAHV3l7kLNw+rJyZ8fx4IyQiUmhzsR8JRRDMCk5SxrmbEqpqS0SM0I3PmKgJ/ke+tw==", "user"=>{"email"=>"tesin@tesin", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (8.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tesin@tesin"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (5.1ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2019-09-10 04:19:33.153862"], ["last_sign_in_at", "2019-09-09 10:50:40.400389"], ["sign_in_count", 18], ["updated_at", "2019-09-10 04:19:33.155782"], ["id", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (14.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 366ms (ActiveRecord: 28.0ms)
+
+
+Started GET "/users/1" for 10.0.2.2 at 2019-09-10 04:19:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:44
+  Rendered users/show.html.erb within layouts/application (7.2ms)
+  Rendered template/_header.html.erb (3.3ms)
+  Rendered template/_footer.html.erb (0.4ms)
+Completed 200 OK in 1073ms (Views: 1037.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/genres/new" for 10.0.2.2 at 2019-09-10 04:30:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenresController#new as HTML
+  Rendering genres/new.html.erb within layouts/application
+  Rendered genres/new.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:9
+  Rendered template/_header.html.erb (6.1ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 1073ms (Views: 1045.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2019-09-10 04:30:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenresController#index as HTML
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (2.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/genres/index.html.erb:5
+  Rendered genres/index.html.erb within layouts/application (4.7ms)
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:9
+  Rendered template/_header.html.erb (11.5ms)
+  Rendered template/_footer.html.erb (0.4ms)
+Completed 200 OK in 977ms (Views: 946.2ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/genres/new" for 10.0.2.2 at 2019-09-10 04:30:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenresController#new as HTML
+  Rendering genres/new.html.erb within layouts/application
+  Rendered genres/new.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:9
+  Rendered template/_header.html.erb (4.6ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 908ms (Views: 879.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/genres" for 10.0.2.2 at 2019-09-10 05:11:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by GenresController#index as HTML
+  Rendering genres/index.html.erb within layouts/application
+  Rendered genres/index.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 397ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/vagrant/juhati/app/views/genres/index.html.erb:24: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/genres/index.html.erb:24: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/genres" for 10.0.2.2 at 2019-09-10 05:11:54 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenresController#index as HTML
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (3.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/genres/index.html.erb:6
+  Rendered genres/index.html.erb within layouts/application (440.7ms)
+Completed 500 Internal Server Error in 669ms (ActiveRecord: 20.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `genre' for #<#<Class:0x00005625df789c58>:0x00007fb5642acf80>):
+     5:     <div class="album-index inner flex">
+     6:       <% @genres.each do |album| %>
+     7:         <div class="album-item text-center">
+     8:           <%= genre.name %>
+     9:           <%= link_to "削除", genre_path(genre), method: :delete, "data-confirm" => "本当に消しますか？", class: "btn btn-danger" %>
+    10:         </div>
+    11:       <% end %>
+  
+app/views/genres/index.html.erb:8:in `block in _app_views_genres_index_html_erb__2592448065554865788_70208523169440'
+app/views/genres/index.html.erb:6:in `_app_views_genres_index_html_erb__2592448065554865788_70208523169440'
+Started GET "/genres" for 10.0.2.2 at 2019-09-10 05:12:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenresController#index as HTML
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (3.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/genres/index.html.erb:6
+  Rendered genres/index.html.erb within layouts/application (8.6ms)
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:9
+  Rendered template/_header.html.erb (60.3ms)
+  Rendered template/_footer.html.erb (0.5ms)
+Completed 200 OK in 5314ms (Views: 5246.4ms | ActiveRecord: 14.0ms)
+
+
+Started GET "/genres/new" for 10.0.2.2 at 2019-09-10 05:12:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GenresController#new as HTML
+  Rendering genres/new.html.erb within layouts/application
+  Rendered genres/new.html.erb within layouts/application (12.9ms)
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:9
+  Rendered template/_header.html.erb (11.1ms)
+  Rendered template/_footer.html.erb (0.8ms)
+Completed 200 OK in 1068ms (Views: 1017.9ms | ActiveRecord: 4.0ms)
+
+

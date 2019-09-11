@@ -22441,3 +22441,521 @@ Processing by AlbumsController#show as HTML
 Completed 200 OK in 1295ms (Views: 1239.8ms | ActiveRecord: 16.7ms)
 
 
+Started GET "/albums/2" for 10.0.2.2 at 2019-09-11 06:36:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAlbum Load (4.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:19
+  [1m[36mGenre Load (2.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:20
+  [1m[36mLabel Load (1.6ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:21
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:22
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mFavorite Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."album_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["album_id", 2], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/album.rb:21
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/favorites/_favorite-btn.html.erb:4
+  Rendered favorites/_favorite-btn.html.erb (28.6ms)
+  [1m[36mReview Load (2.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/reviews/_review-section.html.erb:9
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:2
+  Rendered collection of reviews/_review.html.erb [1 times] (4.5ms)
+  Rendered reviews/_review-form.html.erb (5.0ms)
+  Rendered reviews/_review-section.html.erb (59.6ms)
+  Rendered albums/show.html.erb within layouts/application (160.3ms)
+Started GET "/albums/2" for 10.0.2.2 at 2019-09-11 06:36:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAlbum Load (4.1ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:19
+  [1m[36mGenre Load (3.1ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:20
+  [1m[36mLabel Load (8.5ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:21
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:22
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mFavorite Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."album_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["album_id", 2], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/album.rb:21
+  [1m[35m (9.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/favorites/_favorite-btn.html.erb:4
+  Rendered favorites/_favorite-btn.html.erb (17.1ms)
+  [1m[36mReview Load (1.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/reviews/_review-section.html.erb:9
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:2
+  Rendered collection of reviews/_review.html.erb [1 times] (15.8ms)
+  Rendered reviews/_review-form.html.erb (1.2ms)
+  Rendered reviews/_review-section.html.erb (99.9ms)
+  Rendered albums/show.html.erb within layouts/application (187.7ms)
+Started GET "/albums/2" for 10.0.2.2 at 2019-09-11 06:36:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAlbum Load (5.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:19
+  [1m[36mGenre Load (2.9ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:20
+  [1m[36mLabel Load (2.7ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:21
+  [1m[36mUser Load (6.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:22
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mFavorite Exists (2.4ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."album_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["album_id", 2], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/album.rb:21
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/favorites/_favorite-btn.html.erb:4
+  Rendered favorites/_favorite-btn.html.erb (10.9ms)
+  [1m[36mReview Load (2.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/reviews/_review-section.html.erb:9
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:2
+  Rendered collection of reviews/_review.html.erb [1 times] (4.6ms)
+  Rendered reviews/_review-form.html.erb (1.2ms)
+  Rendered reviews/_review-section.html.erb (73.9ms)
+  Rendered albums/show.html.erb within layouts/application (153.0ms)
+  Rendered template/_header.html.erb (1.9ms)
+  Rendered template/_header.html.erb (2.0ms)
+  Rendered template/_header.html.erb (1.4ms)
+  Rendered template/_footer.html.erb (0.7ms)
+Completed 200 OK in 4575ms (Views: 4492.9ms | ActiveRecord: 32.1ms)
+
+
+  Rendered template/_footer.html.erb (0.4ms)
+Completed 200 OK in 3406ms (Views: 3328.6ms | ActiveRecord: 26.5ms)
+
+
+  Rendered template/_footer.html.erb (1.0ms)
+Completed 200 OK in 5735ms (Views: 5567.5ms | ActiveRecord: 55.2ms)
+
+
+Started GET "/albums/2" for 10.0.2.2 at 2019-09-11 06:43:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAlbum Load (2.9ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:19
+  [1m[36mGenre Load (1.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:20
+  [1m[36mLabel Load (1.4ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:21
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:22
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mFavorite Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."album_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["album_id", 2], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/album.rb:21
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/favorites/_favorite-btn.html.erb:4
+  Rendered favorites/_favorite-btn.html.erb (40.9ms)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/albums/show.html.erb:30
+  [1m[36mReview Load (2.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/reviews/_review-section.html.erb:9
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:2
+  Rendered collection of reviews/_review.html.erb [1 times] (7.6ms)
+  Rendered reviews/_review-form.html.erb (10.6ms)
+  Rendered reviews/_review-section.html.erb (114.9ms)
+  Rendered albums/show.html.erb within layouts/application (265.0ms)
+  Rendered template/_header.html.erb (1.5ms)
+  Rendered template/_footer.html.erb (0.5ms)
+Completed 200 OK in 14052ms (Views: 13858.0ms | ActiveRecord: 53.4ms)
+
+
+Started GET "/attachments/d4fc82114d1d79a31d9ba41620975d32b234e4e7/store/2f239cbb2b1bd2a114091a1ce91724ca3693732154b1c5cddac9d968d2f3/album_image.jpeg" for 10.0.2.2 at 2019-09-11 06:43:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2019-09-11 06:43:51 +0000] GET "/d4fc82114d1d79a31d9ba41620975d32b234e4e7/store/2f239cbb2b1bd2a114091a1ce91724ca3693732154b1c5cddac9d968d2f3/album_image.jpeg" 200 13.3ms
+
+Started DELETE "/albums/2/favorites" for 10.0.2.2 at 2019-09-11 06:45:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavoritesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"U0QbkKGmguA/IlrMt2GNiym6UJVKZRy5P0ADQecrWVdE+sbbnmFqafDeZ3tbQevx62Tty+Du3GwxI01PN2Yczw==", "album_id"=>"2"}
+  [1m[36mAlbum Load (2.4ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:21
+  [1m[36mCACHE Album Load (0.0ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:13
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:14
+  [1m[36mFavorite Load (2.6ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."album_id" = ? LIMIT ?[0m  [["user_id", 1], ["album_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/favorites_controller.rb:15
+  [1m[36mFavorite Destroy (4.7ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/favorites_controller.rb:15
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/favorites_controller.rb:15
+Redirected to http://localhost:3000/albums/2
+Completed 302 Found in 48ms (ActiveRecord: 21.4ms)
+
+
+Started GET "/albums/2" for 10.0.2.2 at 2019-09-11 06:45:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAlbum Load (2.1ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:19
+  [1m[36mGenre Load (2.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:20
+  [1m[36mLabel Load (1.8ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:21
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:22
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mFavorite Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."album_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["album_id", 2], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/album.rb:21
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/favorites/_favorite-btn.html.erb:9
+  Rendered favorites/_favorite-btn.html.erb (10.0ms)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/albums/show.html.erb:30
+  [1m[36mReview Load (1.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/reviews/_review-section.html.erb:9
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:2
+  Rendered collection of reviews/_review.html.erb [1 times] (4.6ms)
+  Rendered reviews/_review-form.html.erb (2.3ms)
+  Rendered reviews/_review-section.html.erb (72.4ms)
+  Rendered albums/show.html.erb within layouts/application (150.4ms)
+  Rendered template/_header.html.erb (77.0ms)
+  Rendered template/_footer.html.erb (0.4ms)
+Completed 200 OK in 1789ms (Views: 1737.1ms | ActiveRecord: 15.6ms)
+
+
+Started POST "/albums/2/favorites" for 10.0.2.2 at 2019-09-11 06:46:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavoritesController#create as HTML
+  Parameters: {"authenticity_token"=>"fTTtGbtw8alEV3pzVjxEe2Bzhs3ahKAti0A9K+ft9B5qijBShLcZIIurR8S6HCIBoq07k3APYPiFI3MlN6Cxhg==", "album_id"=>"2"}
+  [1m[36mAlbum Load (2.7ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:21
+  [1m[36mCACHE Album Load (0.0ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:6
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:7
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/favorites_controller.rb:8
+  [1m[36mAlbum Load (2.1ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:8
+  [1m[36mFavorite Create (9.4ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "album_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["album_id", 2], ["created_at", "2019-09-11 06:46:02.322963"], ["updated_at", "2019-09-11 06:46:02.322963"]]
+  ↳ app/controllers/favorites_controller.rb:8
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/favorites_controller.rb:8
+Redirected to http://localhost:3000/albums/2
+Completed 302 Found in 52ms (ActiveRecord: 23.0ms)
+
+
+Started GET "/albums/2" for 10.0.2.2 at 2019-09-11 06:46:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAlbum Load (2.4ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:19
+  [1m[36mGenre Load (2.9ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:20
+  [1m[36mLabel Load (2.9ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:21
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:22
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mFavorite Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."album_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["album_id", 2], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/album.rb:21
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/favorites/_favorite-btn.html.erb:4
+  Rendered favorites/_favorite-btn.html.erb (9.5ms)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/albums/show.html.erb:30
+  [1m[36mReview Load (2.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/reviews/_review-section.html.erb:9
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:2
+  Rendered collection of reviews/_review.html.erb [1 times] (3.9ms)
+  Rendered reviews/_review-form.html.erb (1.7ms)
+  Rendered reviews/_review-section.html.erb (66.2ms)
+  Rendered albums/show.html.erb within layouts/application (140.0ms)
+  Rendered template/_header.html.erb (2.4ms)
+  Rendered template/_footer.html.erb (0.4ms)
+Completed 200 OK in 1275ms (Views: 1214.4ms | ActiveRecord: 17.6ms)
+
+
+Started GET "/albums/2" for 10.0.2.2 at 2019-09-11 06:46:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAlbum Load (2.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:19
+  [1m[36mGenre Load (2.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:20
+  [1m[36mLabel Load (1.9ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:21
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:22
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mFavorite Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."album_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["album_id", 2], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/album.rb:21
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/favorites/_favorite-btn.html.erb:4
+  Rendered favorites/_favorite-btn.html.erb (14.2ms)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/albums/show.html.erb:30
+  [1m[36mReview Load (1.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/reviews/_review-section.html.erb:9
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:2
+  Rendered collection of reviews/_review.html.erb [1 times] (6.1ms)
+  Rendered reviews/_review-form.html.erb (1.9ms)
+  Rendered reviews/_review-section.html.erb (65.7ms)
+  Rendered albums/show.html.erb within layouts/application (150.8ms)
+  Rendered template/_header.html.erb (1.7ms)
+  Rendered template/_footer.html.erb (0.5ms)
+Completed 200 OK in 2355ms (Views: 2305.1ms | ActiveRecord: 18.1ms)
+
+
+Started GET "/albums/2" for 10.0.2.2 at 2019-09-11 06:46:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAlbum Load (1.9ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:19
+  [1m[36mGenre Load (2.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:20
+  [1m[36mLabel Load (2.2ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:21
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:22
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mFavorite Exists (6.8ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."album_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["album_id", 2], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/album.rb:21
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/favorites/_favorite-btn.html.erb:4
+  Rendered favorites/_favorite-btn.html.erb (16.7ms)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/albums/show.html.erb:30
+  [1m[36mReview Load (2.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/reviews/_review-section.html.erb:9
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:2
+  Rendered collection of reviews/_review.html.erb [1 times] (5.6ms)
+  Rendered reviews/_review-form.html.erb (1.3ms)
+  Rendered reviews/_review-section.html.erb (116.8ms)
+  Rendered albums/show.html.erb within layouts/application (280.1ms)
+  Rendered template/_header.html.erb (1.4ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 1673ms (Views: 1588.9ms | ActiveRecord: 22.5ms)
+
+
+Started GET "/albums" for 10.0.2.2 at 2019-09-11 06:46:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#index as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:15
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (1.3ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/albums/index.html.erb:6
+  Rendered albums/index.html.erb within layouts/application (21.2ms)
+  Rendered template/_header.html.erb (1.5ms)
+  Rendered template/_footer.html.erb (0.4ms)
+Completed 200 OK in 1228ms (Views: 1172.6ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/albums/2" for 10.0.2.2 at 2019-09-11 06:47:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAlbum Load (2.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:19
+  [1m[36mGenre Load (1.6ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:20
+  [1m[36mLabel Load (2.4ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:21
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:22
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mFavorite Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."album_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["album_id", 2], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/album.rb:21
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/favorites/_favorite-btn.html.erb:4
+  Rendered favorites/_favorite-btn.html.erb (7.1ms)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/albums/show.html.erb:30
+  [1m[36mReview Load (2.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/reviews/_review-section.html.erb:9
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:2
+  Rendered collection of reviews/_review.html.erb [1 times] (4.1ms)
+  Rendered reviews/_review-form.html.erb (1.3ms)
+  Rendered reviews/_review-section.html.erb (58.4ms)
+  Rendered albums/show.html.erb within layouts/application (122.9ms)
+  Rendered template/_header.html.erb (1.6ms)
+  Rendered template/_footer.html.erb (0.4ms)
+Completed 200 OK in 1108ms (Views: 1057.2ms | ActiveRecord: 13.3ms)
+
+
+Started GET "/albums/1" for 10.0.2.2 at 2019-09-11 06:47:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAlbum Load (2.9ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:19
+  [1m[36mGenre Load (1.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:20
+  [1m[36mLabel Load (2.7ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:21
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:22
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mFavorite Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."album_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["album_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/album.rb:21
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."album_id" = ?[0m  [["album_id", 1]]
+  ↳ app/views/favorites/_favorite-btn.html.erb:4
+  Rendered favorites/_favorite-btn.html.erb (14.9ms)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."album_id" = ?[0m  [["album_id", 1]]
+  ↳ app/views/albums/show.html.erb:30
+  [1m[36mReview Load (1.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."album_id" = ?[0m  [["album_id", 1]]
+  ↳ app/views/reviews/_review-section.html.erb:9
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:2
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:2
+  Rendered collection of reviews/_review.html.erb [4 times] (15.3ms)
+  Rendered reviews/_review-form.html.erb (1.2ms)
+  Rendered reviews/_review-section.html.erb (93.2ms)
+  Rendered albums/show.html.erb within layouts/application (206.8ms)
+  Rendered template/_header.html.erb (1.5ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 1299ms (Views: 1241.5ms | ActiveRecord: 18.7ms)
+
+
+Started DELETE "/albums/1/favorites" for 10.0.2.2 at 2019-09-11 06:47:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavoritesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"usp0IdSsHI0mOVFQ/jNBv3dsA5QO6AA4OOie/vnJVIytdKlq62v0BOnFbOcSEyfFtbK+yqRjwO02i9DwKYQRFA==", "album_id"=>"1"}
+  [1m[36mAlbum Load (2.7ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:21
+  [1m[36mCACHE Album Load (0.0ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:13
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:14
+  [1m[36mFavorite Load (2.2ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."album_id" = ? LIMIT ?[0m  [["user_id", 1], ["album_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/favorites_controller.rb:15
+  [1m[36mFavorite Destroy (8.9ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/favorites_controller.rb:15
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/favorites_controller.rb:15
+Redirected to http://localhost:3000/albums/1
+Completed 302 Found in 45ms (ActiveRecord: 22.4ms)
+
+
+Started GET "/albums/1" for 10.0.2.2 at 2019-09-11 06:47:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAlbum Load (1.8ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:19
+  [1m[36mGenre Load (2.1ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:20
+  [1m[36mLabel Load (2.2ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:21
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:22
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mFavorite Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."album_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["album_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/album.rb:21
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."album_id" = ?[0m  [["album_id", 1]]
+  ↳ app/views/favorites/_favorite-btn.html.erb:9
+  Rendered favorites/_favorite-btn.html.erb (11.9ms)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."album_id" = ?[0m  [["album_id", 1]]
+  ↳ app/views/albums/show.html.erb:30
+  [1m[36mReview Load (1.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."album_id" = ?[0m  [["album_id", 1]]
+  ↳ app/views/reviews/_review-section.html.erb:9
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:2
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:2
+  Rendered collection of reviews/_review.html.erb [4 times] (17.7ms)
+  Rendered reviews/_review-form.html.erb (2.0ms)
+  Rendered reviews/_review-section.html.erb (85.4ms)
+  Rendered albums/show.html.erb within layouts/application (187.7ms)
+  Rendered template/_header.html.erb (1.7ms)
+  Rendered template/_footer.html.erb (0.5ms)
+Completed 200 OK in 1402ms (Views: 1335.5ms | ActiveRecord: 19.3ms)
+
+
+Started POST "/albums/1/favorites" for 10.0.2.2 at 2019-09-11 06:47:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavoritesController#create as HTML
+  Parameters: {"authenticity_token"=>"R1TdfiibAy6HkSqAOwezTYLjXULpO9K1nf5c+yxLz+JQ6gA1F1zrp0htFzfXJ9U3QD3gHEOwEmCTnRL1/AaKeg==", "album_id"=>"1"}
+  [1m[36mAlbum Load (1.4ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:21
+  [1m[36mCACHE Album Load (0.0ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:6
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/favorites_controller.rb:8
+  [1m[36mAlbum Load (1.2ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:8
+  [1m[36mFavorite Create (7.4ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "album_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["album_id", 1], ["created_at", "2019-09-11 06:47:14.302968"], ["updated_at", "2019-09-11 06:47:14.302968"]]
+  ↳ app/controllers/favorites_controller.rb:8
+  [1m[35m (7.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/favorites_controller.rb:8
+Redirected to http://localhost:3000/albums/1
+Completed 302 Found in 49ms (ActiveRecord: 19.6ms)
+
+
+Started GET "/albums/1" for 10.0.2.2 at 2019-09-11 06:47:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAlbum Load (2.2ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:19
+  [1m[36mGenre Load (1.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:20
+  [1m[36mLabel Load (1.8ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:21
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:22
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mFavorite Exists (2.9ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."album_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["album_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/album.rb:21
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."album_id" = ?[0m  [["album_id", 1]]
+  ↳ app/views/favorites/_favorite-btn.html.erb:4
+  Rendered favorites/_favorite-btn.html.erb (12.0ms)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."album_id" = ?[0m  [["album_id", 1]]
+  ↳ app/views/albums/show.html.erb:30
+  [1m[36mReview Load (1.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."album_id" = ?[0m  [["album_id", 1]]
+  ↳ app/views/reviews/_review-section.html.erb:9
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:2
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:2
+  Rendered collection of reviews/_review.html.erb [4 times] (16.6ms)
+  Rendered reviews/_review-form.html.erb (2.2ms)
+  Rendered reviews/_review-section.html.erb (96.5ms)
+  Rendered albums/show.html.erb within layouts/application (187.1ms)
+  Rendered template/_header.html.erb (3.3ms)
+  Rendered template/_footer.html.erb (0.4ms)
+Completed 200 OK in 1271ms (Views: 1212.9ms | ActiveRecord: 16.5ms)
+
+

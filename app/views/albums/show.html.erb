@@ -26,6 +26,9 @@
 					</a>
 				</div>
 			</div>
+      <div style="margin:30px 0;">
+        <h3>いいねしたユーザー：<%= @album.favorites.count %></h3>
+      </div>
 			<div class="review-section">
 				<% @reviews = @album.reviews %>
 				<%= render "reviews/review-section", reviews: @reviews, album: @album, review: Review.new %>

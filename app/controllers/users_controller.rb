@@ -28,6 +28,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def favorites
+    @user = User.find(params[:id])
+    @favorites = Favorite.where(user_id: current_user)
+  end
+
   private
   def user_params
     params.require(:user).permit(:family_name, :first_name, :kana_family_name, :kana_first_name, :postcode, :assress, :telephone, :email)

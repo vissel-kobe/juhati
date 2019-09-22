@@ -41,8 +41,14 @@
       <%= @user.email %>
     </div>
     <div class="submit">
-      <%= link_to "編集する", edit_user_path(current_user.id), class: "actions btn btn-success" %>
+      <%= link_to "編集する", edit_user_path(@user.id), class: "actions btn btn-success" %>
     </div>
   </main>
-  <div class="rightside"></div>
+  <div class="rightside">
+    <% if user_signed_in? %>
+      <%= link_to "いいねした商品", users_favorites_path(@user) %>
+    <% elsif admin_signed_in? %>
+      <%= link_to "いいねした商品", admin_users_favorites_path(@user) %>
+    <% end %>
+  </div>
 </div>

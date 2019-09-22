@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   }
   root 'homes#top'
   resources:admins
+  get 'admin/users/:id/favorites', to: 'admins#favorites', as: 'admin_users_favorites'
   resources:users, only:[:index, :show, :edit, :update]
+  get 'users/:id/favorites', to: 'users#favorites', as: 'users_favorites'
   resources:artists, only:[:index, :edit, :create, :update, :destroy]
   resources:albums do
     resources:reviews, only:[:edit, :create, :update, :destroy]

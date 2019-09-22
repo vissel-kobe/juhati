@@ -32,7 +32,7 @@
 			<div class="field">
 				<span class="label">ジャンル</span>
 				<div class="field-selectbox">
-					<%= f.select :genre_id, [["J-POP", 1], ["K-POP", 2], ["レゲエ", 3], ["EDM", 4]] %>
+					<%= f.collection_select :genre_id, Genre.all, :id, :name %>
 				</div>
 			</div>
 			<div class="field">

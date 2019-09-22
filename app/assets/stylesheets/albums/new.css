@@ -1,3 +1,16 @@
 .albums-content {
 	display: flex;
 }
+
+.disc_btn {
+	background-color: red;
+	width:25px;
+	display:inline-block;
+	margin: 0 20px;
+	text-align: center;
+	border-radius: 5px;
+}
+
+.submit_color {
+	background-color: #5cb85c!important;
+}

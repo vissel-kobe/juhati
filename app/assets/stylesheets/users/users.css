@@ -1,0 +1,52 @@
+.content {
+	margin:0 20px 0 20px;
+}
+
+.table-margin {
+	padding-left: 50px ;
+}
+
+.userinfo-table,
+.userhistory-table {
+	width: 90%;
+	margin: 0 auto;
+	padding-top: 20px;
+}
+th {
+	text-align: center;
+}
+.th-small {
+	width: 25%;
+}
+.th-large {
+	width: 75%;
+}
+.userinfo-tbody tr {
+	height: 40px;
+}
+.user-edit-btn {
+	float: right;
+	margin-bottom: 30px;
+}
+
+.th-date{
+	width: 15%;
+}
+.th-album-name{
+	width: 35%;
+}
+.th-album-count{
+	width: 10%;
+}
+.th-album-price{
+	width: 10%;
+}
+.th-total{
+	width: 15%;
+}
+.th-status{
+	width: 15%;
+}
+.user-history-btn {
+	margin: 100px 20px 0;
+}

@@ -4,10 +4,10 @@ class Album < ApplicationRecord
 	belongs_to :label
 	belongs_to :genre
 	has_many :orders
-	has_many :favorites
-	has_many :reviews
+	has_many :favorites, dependent: :destroy
+	has_many :reviews, dependent: :destroy
 
-	enum status: { selling: 0, suspended: 1}
+	enum status: { 販売中: 0, 販売停止: 1}
 	validates :title, presence: true
 	validates :price, presence: true
 	validates :stock, presence: true
@@ -17,5 +17,8 @@ class Album < ApplicationRecord
 
 	attachment :album_image
 
+  def favorited_by?(user)
+    favorites.where(user_id: user.id).exists?
+  end
 
 end

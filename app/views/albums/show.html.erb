@@ -5,9 +5,15 @@
 		<div class="inner">
 			<div class="album-content-first flex is-between">
 				<p class="album-title"><%= @album.title %></p>
-				<div class="fav-btn">
-					<%= render "favorites/favorite-btn", album: @album %>
-				</div>
+				<% if user_signed_in? %>
+					<div class="fav-btn">
+						<%= render "favorites/favorite-btn", album: @album %>
+					</div>
+				<% elsif %>
+					<div class="edit-btn">
+						<%= link_to "編集する", edit_album_path(@album.id) %>
+					</div>
+				<% end %>
 			</div>
 			<div class="album-content-second flex is-between">
 				<%= attachment_image_tag @album, :album_image, format:"jpeg", class: "album-content-img", fallback: "no-image.jpg" %>
@@ -17,7 +23,7 @@
 					<p>在庫: <%= @album.stock %> 枚</p>
 					<p>ジャンル: <%= @album_genre.name %></p>
 					<p>レーベル名: <%= @album_label.name %></p>
-					<p>ディスク数: @album.discs.count</p>
+					<p>ディスク数: <%= @album.discs.count %></p>
 				</div>
 				<div class="second-left">
 					<a class="add-cart-btn text-center" href="">

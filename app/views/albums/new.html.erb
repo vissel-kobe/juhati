@@ -59,7 +59,7 @@
 					</div>
 				</div>
 
-				<%= f.submit "追加不能", class: "btn btn-cannot", id: "submit", disabled: true %>
+			<%= f.submit "追加不能", class: "btn btn-success", id: "submit", disabled: true, style: "background-color: gray;" %>
 
 			<% end %>
 		</div>
@@ -70,20 +70,20 @@
   //nameが空のとき、submitを押せないようにする
   //nameに何か入力されていたら、押せるようにする。
   //submitはすでにdisabledなので、入力したらdisabledを解除すればいい
-  const title = document.querySelector('#title');
-  const price = document.querySelector('#price');
-  const stock = document.querySelector('#stock');
-  const submit = document.querySelector('#submit');
-  title.addEventListener('keyup',function(){
-  	if (title.value.length >= 1){
-  		submit.disabled = false;
-  		$('#submit').addClass("submit_color");
-  		submit.value = "追加する";
-  	}else{
-  		submit.disabled = true;
-  		$('#submit').removeClass("submit_color");
-  		submit.value = "追加不能";
-  	};
-  });
-  console.log(title);
+const title = document.querySelector('#title');
+const price = document.querySelector('#price');
+const stock = document.querySelector('#stock');
+const submit = document.querySelector('#submit');
+title.addEventListener('keyup',function(){
+	if (title.value.length >= 1){
+		submit.disabled = false;
+		$('#submit').addClass("submit_color");
+		submit.value = "追加する";
+	}else{
+		submit.disabled = true;
+		$('#submit').removeClass("submit_color");
+		submit.value = "追加不能";
+	};
+});
+console.log(title);
 </script>

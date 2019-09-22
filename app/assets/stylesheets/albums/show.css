@@ -1,0 +1,49 @@
+.title-box {
+  width:50%;
+  margin:30px 0 20px 20px;
+}
+
+.price-box {
+  width:50%;
+  text-align:center;
+}
+
+.album-box {
+  width:30%;
+  float:left;
+}
+
+.album-img {
+  margin-left:40px;
+}
+
+.details {
+  width:30%
+}
+
+.status {
+  width:50%;  
+}
+
+.stock {
+  
+}
+
+.genre {
+  margin:15px 0;
+}
+
+.label {
+    
+}
+
+.cart-box {
+  width:30%;
+
+}
+
+.cart-picture {
+  width:50%;
+  margin:0 auto;
+}
+

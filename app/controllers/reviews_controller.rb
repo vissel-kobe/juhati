@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-
+  
   before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
 
   def ensure_correct_user
@@ -10,7 +10,8 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    @album = Album.find(@review.album_id)
+    @user = current_user
+    @album = Album.find(params[:album_id])
   end
 
   def create
@@ -19,7 +20,7 @@ class ReviewsController < ApplicationController
     review.album_id = @album.id
     review.user_id = current_user.id
     review.save
-    redirect_to album_path(@album)
+    redirect_to album_path(@album.id)
   end
 
   def update

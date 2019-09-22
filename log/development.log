@@ -24034,3 +24034,125 @@ Processing by AlbumsController#index as HTML
 Completed 200 OK in 3921ms (Views: 3784.5ms | ActiveRecord: 29.4ms)
 
 
+Started GET "/albums/new" for 10.0.2.2 at 2019-09-22 04:42:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mGenre Load (1.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/albums/new.html.erb:35
+  [1m[36mLabel Load (1.3ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/albums/new.html.erb:41
+  Rendered albums/_disc_fields.html.erb (0.7ms)
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/new.html.erb within layouts/application (74.2ms)
+  [1m[36mAdmin Load (0.6ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:38
+  Rendered template/_header.html.erb (15.6ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 3647ms (Views: 3570.6ms | ActiveRecord: 20.4ms)
+
+
+Started GET "/admins/1" for 10.0.2.2 at 2019-09-22 04:42:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (1.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins_controller.rb:7
+  Rendering admins/show.html.erb within layouts/application
+  Rendered admins/show.html.erb within layouts/application (0.6ms)
+  Rendered template/_header.html.erb (1.4ms)
+  Rendered template/_footer.html.erb (0.4ms)
+Completed 200 OK in 373ms (Views: 353.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/albums" for 10.0.2.2 at 2019-09-22 04:42:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/albums/index.html.erb:6
+  Rendered albums/index.html.erb within layouts/application (7.9ms)
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:38
+  Rendered template/_header.html.erb (3.1ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 370ms (Views: 338.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/attachments/e669812f6440e85f5ccfa023dd100f8f63443f8a/store/56375505e2520700963f6058234dbc64fad0d8d3277083243d07ea3a36b9/album_image.jpeg" for 10.0.2.2 at 2019-09-22 04:42:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/attachments/d4fc82114d1d79a31d9ba41620975d32b234e4e7/store/2f239cbb2b1bd2a114091a1ce91724ca3693732154b1c5cddac9d968d2f3/album_image.jpeg" for 10.0.2.2 at 2019-09-22 04:42:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/attachments/49415e62444282bfc11fe41dd2c1dc0217684164/store/dc3fcef9fa921e2702bc5c8d3db9a5d219aca1892020cc5470939262f00e/album_image.jpeg" for 10.0.2.2 at 2019-09-22 04:42:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: Could not find attachment by id: 2f239cbb2b1bd2a114091a1ce91724ca3693732154b1c5cddac9d968d2f3
+Refile::App: [2019-09-22 04:42:47 +0000] GET "/d4fc82114d1d79a31d9ba41620975d32b234e4e7/store/2f239cbb2b1bd2a114091a1ce91724ca3693732154b1c5cddac9d968d2f3/album_image.jpeg" 404 2.2ms
+
+Refile::App: Could not find attachment by id: 56375505e2520700963f6058234dbc64fad0d8d3277083243d07ea3a36b9
+Refile::App: [2019-09-22 04:42:47 +0000] GET "/e669812f6440e85f5ccfa023dd100f8f63443f8a/store/56375505e2520700963f6058234dbc64fad0d8d3277083243d07ea3a36b9/album_image.jpeg" 404 5.1ms
+
+Refile::App: Could not find attachment by id: dc3fcef9fa921e2702bc5c8d3db9a5d219aca1892020cc5470939262f00e
+Refile::App: [2019-09-22 04:42:47 +0000] GET "/49415e62444282bfc11fe41dd2c1dc0217684164/store/dc3fcef9fa921e2702bc5c8d3db9a5d219aca1892020cc5470939262f00e/album_image.jpeg" 404 2.8ms
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-09-22 04:42:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+Started GET "/attachments/e669812f6440e85f5ccfa023dd100f8f63443f8a/store/56375505e2520700963f6058234dbc64fad0d8d3277083243d07ea3a36b9/album_image.jpeg" for 10.0.2.2 at 2019-09-22 04:42:49 +0000
+Started GET "/attachments/d4fc82114d1d79a31d9ba41620975d32b234e4e7/store/2f239cbb2b1bd2a114091a1ce91724ca3693732154b1c5cddac9d968d2f3/album_image.jpeg" for 10.0.2.2 at 2019-09-22 04:42:49 +0000
+Started GET "/attachments/49415e62444282bfc11fe41dd2c1dc0217684164/store/dc3fcef9fa921e2702bc5c8d3db9a5d219aca1892020cc5470939262f00e/album_image.jpeg" for 10.0.2.2 at 2019-09-22 04:42:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: Could not find attachment by id: dc3fcef9fa921e2702bc5c8d3db9a5d219aca1892020cc5470939262f00e
+Refile::App: Could not find attachment by id: 2f239cbb2b1bd2a114091a1ce91724ca3693732154b1c5cddac9d968d2f3
+Refile::App: [2019-09-22 04:42:49 +0000] GET "/49415e62444282bfc11fe41dd2c1dc0217684164/store/dc3fcef9fa921e2702bc5c8d3db9a5d219aca1892020cc5470939262f00e/album_image.jpeg" 404 3.0ms
+
+Refile::App: [2019-09-22 04:42:49 +0000] GET "/d4fc82114d1d79a31d9ba41620975d32b234e4e7/store/2f239cbb2b1bd2a114091a1ce91724ca3693732154b1c5cddac9d968d2f3/album_image.jpeg" 404 15.2ms
+
+Refile::App: Could not find attachment by id: 56375505e2520700963f6058234dbc64fad0d8d3277083243d07ea3a36b9
+Refile::App: [2019-09-22 04:42:49 +0000] GET "/e669812f6440e85f5ccfa023dd100f8f63443f8a/store/56375505e2520700963f6058234dbc64fad0d8d3277083243d07ea3a36b9/album_image.jpeg" 404 2.8ms
+
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/albums/new.html.erb:35
+  [1m[36mLabel Load (1.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/albums/new.html.erb:41
+  Rendered albums/_disc_fields.html.erb (0.7ms)
+  Rendered albums/_disc_fields.html.erb (0.6ms)
+  Rendered albums/new.html.erb within layouts/application (32.9ms)
+  [1m[36mAdmin Load (0.7ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:38
+  Rendered template/_header.html.erb (3.2ms)
+  Rendered template/_footer.html.erb (0.2ms)
+Completed 200 OK in 438ms (Views: 411.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2019-09-22 04:42:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:13
+  Rendered users/index.html.erb within layouts/application (18.0ms)
+  [1m[36mAdmin Load (0.6ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:38
+  Rendered template/_header.html.erb (3.0ms)
+  Rendered template/_footer.html.erb (0.2ms)
+Completed 200 OK in 440ms (Views: 407.8ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/admins/1" for 10.0.2.2 at 2019-09-22 04:42:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (2.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins_controller.rb:7
+  Rendering admins/show.html.erb within layouts/application
+  Rendered admins/show.html.erb within layouts/application (0.5ms)
+  Rendered template/_header.html.erb (1.5ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 358ms (Views: 327.8ms | ActiveRecord: 2.0ms)
+
+

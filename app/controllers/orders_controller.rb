@@ -11,4 +11,5 @@ class OrdersController < ApplicationController
   def destroy
   end
 
+  private
 end

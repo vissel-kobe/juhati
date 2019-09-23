@@ -21,4 +21,8 @@ class Album < ApplicationRecord
     favorites.where(user_id: user.id).exists?
   end
 
+  def in_cart?(user)
+  	orders.where(user_id: user.id, status: "cart").exists?
+  end
+
 end

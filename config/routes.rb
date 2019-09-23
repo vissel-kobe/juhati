@@ -9,6 +9,9 @@ Rails.application.routes.draw do
     passwords: 'users/passwords',
     registrations: 'users/registrations'
   }
+  get 'users/:id/carts' => 'users#carts', as: 'user_carts'
+  get 'users/:id/unsubscribe' => 'users#unsubscribe', as: 'unsubscribe_user'
+  post 'users/:id' => 'users#delete', as: 'delete_user'
   root 'homes#top'
   resources:admins
   resources:users, only:[:index, :show, :edit, :update]
@@ -16,6 +19,7 @@ Rails.application.routes.draw do
   resources:albums do
     resources:reviews, only:[:edit, :create, :update, :destroy]
     resource:favorites, only:[:create, :destroy]
+    resource:orders, only:[:create, :update, :destroy]
   end
   resources:users do
     resources:shipping_addresses

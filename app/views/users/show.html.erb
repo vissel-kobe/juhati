@@ -40,8 +40,10 @@
       <span  class="label">メールアドレス</span>
       <%= @user.email %>
     </div>
+    <%= @user.deleted %>
     <div class="submit">
       <%= link_to "編集する", edit_user_path(current_user.id), class: "actions btn btn-success" %>
+      <%= link_to "退会する", unsubscribe_user_path(current_user.id), class: "actions btn btn-danger" %>
     </div>
   </main>
   <div class="rightside"></div>

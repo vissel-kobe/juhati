@@ -65,5 +65,7 @@
 .cart-img {
     height: 150px;
     width: 150px;
-    background-color: #eff;
+    background-image: url("../cart-image.jpg");
+    background-size: contain;
+
 }

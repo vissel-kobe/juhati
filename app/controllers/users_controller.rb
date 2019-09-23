@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
 
-
   def index
     @users = User.all
     @user = current_user
@@ -16,6 +15,7 @@ class UsersController < ApplicationController
 
   def carts
     @user = User.find(params[:id])
+    @orders = @user.orders.all
   end
 
   def update
@@ -26,6 +26,19 @@ class UsersController < ApplicationController
 
   def unsubscribe
     @user = User.find(params[:id])
+  end
+
+  def delete
+    user = current_user
+    user.deleted = "true"
+    user.update(deleted: user.deleted)
+    session[:user_id] = nil
+    redirect_to '/'
+  end
+
+  def favorites
+    @user = User.find(params[:id])
+    @favorites = Favorite.where(user_id: current_user)
   end
 
   private

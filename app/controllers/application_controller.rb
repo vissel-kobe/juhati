@@ -21,4 +21,13 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:family_name, :first_name, :kana_family_name, :kana_first_name, :postcode, :address, :telephone, :email])
   end
 
+  # def set_current_user
+  #   return unless session[:user_id]
+  #   @current_user ||= User.find_by(id: session[:user_id])
+  #   if @current_user.deleted == "true"
+  #     session[:user_id] = nil
+  #     redirect_to '/'
+  #   end
+  # end
+
 end

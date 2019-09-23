@@ -2,27 +2,47 @@
 	<div class="leftside"></div>
 	<main class="main">
 		<h2 class="page-title">カート</h2>
-		<div class="inner">
-			<table class="albums-in-cart">
-				<thead></thead>
-				<tbody>
-					<% @orders.each do |cart| %>
-						<% cart_album = Album.find(cart.album_id) %>
-						<tr>
+		<table class="albums-in-cart inner">
+			<thead>
+				<tr>
+					<th>商品情報</th>
+					<th>単価</th>
+					<th>在庫数</th>
+					<th>購入数</th>
+					<th>小計</th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @orders.each do |cart| %>
+					<% cart_album = Album.find(cart.album_id) %>
+					<tr>
+						<td>
+							<%= link_to album_path(cart_album.id), class: "cart_album-img-haslink flex" do %>
+								<%= attachment_image_tag cart_album, :album_image, format:"jpeg", class: "album-small-img", fallback: "no-image.jpg" %>
+								<p class="title-haslink"><%= cart_album.title %></p>
+							<% end %>
+						</td>
+						<td class="text-center"><%= cart_album.price %>円</td>
+						<td class="text-center"><%= cart_album.stock %>個</td>
+						<%= form_for cart do |f| %>
 							<td>
-								<%= link_to album_path(cart_album.id), class: "flex" do %>
-									<%= attachment_image_tag cart_album, :album_image, format:"jpeg", class: "album-small-img", fallback: "no-image.jpg" %>
-									<p class="title-haslink"><%= cart_album.title %></p>
-								<% end %>
+								<%= f.number_field :number, class: "number-field", id: "number" %>
+								<%= hidden_field_tag :album_id, cart_album.id %>
 							</td>
-							<td><%= cart_album.price %> 円(税込み)</td>
-							<td></td>
-							<td><%= link_to "カートから削除する", album_orders_path(album_id: cart_album.id), class: "btn btn-danger", method: :delete %>
+							<td>
+								<p class="subtotal"><%= cart.subtotal %>円</p>
 							</td>
-						</tr>
-					<% end %>
-			</table>
-		</div>
+							<td>
+								<%= f.submit "変更する", class: "btn submit-color" %>
+							</td>
+						<% end %>
+						<td><%= link_to "カートから削除する", album_orders_path(album_id: cart_album.id), class: "btn btn-danger", method: :delete %>
+						</td>
+					</tr>
+				<% end %>
+		</table>
 	</main>
 	<div class="rightside"></div>
 </div>

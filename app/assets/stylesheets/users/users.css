@@ -50,3 +50,12 @@ th {
 .user-history-btn {
 	margin: 100px 20px 0;
 }
+
+.album-small-img {
+	width: 80px;
+	height: 80px;
+}
+.users-carts .title-haslink {
+	display: block;
+	padding-top: 28px;
+}

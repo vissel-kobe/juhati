@@ -1,0 +1,25 @@
+<h2>この商品のレビュー</h2>  
+<%= form_for [album, review], remote: true do |f| %>
+  <div class="flex-box"> 
+    <div class="review-form">
+      <%= f.text_area :body, row:'3', class:"review-body" %>
+    </div>
+    <div class="submit">
+      <%= f.submit "OK!" %>
+    </div>
+  </div>
+<% end %>
+<div class="review_box">
+<% album.reviews.each do |review| %>
+  <div class="flex-box">
+    <div class="review-form">
+      <%= review.body %>
+    </div>
+    <% if user.id == current_user.id %>
+      <div class="submit">
+        <%= link_to "編集する", edit_album_review_path(@album, review.id) %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+</div>

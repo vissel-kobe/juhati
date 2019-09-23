@@ -1,0 +1,13 @@
+<div class="users-unsubscribe flex">
+  <div class="leftside"></div>
+  <main class="main">
+    <h2 class="page-title">退会</h2>
+    <p>本当に退会しますか？</p>
+    <div class="yes-or-no flex">
+      <%= link_to "はい", delete_user_path(@user.id),"data-confirm" => "本当に消しますか？", method: :delete %>
+      <a>|</a>
+      <%= link_to "いいえ", user_path(@user.id) %>
+    </div>
+  </main>
+  <div class="rightside"></div>
+</div>

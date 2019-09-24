@@ -13,6 +13,8 @@ class AlbumsController < ApplicationController
   def index
     @albums = Album.all
     @user = current_user
+    @search = Album.search(params[:search])
+    @album = Album.where(album_id: params[:album_id])
   end
 
   def show

@@ -3,11 +3,16 @@
     <div class="header-logo">
       <%= link_to "VISSEL", root_path %>
     </div>
+    <div class="search">
+      <%= form_tag albums_path, :method => 'get' do %>
+        <%= text_field_tag :search %>
+        <%= submit_tag 'Search', :title => nil %>
+      <% end %>
+    </div>
     <div class="header-right">
       <nav class="header-nav text-center">
         <ul class="flex is-between">
           <% if user_signed_in? %>
-
           <li class="has-hidden-nav">
             <%= link_to "商品一覧", albums_path, class: "btn header-nav-btn" %>
             <ul class="header-hidden-nav text-center flex column">

@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
 			order = Order.new(user_id: current_user.id, album_id: @album.id)
 			order.subtotal = @album.price
 			order.save!
-			redirect_to users_carts_path(current_user)
+			redirect_to user_carts_path(current_user)
 			# 非同期にするなら以下
 			# @album.reload
 			# respond_to do |format|
@@ -19,7 +19,7 @@ class OrdersController < ApplicationController
 	def update
 		order = Order.find_by(user_id: current_user.id, album_id: @album.id)
 		if order.update!(order.params)
-			redirect_to users_carts_path(current_user)
+			redirect_to user_carts_path(current_user)
 		end
 	end
 
@@ -27,7 +27,7 @@ class OrdersController < ApplicationController
 		if @album.in_cart?(current_user)
 			order = Order.find_by(user_id: current_user.id, album_id: @album.id)
 			order.destroy
-			redirect_to users_carts_path(current_user)
+			redirect_to user_carts_path(current_user)
 			# 非同期にするなら以下
 			# @album.reload
 			# respond_to do |format|

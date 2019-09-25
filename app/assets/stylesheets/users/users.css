@@ -12,9 +12,6 @@
 	margin: 0 auto;
 	padding-top: 20px;
 }
-th {
-	text-align: center;
-}
 .th-small {
 	width: 25%;
 }
@@ -49,4 +46,9 @@ th {
 }
 .user-history-btn {
 	margin: 100px 20px 0;
+}
+
+.album-small-img {
+	width: 80px;
+	height: 80px;
 }

@@ -1,9 +1,9 @@
-<div class="albums-index flex">
+<div class="albums-search flex">
 	<div class="leftside"></div>
 	<main class="main">
 		<h2 class="page-title">商品一覧</h2>
 		<div class="album-index inner flex">
-			<% @albums.each do |album| %>
+			<% @search.each do |album| %>
 				<div class="album-item text-center">
 				<%= link_to album_path(album) do %>
 					<%= attachment_image_tag album, :album_image, format:"jpeg", class: "album-item-img", fallback: "no-image.jpg" %>
@@ -19,5 +19,4 @@
 		<p class="text-center"> &lt; 1 2 3 &gt;</p>
 	</main>
 	<div class="rightside"></div>
-	<%= render "orders/link_to-users-carts" %>
 </div>

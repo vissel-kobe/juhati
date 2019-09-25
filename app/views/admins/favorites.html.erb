@@ -1,0 +1,15 @@
+<div class="admins-favorites flex">
+  <div class="leftside"></div>
+  <main class="main">
+    <h2 class="page-title">いいねした商品</h2>
+    <div class="content">
+      <% @favorites.each do |favorites| %>
+        <div class="favorites-item">
+          <%= attachment_image_tag favorites.album, :album_image, format:"jpeg", class: "album-item-img", fallback: "no-image.jpg" %>
+          <p style= 'text-align:center'><%= favorites.album.title %></p>
+        </div>
+      <% end %>
+    </div>
+  </main>
+  <div class="rightside"></div>
+</div>

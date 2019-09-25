@@ -3,6 +3,12 @@
     <div class="header-logo">
       <%= link_to "VISSEL", root_path %>
     </div>
+    <div class="search">
+      <%= form_tag search_path, :method => 'get' do %>
+        <%= text_field_tag :search %>
+        <%= submit_tag 'Search', :title => nil %>
+      <% end %>
+    </div>
     <div class="header-right">
       <nav class="header-nav text-center">
         <ul class="flex is-between">

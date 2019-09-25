@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   root 'homes#top'
+  get 'albums/search' => 'albums#search', as: 'search'
   resources:admins
   get 'admin/users/:id/favorites', to: 'admins#favorites', as: 'admin_users_favorites'
   resources:users, only:[:index, :show, :edit, :update]

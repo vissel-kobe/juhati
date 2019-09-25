@@ -61,6 +61,9 @@ a {
 .text-center {
   text-align: center;
 }
+.text-right {
+  text-align: right;
+}
 .vertical-center {
   align-items: center;
 }
@@ -240,4 +243,8 @@ a {
 }
 .link_to-users-carts-btn p {
   line-height: 200px;
+}
+
+th {
+  text-align: center;
 }

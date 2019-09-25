@@ -15,6 +15,7 @@
 				</tr>
 			</thead>
 			<tbody>
+				<% total = 0 %>
 				<% @orders.each do |cart| %>
 					<% cart_album = Album.find(cart.album_id) %>
 					<tr>
@@ -33,15 +34,36 @@
 							</td>
 							<td>
 								<p class="subtotal"><%= cart.subtotal %>円</p>
+								<% total = total + cart.subtotal %>
 							</td>
 							<td>
 								<%= f.submit "変更する", class: "btn submit-color" %>
 							</td>
 						<% end %>
-						<td><%= link_to "カートから削除する", album_orders_path(album_id: cart_album.id), class: "btn btn-danger", method: :delete %>
+						<td><%= link_to "カートから削除する", album_orders_path(album_id: cart_album.id), class: "btn btn-danger", method: :delete, "data-confirm" => "カートから削除します。よろしいですか？" %>
 						</td>
 					</tr>
 				<% end %>
+		</table>
+		<table class="prices-table text-right">
+			<thead>
+				<th></th>
+				<th></th>
+			</thead>
+			<tbody>
+				<tr class="total">
+					<td>合計:</td>
+					<td><%= total %>円(税込)</td>
+				</tr>
+				<tr class="shipping-tax">
+					<td>配送料:</td>
+					<td>500円(一律)</td>
+				</tr>
+				<tr class="finally">
+					<td>総計:</td>
+					<td><%= total + 500 %>円(税込)</td>
+				</tr>
+			<tbody>
 		</table>
 	</main>
 	<div class="rightside"></div>

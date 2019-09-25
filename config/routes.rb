@@ -9,12 +9,15 @@ Rails.application.routes.draw do
     passwords: 'users/passwords',
     registrations: 'users/registrations'
   }
-  get 'users/:id/carts' => 'users#carts', as: 'user_carts'
+  get 'users/:id/carts' => 'users#carts', as: 'users_carts'
   get 'users/:id/unsubscribe' => 'users#unsubscribe', as: 'unsubscribe_user'
   post 'users/:id' => 'users#delete', as: 'delete_user'
   root 'homes#top'
+  get 'albums/search' => 'albums#search', as: 'search'
   resources:admins
+  get 'admin/users/:id/favorites', to: 'admins#favorites', as: 'admin_users_favorites'
   resources:users, only:[:index, :show, :edit, :update]
+  get 'users/:id/favorites', to: 'users#favorites', as: 'users_favorites'
   resources:artists, only:[:index, :edit, :create, :update, :destroy]
   resources:albums do
     resources:reviews, only:[:edit, :create, :update, :destroy]

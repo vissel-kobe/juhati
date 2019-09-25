@@ -15,6 +15,10 @@ class AlbumsController < ApplicationController
     @user = current_user
   end
 
+  def search
+    @search = Album.search(params[:search])
+  end
+
   def show
     @album = Album.find(params[:id])
     @album_genre = Genre.find_by(id: @album.genre_id)

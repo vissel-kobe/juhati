@@ -1,0 +1,10 @@
+.favorites-index {
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+.favorites-item {
+    width: 200px;
+    height: 220px;
+    margin: 0 50px 50px 0;
+    background-color: #fef;
+}

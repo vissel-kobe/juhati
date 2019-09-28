@@ -56,6 +56,7 @@
 
 				<%= f.submit "変更する", class: "btn submit-color", disabled: false %>
 			<% end %>
+      <%= link_to "削除する", album_path(@album), method: :delete %>
 		</div>
 	</main>
 	<div class="rightside"></div>

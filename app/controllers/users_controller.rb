@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_action :ensure_correct_user, {only: [:edit, :update, :unsubscribe, :delete]}
+
   def index
     @users = User.all
     @user = current_user
@@ -42,7 +44,16 @@ class UsersController < ApplicationController
   end
 
   private
+
   def user_params
-    params.require(:user).permit(:family_name, :first_name, :kana_family_name, :kana_first_name, :postcode, :assress, :telephone, :email)
+    params.require(:user).permit(:family_name, :first_name, :kana_family_name, :kana_first_name, :postcode, :address, :telephone, :email)
   end
+
+  def ensure_correct_user
+    @user  = User.find(params[:id])
+    if current_user.id != @user.id
+      redirect_to user_path(current_user)
+    end
+  end
+
 end

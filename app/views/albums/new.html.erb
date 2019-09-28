@@ -25,7 +25,7 @@
 			<div class="field">
 				<span class="label">価格（税込み）</span>
 				<div class="field-textbox">
-					<%= f.number_field :price, id: "price" %>
+					<%= f.number_field :price, min: 1, id: "price" %>
 					<span>円</span>
 				</div>
 			</div>
@@ -55,7 +55,7 @@
 			<div class="field">
 				<span class="label">在庫</span>
 				<div class="field-textbox">
-					<%= f.number_field :stock, id: "stock" %>
+					<%= f.number_field :stock, min: 1, id: "stock" %>
 				</div>
 			</div>
 

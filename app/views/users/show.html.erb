@@ -48,5 +48,11 @@
       </div>
     <% end %>
   </main>
-  <div class="rightside"></div>
+  <div class="rightside">
+    <% if user_signed_in? %>
+      <%= link_to "いいねした商品", users_favorites_path(@user) %>
+    <% elsif admin_signed_in? %>
+      <%= link_to "いいねした商品", admin_users_favorites_path(@user) %>
+    <% end %>
+  </div>
 </div>

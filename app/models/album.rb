@@ -25,19 +25,12 @@ class Album < ApplicationRecord
 		orders.where(user_id: user.id, status: "cart").exists?
 	end
 
-	def self.search(search)
-		if search
-			Album.where(['title LIKE ?', "%#{search}%"])
-		else
-			Album.all
-		end
-	end
-
   def self.search(search)
     if search
-      where(['title LIKE ?', "%#{search}%"])
+      Album.where(['title LIKE ?', "%#{search}%"])
     else
-      all
+      Album.all
     end
   end
+
 end

@@ -1,0 +1,21 @@
+.album-index {
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+.album-item {
+    width: 200px;
+    height: 220px;
+    margin: 0 50px 50px 0;
+    background-color: #fef;
+}
+.album-item:nth-child(3n){
+    margin-right: 0;
+}
+.album-item-img {
+    width: 150px;
+    height: 150px;
+    margin: 10px 25px;
+}
+.album-item-txt {
+    display: block;
+}

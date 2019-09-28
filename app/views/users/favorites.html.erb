@@ -1,15 +1,23 @@
-<div class="admins-index flex">
-	<div class="leftside"></div>
-	<main class="main">
-		<h2 class="page-title">いいねした商品</h2>
-		<div class="content">
-			<% @favorites.each do |favorites| %>
-				<div class="favorites-item">
-					<%= attachment_image_tag favorites.album, :album_image, format:"jpeg", class: "album-item-img", fallback: "no-image.jpg" %>
-					<p style= 'text-align:center'><%= favorites.album.title %></p>
-				</div>
-			<% end %>
-		</div>
-	</main>
-	<div class="rightside"></div>
+<div class="users-favorites flex">
+  <div class="leftside"></div>
+  <main class="main">
+    <h2 class="page-title">いいねした商品</h2>
+    <div class="favorites-index inner flex">
+      <% @favorites.each do |favorite| %>
+        <% album = favorite.album %>
+        <div class="favorites-item text-center">
+          <%= link_to album_path(album) do %>
+            <%= attachment_image_tag album, :album_image, format:"jpeg", class: "album-item-img", fallback: "no-image.jpg" %>
+            <p class="album-item-txt"><%= album.title %></p>
+            <!-- album_firstdisc = album.discs[0] -->
+            <!-- album_mainartist = Artist.find_by(id: album_firstdisc.artist_id) -->
+            <p class="album-item-txt">アーティスト名</p>
+            <!-- album_mainartist.name -->
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </main>
+  <div class="rightside"></div>
+  <%= render "orders/link_to-users-carts" %>
 </div>

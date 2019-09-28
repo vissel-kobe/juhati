@@ -25,21 +25,22 @@
 					<p>レーベル名: <%= @album_label.name %></p>
 					<p>ディスク数: <%= @album.discs.count %></p>
 				</div>
-				<div class="second-left">
-					<a class="add-cart-btn text-center" href="">
-						<div class="cart-img"></div>
-						<p>カートに追加</p>
-					</a>
+				<div class="second-left text-center">
+				<% if user_signed_in? %>
+					<%= render "orders/cart-btn", album: @album %>
+				<% end %>
 				</div>
 			</div>
-      <div style="margin:30px 0;">
-        <h3>いいねしたユーザー：<%= @album.favorites.count %></h3>
-      </div>
+			<div style="margin:30px 0;">
+				<h3>いいねしたユーザー：<%= @album.favorites.count %></h3>
+			</div>
 			<div class="review-section">
-				<% @reviews = @album.reviews %>
-				<%= render "reviews/review-section", reviews: @reviews, album: @album, review: Review.new %>
+				<%= render "reviews/review-section", reviews: @album.reviews, album: @album, review: Review.new %>
 			</div>
 		</div>
 	</main>
 	<div class="rightside"></div>
+	<% if user_signed_in? %>
+		<%= render "orders/link_to-users-carts" %>
+	<% end %>
 </div>

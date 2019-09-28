@@ -32,7 +32,9 @@
             <ul class="header-hidden-nav text-center flex column">
               <!-- 以下リンク未実装 -->
               <li class="btn header-hidden-nav-btn">購入履歴</li>
-              <li class="btn header-hidden-nav-btn">いいねした商品</li>
+              <li class="">
+                <%= link_to "いいねした商品", users_favorites_path(current_user.id), class: "btn header-hidden-nav-btn" %>
+              </li>
               <li class="">
                 <%= link_to "会員情報編集", edit_user_path(current_user.id), class: "btn header-hidden-nav-btn" %>
               </li>

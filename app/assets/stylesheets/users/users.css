@@ -1,6 +1,12 @@
 .content {
 	margin:0 20px 0 20px;
 }
+.flash-danger {
+	text-align: center;
+	font-size: 16px;
+	color: #f99;
+	margin-bottom: 10px;
+}
 
 .table-margin {
 	padding-left: 50px ;

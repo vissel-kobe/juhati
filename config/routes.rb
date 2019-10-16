@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   }
   get 'users/:id/carts' => 'users#carts', as: 'users_carts'
   get 'users/:id/unsubscribe' => 'users#unsubscribe', as: 'unsubscribe_user'
-  post 'users/:id' => 'users#delete', as: 'delete_user'
+  delete 'users/:id' => 'users#destroy', as: 'delete_user'
   root 'homes#top'
   get 'albums/search' => 'albums#search', as: 'search'
   resources:admins

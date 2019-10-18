@@ -7,7 +7,7 @@ class Album < ApplicationRecord
 	has_many :favorites, dependent: :destroy
 	has_many :reviews, dependent: :destroy
 
-	enum status: { 販売中: 0, 販売停止: 1}
+	enum status: { suspended: 0, selling: 1}
 	validates :title, presence: true
 	validates :price, presence: true
 	validates :stock, presence: true

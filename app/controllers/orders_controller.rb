@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
 
 	before_action :set_album
+	before_action :ensure_correct_user, {only: [:update])
 
 	def create
 		unless @album.in_cart?(current_user)
@@ -18,11 +19,10 @@ class OrdersController < ApplicationController
 
 	def update
 		order = Order.find(params[:id])
-		user = User.find(order.user_id)
 		new_number = params[:order][:number]
 		new_subtotal = (@album.price.to_i) * (new_number.to_i)
 		if order.update!(number: new_number, subtotal: new_subtotal)
-			redirect_to users_carts_path(user.id)
+			redirect_to users_carts_path(user)
 		end
 	end
 
@@ -43,6 +43,13 @@ class OrdersController < ApplicationController
 
 	def set_album
 		@album = Album.find(params[:album_id])
+	end
+
+	def ensure_correct_user
+		user  = User.find(Order.find(params[:id]).user_id)
+		if user != current_user
+			redirect_to user_path(current_user)
+		end
 	end
 
 end

@@ -1,29 +1,41 @@
 class GenresController < ApplicationController
-  def index
-    @genres = Genre.all
-  end
-
-  def edit
-  end
-
-  def create
-    @genre = Genre.new(genre_params)
-    @genre.save
-    redirect_to new_album_path
-  end
-
-  def update
-  end
-
-  def destroy
-   @genre = Genre.find(params[:id])
-   @genre.destroy
-   redirect_to genres_path
-  end
 
   def new
     @genre = Genre.new
   end
+
+  def index
+    @genres = Genre.all
+  end
+
+  def create
+    @genre = Genre.new(genre_params)
+    if @genre.save
+      redirect_to new_album_path
+    else
+      render 'new'
+    end
+  end
+
+  def edit
+    @genre = Genre.find(params[:id])
+  end
+
+  def update
+    @genre = Genre.find(params[:id])
+    if @genre.update(genre_params)
+      redirect_to "/genres"
+    else
+      render 'edit'
+    end
+  end
+
+  # できれば物理削除したくないのでコメントアウト
+  # def destroy
+  #   @genre = Genre.find(params[:id])
+  #   @genre.destroy
+  #   redirect_to genres_path
+  # end
 
   private
   def genre_params

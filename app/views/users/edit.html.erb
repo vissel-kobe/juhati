@@ -1,8 +1,9 @@
-<div class="users-regisitations-new flex">
+<div class="users-edit flex">
   <div class="leftside"></div>
   <main class="main">
     <h2 class="page-title">会員情報編集</h2>
     <%= form_for(@user) do |f| %>
+      <%= render "devise/shared/error_messages", resource: @user %>
       <div class="field">
         <span class="label">氏名</span>
         <%= f.label :family_name, "(姓)", class: "label-sub" %>

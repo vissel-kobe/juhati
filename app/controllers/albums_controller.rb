@@ -11,7 +11,7 @@ class AlbumsController < ApplicationController
   end
 
   def index
-    @albums = Album.all
+    @albums = Album.page(params[:page]).per(12).reverse_order
     @user = current_user
   end
 
@@ -21,8 +21,8 @@ class AlbumsController < ApplicationController
 
   def show
     @album = Album.find(params[:id])
-    @album_genre = Genre.find_by(id: @album.genre_id)
-    @album_label = Label.find_by(id: @album.label_id)
+    @album_genre = Genre.find(@album.genre_id)
+    @album_label = Label.find(@album.label_id)
     @user = current_user
   end
 

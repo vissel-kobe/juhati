@@ -1,9 +1,5 @@
 class GenresController < ApplicationController
 
-  def new
-    @genre = Genre.new
-  end
-
   def index
     @genres = Genre.all
   end
@@ -11,22 +7,38 @@ class GenresController < ApplicationController
   def create
     @genre = Genre.new(genre_params)
     if @genre.save
-      redirect_to new_album_path
+      redirect_to genres_path
     else
-      render 'new'
+      @title = "ジャンル新規追加"
+      @resource = @genre
+      @submit = "作成"
+      render "template/simple-form"
     end
   end
 
+  def new
+    @title = "ジャンル新規追加"
+    @resource = Genre.new
+    @submit = "作成"
+    render "template/simple-form"
+  end
+
   def edit
-    @genre = Genre.find(params[:id])
+    @title = 'ジャンル編集'
+    @resource = Genre.find(params[:id])
+    @submit = '更新'
+    render 'template/simple-form'
   end
 
   def update
     @genre = Genre.find(params[:id])
     if @genre.update(genre_params)
-      redirect_to "/genres"
+      redirect_to genres_path
     else
-      render 'edit'
+      @title = 'ジャンル編集'
+      @resource = @genre
+      @submit = '更新'
+      render 'template/simple-form'
     end
   end
 

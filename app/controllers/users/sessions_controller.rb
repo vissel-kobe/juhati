@@ -22,8 +22,8 @@ class Users::SessionsController < Devise::SessionsController
    protected
 
    def reject_deleted_user
-    @user = User.find_by(email: params[:user][:email], deleted: nil)
-    unless @user
+    @user = User.find_by(email: params[:user][:email], deleted: "true")
+    if @user
       flash[:danger] = "お客様は退会済みです。申し訳ございませんが、別のメールアドレスをお使いください。"
       redirect_to new_user_session_path
     end

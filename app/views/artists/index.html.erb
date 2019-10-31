@@ -1,2 +1,19 @@
-<h1>Artists#index</h1>
-<p>Find me in app/views/artists/index.html.erb</p>
+<div class="artists-index flex">
+  <div class="leftside"></div>
+  <main class="main">
+    <h2 class="page-title">アーティスト一覧</h2>
+    <div class="artists-index inner flex">
+      <% @artists.each do |artist| %>
+        <div class="album-item text-center">
+          <%= link_to artist.name, edit_artist_path(artist) %>
+          <%= link_to "削除", artist_path(artist), method: :delete, "data-confirm" => "本当に消しますか？", class: "btn btn-danger" %>
+        </div>
+      <% end %>
+      <div class="link">
+        <%= link_to "アーティストを追加する✔️", new_artist_path, class: "link_to-signup-btn" %>
+      </div>
+    </div>
+  </main>
+  <div class="rightside"></div>
+</div>
+

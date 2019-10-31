@@ -160,8 +160,7 @@ a {
 .header-nav-btn,
 .header-hidden-nav-btn {
   display: block;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px 0;
   width: 120px;
   color: #333;
   background-color: rgba(235,235,235,0.7);

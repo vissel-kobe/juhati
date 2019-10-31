@@ -1,9 +1,9 @@
 class Album < ApplicationRecord
 
-
 	belongs_to :label
 	belongs_to :genre
 	has_many :orders
+	has_many :history_items
 	has_many :favorites, dependent: :destroy
 	has_many :reviews, dependent: :destroy
 

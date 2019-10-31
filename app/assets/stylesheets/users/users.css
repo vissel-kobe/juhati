@@ -1,6 +1,12 @@
 .content {
 	margin:0 20px 0 20px;
 }
+.flash-danger {
+	text-align: center;
+	font-size: 16px;
+	color: #f99;
+	margin-bottom: 10px;
+}
 
 .table-margin {
 	padding-left: 50px ;
@@ -11,9 +17,6 @@
 	width: 90%;
 	margin: 0 auto;
 	padding-top: 20px;
-}
-th {
-	text-align: center;
 }
 .th-small {
 	width: 25%;
@@ -49,4 +52,9 @@ th {
 }
 .user-history-btn {
 	margin: 100px 20px 0;
+}
+
+.album-small-img {
+	width: 80px;
+	height: 80px;
 }

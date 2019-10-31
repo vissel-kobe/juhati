@@ -30,10 +30,10 @@ Rails.application.routes.draw do
   resources :labels, only:[:new, :index, :edit, :create, :update]
   resources :genres, only:[:new, :index, :edit, :create, :update]
   resources :orders, only:[:create, :update, :destroy]
-  resources :sale_histories, only:[:index, :show, :create]
+  resources :sale_histories, only:[:index, :create]
   post 'sale_histories/:id' => 'sale_histories#change_status', as: 'change_status_history'
-  post '/users/:user_id/sale_histories/:id' => 'sale_histories#hidden', as: 'hidden_history'
-  get '/users/:id/sale_histories' => 'sale_histories#index', as: 'user_history'
+  post '/users/:user_id/histories/:id' => 'sale_histories#hidden', as: 'hidden_history'
+  get '/users/:id/histories' => 'sale_histories#index', as: 'user_history'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

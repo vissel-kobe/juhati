@@ -5,7 +5,6 @@ class CreateOrders < ActiveRecord::Migration[5.2]
       t.integer :album_id
       t.integer :number, default: 1, null: false, limit: 1
       t.integer :subtotal
-      t.integer :status, default: 0, null: false, limit: 1
       t.timestamps
     end
   end

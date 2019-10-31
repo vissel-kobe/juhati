@@ -4,26 +4,26 @@ class SaleHistoriesController < ApplicationController
 
   def index
     if params[:id]
-      @histories = SalesHistory.where(user_id: params[:id])
+      @user = User.find(params[:id])
+      @histories = SaleHistory.where(user_id: @user.id, deleted: nil).page(params[:page]).reverse_order
+      @title = "購入"
     else
-      @hitories = SalesHistory.all
+      @histories = SaleHistory.page(params[:page]).reverse_order
+      @title = "販売"
     end
-  end
-
-  def show
   end
 
   def create
   end
 
   def change_status
-    history = SalesHistory.find(params[:id])
+    history = SaleHistory.find(params[:id])
     history.update(status: params[:sales_history][:status])
     redirect_to histories_path
   end
 
   def hidden
-    history = SalesHistory.find(params[:id])
+    history = SaleHistory.find(params[:id])
     history.update(deleted: "true")
     redirect_to user_history_path(user)
   end

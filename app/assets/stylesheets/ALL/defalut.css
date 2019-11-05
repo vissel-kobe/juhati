@@ -10,7 +10,6 @@ a {
     color: black;
 }
 
-
 .clearfix::after {
     display: block;
     content: "";

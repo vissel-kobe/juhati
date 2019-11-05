@@ -31,3 +31,13 @@
 
 en:
   hello: "Hello world"
+  enums:
+    sales_history:
+      status:
+        '購入済み': 購入済み
+        '発送準備中': 発送準備中
+        '発送済み': 発送済み
+    album:
+      status:
+        '販売停止中': 販売停止中
+        '販売中': 販売中

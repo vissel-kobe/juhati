@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def carts
-    @orders = @user.orders.all
+    @cart_items = @user.orders.all
   end
 
   def update

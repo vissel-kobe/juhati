@@ -7,12 +7,12 @@ class Album < ApplicationRecord
 	has_many :favorites, dependent: :destroy
 	has_many :reviews, dependent: :destroy
 
-	enum status: { suspended: 0, selling: 1}
-	validates :title, presence: true
-	validates :price, presence: true
-	validates :stock, presence: true
+	enum status: { "販売停止中": 0, "販売中": 1}
+	# validates :title, presence: true
+	# validates :price, presence: true
+	# validates :stock, presence: true
 
-	has_many :discs, -> {order("disc_number")}, dependent: :destroy
+	has_many :discs, -> {order("disc_number")}
 	accepts_nested_attributes_for :discs, allow_destroy: true
 
 	attachment :album_image
@@ -22,7 +22,7 @@ class Album < ApplicationRecord
 	end
 
 	def in_cart?(user)
-		orders.where(user_id: user.id, status: "cart").exists?
+		orders.where(user_id: user.id).exists?
 	end
 
 	def self.search(search)

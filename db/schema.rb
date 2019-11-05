@@ -103,9 +103,11 @@ ActiveRecord::Schema.define(version: 2019_10_31_040555) do
   end
 
   create_table "sales_histories", force: :cascade do |t|
+    t.integer "user_id"
     t.integer "shipping_address_id"
     t.integer "total"
     t.integer "status", limit: 1, default: 0, null: false
+    t.string "deleted"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

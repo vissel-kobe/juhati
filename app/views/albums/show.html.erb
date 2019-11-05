@@ -17,7 +17,7 @@
 					<p>在庫: <%= @album.stock %> 枚</p>
 					<p>ジャンル: <%= @album_genre.name %></p>
 					<p>レーベル名: <%= @album_label.name %></p>
-					<p>ディスク数: @album.discs.count</p>
+					<p>ディスク数: <%= @album.discs.count %></p>
 				</div>
 				<div class="second-left text-center">
 					<%= render "orders/cart-btn", album: @album %>
@@ -32,5 +32,5 @@
 		</div>
 	</main>
 	<div class="rightside"></div>
-	<%= render "orders/link_to-users-carts" %>
+	<%= render "orders/link_to-user-carts" %>
 </div>

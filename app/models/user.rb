@@ -13,6 +13,7 @@ class User < ApplicationRecord
   validates :telephone, presence: true
 
   has_many :orders
+  has_many :sales_histories
   has_many :shipping_addresses
   has_many :favorites, dependent: :destroy
   has_many :reviews, dependent: :destroy

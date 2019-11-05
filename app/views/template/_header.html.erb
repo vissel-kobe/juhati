@@ -33,10 +33,10 @@
               <%= link_to current_user.first_name, user_path(current_user.id) , class: "btn header-nav-btn"%>
               <ul class="header-hidden-nav text-center flex column">
                 <li class="">
-                  <%= link_to "購入履歴", user_history_path(current_user), class: "btn header-hidden-nav-btn" %>
+                  <%= link_to "購入履歴", user_histories_path(current_user), class: "btn header-hidden-nav-btn" %>
                 </li>
                 <li class="">
-                  <%= link_to "いいねした商品", users_favorites_path(current_user.id), class: "btn header-hidden-nav-btn" %>
+                  <%= link_to "いいねした商品", user_favorites_path(current_user.id), class: "btn header-hidden-nav-btn" %>
                 </li>
                 <li class="">
                   <%= link_to "会員情報編集", edit_user_path(current_user.id), class: "btn header-hidden-nav-btn" %>
@@ -65,7 +65,7 @@
             </li>
             <li><%= link_to "商品追加", new_album_path, class: "btn header-nav-btn" %></li>
             <li><%= link_to "会員一覧", users_path, class: "btn header-nav-btn" %></li>
-            <li><%= link_to "販売履歴一覧", histories_path, class: "btn header-nav-btn" %></li>
+            <li><%= link_to "販売履歴一覧", sales_histories_path, class: "btn header-nav-btn" %></li>
             <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "btn header-nav-btn" %></li>
 
           <% else %>

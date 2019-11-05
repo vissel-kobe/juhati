@@ -4,7 +4,7 @@
 		<h2 class="page-title"><%= @title %></h2>
 		<div class="simple-form">
 			<%= form_for @resource do |f| %>
-    			<%= render "devise/shared/error_messages", resource: @resource %>
+			<%= render "template/error_messages", resource: @resource %>
 				<%= f.text_field :name %>
 				<%= f.submit @submit %>
 			<% end %>

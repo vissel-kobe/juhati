@@ -13,6 +13,7 @@ class LabelsController < ApplicationController
       @resource = @label
       @submit = '作成'
       render 'template/simple-form'
+    end
   end
 
   def new

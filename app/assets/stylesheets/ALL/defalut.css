@@ -43,14 +43,14 @@ a {
 }
 
 .page-title {
-    display: block;
-    width: 200px;
+    display: inline-block;
     margin: 0 0 20px 20px;
-    text-align: center;
     border-radius: 5px;
     background-color: #008080;
     color: #fff;
+    padding: 5px 10px;
 }
+
 .flex {
     display: flex;
 }
@@ -110,6 +110,10 @@ a {
 }
 
 .red-icon {
+    color: red;
+}
+
+#error_explanation {
     color: red;
 }
 
@@ -253,4 +257,35 @@ a {
 
 th {
     text-align: center;
+}
+.simple-index {
+    width: 77%;
+}
+.simple-item {
+    width: 33.3%;
+    padding: 0 5px 10px 0;
+}
+.simple-item-name {
+    display: block;
+    word-break: break-all;
+}
+.simple-item .btn {
+    margin-left: 5px;
+    height: 28px;
+}
+.simple-add-link {
+    width: 23%;
+}
+
+.thanks-txt {
+    font-size: 32px;
+    text-align: center;
+    margin: 70px 0;
+}
+.home-thanks-links {
+    justify-content: center;
+    align-items: center;
+}
+.home-thanks-links .btn {
+    margin-right: 20px;
 }

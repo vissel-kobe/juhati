@@ -1,5 +1,5 @@
-<div class="albums-newflex">
-	<% render "albums/album-form", album: @album submit: "追加不能" %>
+<div class="albums-new flex">
+  <%= render "albums/album-form", album: @album, submit: "追加不能" %>
 </div>
 <script defer>
   //nameが空のとき、submitを押せないようにする
@@ -12,13 +12,15 @@
   title.addEventListener('keyup',function(){
   	if (title.value.length >= 1){
   		submit.disabled = false;
-  		$('#submit').addClass("submit_color");
+  		$('#submit').removeClass("btn-cannot");
+      $('#submit').addClass("submit_color");
   		submit.value = "追加する";
   	}else{
   		submit.disabled = true;
+      $('#submit').addClass("btn-cannot");
   		$('#submit').removeClass("submit_color");
   		submit.value = "追加不能";
   	};
   });
-  console.log(title);
+  // console.log(title);
 </script>

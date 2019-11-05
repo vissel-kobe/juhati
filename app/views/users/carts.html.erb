@@ -2,7 +2,22 @@
 	<div class="leftside"></div>
 	<main class="main">
 		<h2 class="page-title">カート</h2>
-		<table class="albums-in-cart inner">
+		<% if @error_albums %>
+			<div class="notice-failed">
+				<p>在庫数を超える購入はできません。<br>申し訳ございませんが、以下の商品について変更をお願いします。</p>
+				<ul>
+					<% @error_albums.each do |ea| %>
+						<li>・<%= ea.title %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+		<% if flash[:danger] %>
+			<div id="error_explanation">
+				<p><%= flash[:danger] %></p>
+			</div>
+		<% end %>
+		<table class="cart_items-table inner">
 			<thead>
 				<tr>
 					<th>商品情報</th>
@@ -15,26 +30,26 @@
 				</tr>
 			</thead>
 			<tbody>
-				<% total = 0 %>
-				<% @orders.each do |cart| %>
-					<% cart_album = Album.find(cart.album_id) %>
+				<% total = 500 %>
+				<% @cart_items.each do |cart_item| %>
+					<% cart_album = Album.find(cart_item.album_id) %>
 					<tr>
 						<td>
 							<%= link_to album_path(cart_album.id), class: "cart_album-img-haslink flex" do %>
 								<%= attachment_image_tag cart_album, :album_image, format:"jpeg", class: "album-small-img", fallback: "no-image.jpg" %>
-								<p class="title-haslink"><%= cart_album.title %></p>
+								<p class="cart_album-title"><%= cart_album.title %></p>
 							<% end %>
 						</td>
 						<td class="text-center"><%= cart_album.price %>円</td>
 						<td class="text-center"><%= cart_album.stock %>個</td>
-						<%= form_for cart do |f| %>
+						<%= form_for(cart_item) do |f| %>
 							<td>
 								<%= f.number_field :number, class: "number-field", id: "number" %>
 								<%= hidden_field_tag :album_id, cart_album.id %>
 							</td>
 							<td>
-								<p class="subtotal"><%= cart.subtotal %>円</p>
-								<% total = total + cart.subtotal %>
+								<p class="subtotal"><%= cart_item.subtotal %>円</p>
+								<% total += cart_item.subtotal %>
 							</td>
 							<td>
 								<%= f.submit "変更する", class: "btn submit-color" %>
@@ -53,7 +68,7 @@
 			<tbody>
 				<tr class="total">
 					<td>合計:</td>
-					<td><%= total %>円(税込)</td>
+					<td><%= total - 500 %>円(税込)</td>
 				</tr>
 				<tr class="shipping-tax">
 					<td>配送料:</td>
@@ -61,10 +76,13 @@
 				</tr>
 				<tr class="finally">
 					<td>総計:</td>
-					<td><%= total + 500 %>円(税込)</td>
+					<td><%= total %>円(税込)</td>
 				</tr>
 			<tbody>
 		</table>
+		<div class="submit">
+			<%= link_to "購入確認へ進む", user_confirm_purchase_path(user_id: @user.id), class: "actions btn btn-success" %>
+		</div>
 	</main>
 	<div class="rightside"></div>
 </div>

@@ -9,15 +9,16 @@ Rails.application.routes.draw do
     passwords: 'users/passwords',
     registrations: 'users/registrations'
   }
-  get 'users/:id/carts' => 'users#carts', as: 'users_carts'
+  get 'users/:id/carts' => 'users#carts', as: 'user_carts'
   get 'users/:id/unsubscribe' => 'users#unsubscribe', as: 'unsubscribe_user'
   delete 'users/:id' => 'users#destroy', as: 'delete_user'
   root 'homes#top'
+  get 'thanks' => 'homes#thanks', as: 'thanks'
   get 'albums/search' => 'albums#search', as: 'search'
   resources :admins
-  get 'admin/users/:id/favorites', to: 'admins#favorites', as: 'admin_users_favorites'
+  get 'admin/users/:id/favorites', to: 'admins#favorites', as: 'admin_user_favorites'
   resources :users, only:[:index, :show, :edit, :update]
-  get 'users/:id/favorites', to: 'users#favorites', as: 'users_favorites'
+  get 'users/:id/favorites', to: 'users#favorites', as: 'user_favorites'
   resources :albums do
     resources :reviews, only:[:edit, :create, :update, :destroy]
     resource :favorites, only:[:create, :destroy]
@@ -30,10 +31,13 @@ Rails.application.routes.draw do
   resources :labels, only:[:new, :index, :edit, :create, :update]
   resources :genres, only:[:new, :index, :edit, :create, :update]
   resources :orders, only:[:create, :update, :destroy]
-  resources :sale_histories, only:[:index, :create]
-  post 'sale_histories/:id' => 'sale_histories#change_status', as: 'change_status_history'
-  post '/users/:user_id/histories/:id' => 'sale_histories#hidden', as: 'hidden_history'
-  get '/users/:id/histories' => 'sale_histories#index', as: 'user_history'
+  # sales_histories
+  get 'sale_histories' => 'sales_histories#index', as: 'sales_histories'
+  patch 'sale_histories/:id' => 'sales_histories#change_status', as: 'change_status_sales_history'
+  get 'users/:user_id/histories' => 'sales_histories#index', as: 'user_histories'
+  get 'users/:user_id/histories/new' => 'sales_histories#new', as: 'user_confirm_purchase'
+  post 'users/:user_id/histories' => 'sales_histories#create', as: 'user_create_history'
+  patch 'users/:user_id/histories/:id' => 'sales_histories#hidden', as: 'user_hidden_history'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

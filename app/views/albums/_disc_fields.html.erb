@@ -1,4 +1,10 @@
 <div class="nested-fields">
 	<%= f.number_field :disc_number %>
 	<%= link_to_remove_association "-", f ,class: "disc_btn", style: "background-color: green;" %>
+	<div class="field">
+		<%= f.label :artist_id, "アーティスト", class: "label" %>
+		<div class="field-selectbox">
+			<%= f.collection_select :artist_id, Artist.all, :id, :name %>
+		</div>
+	</div>
 </div>

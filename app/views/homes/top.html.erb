@@ -2,6 +2,17 @@
 	<div class="leftside"></div>
 	<main class="main">
 		ランキングの予定
+    <div class="album-index inner flex">
+    <% @ranking.each.with_index(1) do |r, i| %>
+      <div class="album-item text-center">
+        <%= link_to album_path(r) do %>
+          <%= attachment_image_tag r, :album_image, format:"jpeg", class:"album-item-image", size: "150x150", fallback:"no-image.jpg" %>
+          <p class ="album-item-txt"><%= r.title %></p>
+          <p class ="album-item-txt">アーティスト名</p>
+        <% end %>
+      </div>
+    <% end %>
+    </div>
 	</main>
 	<div class="rightside"></div>
 </div>

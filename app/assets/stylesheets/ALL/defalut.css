@@ -144,7 +144,7 @@ a {
   background-color: rgba(255,255,255,0.7);
 }
 .header-right {
-  width: 400px;
+  width: 550px;
 }
 .header-nav ul {
   list-style: none;
@@ -247,4 +247,8 @@ a {
 
 th {
   text-align: center;
+}
+
+.left {
+  margin-left:30px;  
 }

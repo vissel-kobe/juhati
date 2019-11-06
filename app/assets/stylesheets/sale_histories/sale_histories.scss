@@ -1,3 +1,39 @@
 // Place all the styles related to the SaleHistories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.sales_histories-new .cart_items-table {
+	width: 550px;
+	margin: 0 auto;
+}
+.sales_histories-index div {
+	text-align: center;
+}
+.history-section-thead {
+	margin-bottom: 5px;
+	border-bottom: 5px double #bbb;
+}
+.history-section {
+	margin-bottom: 15px;
+	justify-content: space-between;
+	border-bottom: 1px solid #bbb;
+}
+.created_at-box,
+.album_title-box {
+	width: 150px;
+}
+.album_title-box a {
+	display: block;
+	width: 150px;
+	text-align: center;
+}
+.album_price-box,
+.subtotal-box,
+.total-box {
+	width: 83.3px;
+}
+.quantity-box {
+	width: 60px;
+}
+.status-box {
+	width: 90px;
+}

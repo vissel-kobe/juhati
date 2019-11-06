@@ -1,0 +1,66 @@
+<div class="leftside"></div>
+<main class="main">
+	<h2 class="page-title">商品追加</h2>
+	<div class="album-form">
+		<%= form_for(album) do |f| %>
+			<%= render "template/error_messages", resource: @album %>
+			<div class="field">
+				<%= f.label :title, "タイトル", class: "label" %>
+				<div class="field-textbox">
+					<%= f.text_field :title, id: "title" %>
+				</div>
+			</div>
+			<div class="field">
+				<%= f.label :album_image, "画像", class: "label" %>
+				<div class="image-field">
+					<%= f.attachment_field :album_image, id: "album_image" %>
+				</div>
+			</div>
+			<div class="field">
+				<%= f.label :status, "ステータス", class: "label" %>
+				<div class="field-selectbox">
+					<%= f.select :status, Album.statuses.keys.map {|k| [I18n.t("enums.album.status.#{k}"), k]} %>
+				</div>
+			</div>
+			<div class="field">
+				<%= f.label :price, "価格（税込み）", class: "label" %>
+				<div class="field-textbox">
+					<%= f.number_field :price, id: "price" %>
+					<span>円</span>
+				</div>
+			</div>
+			<div class="field">
+				<%= f.label :genre_id, "ジャンル", class: "label" %>
+				<div class="field-selectbox">
+					<%= f.collection_select :genre_id, Genre.all, :id, :name %>
+				</div>
+			</div>
+			<div class="field">
+				<%= f.label :label_id, "レーベル", class: "label" %>
+				<div class="disc-field">
+					<%= f.collection_select :label_id, Label.all, :id, :name %>
+				</div>
+			</div>
+			<div class="field">
+				<span class="label">シングル/アルバム内</span>
+				<div class="field">
+					<%= f.fields_for :discs do |disc| %>
+						<%= render "disc_fields", f: disc %>
+					<% end %>
+					<div class="links">
+						<%= link_to_add_association "+", f, :discs, class: "disc_btn" %>
+					</div>
+				</div>
+			</div>
+			<div class="field">
+				<%= f.label :stock, "在庫", class: "label" %>
+				<div class="field-textbox">
+					<%= f.number_field :stock, id: "stock" %>
+				</div>
+			</div>
+
+			<%= f.submit submit, class: "btn btn-cannot", id: "submit", disabled: true %>
+		<% end %>
+	</div>
+</main>
+<div class="rightside"></div>

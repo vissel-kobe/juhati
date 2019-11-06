@@ -1,0 +1,38 @@
+<div class="sales_histories-index flex">
+	<div class="leftside"></div>
+	<main class="main">
+		<h2 class="page-title"><%= @title %>履歴</h2>
+		<div class="inner">
+			<div class="history-section-thead flex">
+				<div class="created_at-box"><%= @title %>日時</div>
+				<div class="album_title-box">商品名</div>
+				<div class="album_price-box">単価(税込)</div>
+				<div class="quantity-box"><%= @title %>数</div>
+				<div class="subtotal-box">小計(税込)</div>
+				<div class="total-box">総計(税込)</div>
+				<div class="status-box">ステータス</div>
+			</div>
+			<% @histories.each do |h| %>
+				<section class="history-section flex">
+					<div class="created_at-box">
+						<%= h.created_at.strftime("%Y-%m-%d %H:%M") %>
+					</div>
+					<!-- <div class="flex"> -->
+						<% h.history_items.each do |hi| %>
+							<!-- <div class="history-item-section flex"> -->
+								<div class="album_title-box"><%= link_to hi.album_title, album_path(hi.album_id) %></div>
+								<div class="album_price-box"><%= hi.album_price %>円</div>
+								<div class="quantity-box"><%= hi.quantity %>個</div>
+								<div class="subtotal-box"><%= (hi.album_price * hi.quantity).to_i %>円</div>
+							<!-- </div> -->
+						<% end %>
+					<!-- </div> -->
+					<div class="total-box"><%= h.total %>円</div>
+					<div class="status-box"><%= h.status %></div>
+				</section>
+			<% end %>
+			<%= paginate @histories %>
+		</div>
+	</main>
+	<div class="rightside"></div>
+</div>

@@ -1,65 +1,5 @@
-<div class="albums-show flex">
-	<div class="leftside"></div>
-	<main class="main">
-		<h2 class="page-title">商品情報編集</h2>
-		<div class="albums-new-form">
-			<%= form_for @album do |f| %>
-				<div class="field">
-					<span class="label">タイトル</span>
-					<div class="field-textbox">
-						<%= f.text_field :title, id: "title"%>
-					</div>
-				</div>
-				<div class="field">
-					<span class="label">画像</span>
-					<div class="image-field">
-						<%= f.attachment_field :album_image, id: "album_image" %>
-					</div>
-				</div>
-				<div class="field">
-					<span class="label">ステータス</span>
-					<div class="field-selectbox">
-						<%= f.select :status, [["販売中", 0], ["販売停止", 1]] %>
-					</div>
-				</div>
-				<div class="field">
-					<span class="label">価格（税込み）</span>
-					<div class="field-textbox">
-						<%= f.number_field :price, min: 1, class: "price-field", id: "price" %>
-						<span>円</span>
-					</div>
-				</div>
-				<div class="field">
-					<span class="label">ジャンル</span>
-					<div class="field-selectbox">
-						<%= f.collection_select :genre_id, Genre.all, :id, :name %>
-					</div>
-				</div>
-				<div class="field">
-					<span class="label">レーベル</span>
-					<div class="disc-field">
-						<%= f.collection_select :label_id, Label.all, :id, :name %>
-					</div>
-				</div>
-				<div class="field">
-					<span class="label">シングル/アルバム内</span>
-					<div class="field">
-						<!-- disc -->
-					</div>
-				</div>
-				<div class="field">
-					<span class="label">在庫</span>
-					<div class="field-textbox">
-						<%= f.number_field :stock, min: 0, class: "stock-field", id: "stock" %>
-					</div>
-				</div>
-
-				<%= f.submit "変更する", class: "btn submit-color", disabled: false %>
-			<% end %>
-      <%= link_to "削除する", album_path(@album), method: :delete %>
-		</div>
-	</main>
-	<div class="rightside"></div>
+<div class="albums-edit flex">
+	<%= render "albums/album-form", album: @album, submit: "変更不能" %>
 </div>
 <script defer>
   //nameが空のとき、submitを押せないようにする
@@ -72,10 +12,12 @@
   title.addEventListener('keyup',function(){
   	if (title.value.length >= 1){
   		submit.disabled = false;
+      $('#submit').removeClass("btn-cannot");
   		$('#submit').addClass("submit_color");
   		submit.value = "変更する";
   	}else{
   		submit.disabled = true;
+      $('#submit').addClass("btn-cannot");
   		$('#submit').removeClass("submit_color");
   		submit.value = "変更不能";
   	};

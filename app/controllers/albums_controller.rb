@@ -6,12 +6,19 @@ class AlbumsController < ApplicationController
 
   def create
     @album = Album.new(album_params)
-    @album.save
-    redirect_to albums_path
+    respond_to do |format|
+      if @album.save
+        format.html { redirect_to albums_path}
+        format.json { render :show, status: :created, location: @album }
+      else
+        format.html { render :new }
+        format.json { render json: @album.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def index
-    @albums = Album.all
+    @albums = Album.page(params[:page]).per(12).reverse_order
     @user = current_user
     @search = Album.search(params[:search])
     @album = Album.where(album_id: params[:album_id])
@@ -27,8 +34,8 @@ class AlbumsController < ApplicationController
 
   def show
     @album = Album.find(params[:id])
-    @album_genre = Genre.find_by(id: @album.genre_id)
-    @album_label = Label.find_by(id: @album.label_id)
+    @album_genre = Genre.find(@album.genre_id)
+    @album_label = Label.find(@album.label_id)
     @user = current_user
   end
 
@@ -51,7 +58,7 @@ class AlbumsController < ApplicationController
   private
 
   def album_params
-    pp = params.require(:album).permit(:title, :status, :album_image, :price, :label_id, :genre_id, :stock, tags_attributes: [:id, :disc_number, :_destroy])
+    pp = params.require(:album).permit(:title, :status, :album_image, :price, :label_id, :genre_id, :stock, discs_attributes: [:id, :disc_number, :artist_id, :_destroy])
     pp[:status] = params[:album][:status].to_i
     return pp
   end

@@ -12,12 +12,30 @@
 			<div class="album-content-second flex is-between">
 				<%= attachment_image_tag @album, :album_image, format:"jpeg", class: "album-content-img", fallback: "no-image.jpg" %>
 				<div class="album-info">
-					<p class="album-content-status"><%= @album.status %></p>
+					<% if @album.status == "販売停止中" %>
+						<p class="album-content-status red-txt bold"><%= @album.status %></p>
+					<% else %>
+						<p class="album-content-status bold"><%= @album.status %></p>
+					<% end %>
+					</p>
 					<p><%= @album.price %> 円(税込み)</p>
 					<p>在庫: <%= @album.stock %> 枚</p>
 					<p>ジャンル: <%= @album_genre.name %></p>
 					<p>レーベル名: <%= @album_label.name %></p>
 					<p>ディスク数: <%= @album.discs.count %></p>
+					<div class="album-discs-section flex">
+						<% @album.discs.each do |disc| %>
+							<div class="album-disc">
+								<p class="bold">ディスク<%= disc.disc_number %></p>
+								<p>[アーティスト]</p>
+								<p><%= disc.artist.name %></p>
+								<p>[収録曲]
+								<% disc.songs.each do |song| %>
+									<p><%= song.song_number %>. <%= song.title %></p>
+								<% end %>
+							</div>
+						<% end %>
+					</div>
 				</div>
 				<div class="second-left text-center">
 					<%= render "orders/cart-btn", album: @album %>

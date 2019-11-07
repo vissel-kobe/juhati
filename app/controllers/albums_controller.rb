@@ -2,12 +2,14 @@ class AlbumsController < ApplicationController
   def new
     @album = Album.new
     @album.discs.build
+    @album.discs.first.songs.build
   end
 
   def create
     @album = Album.new(album_params)
     respond_to do |format|
       if @album.save
+        @album.update
         format.html { redirect_to albums_path}
         format.json { render :show, status: :created, location: @album }
       else
@@ -20,6 +22,7 @@ class AlbumsController < ApplicationController
   def index
     @albums = Album.page(params[:page]).per(12).reverse_order
     @user = current_user
+    @title = "商品一覧"
   end
 
   def search
@@ -51,9 +54,12 @@ class AlbumsController < ApplicationController
 
   private
 
+  # def new_album_params
+  #   params.require(:album).permit(:title, :status, :album_image, :price, :label_id, :genre_id, :stock)
+  # end
   def album_params
-    pp = params.require(:album).permit(:title, :status, :album_image, :price, :label_id, :genre_id, :stock, discs_attributes: [:id, :disc_number, :artist_id, :_destroy])
-    pp[:status] = params[:album][:status].to_i
-    return pp
+    params.require(:album).permit(:title, :status, :album_image, :price, :label_id, :genre_id, :stock,
+      discs_attributes: [:id, :disc_number, :artist_id, :_destroy,
+        songs_attributes: [:id, :song_number, :title, :_destroy]])
   end
 end

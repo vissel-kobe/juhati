@@ -1,7 +1,7 @@
 <div class="albums-index flex">
 	<div class="leftside"></div>
 	<main class="main">
-		<h2 class="page-title">商品一覧</h2>
+		<h2 class="page-title"><%= @title %></h2>
 		<div class="album-index inner flex">
 			<% @albums.each do |album| %>
 				<div class="album-item text-center">
@@ -13,7 +13,9 @@
 				</div>
 			<% end %>
 		</div>
-		<%= paginate @albums %>
+		<% if params[:id] == nil %>
+			<%= paginate @albums %>
+		<% end %>
 	</main>
 	<div class="rightside"></div>
 	<%= render "orders/link_to-user-carts" %>

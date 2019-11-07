@@ -35,7 +35,13 @@ class UsersController < ApplicationController
   end
 
   def favorites
-    @favorites = Favorite.where(user_id: current_user.id)
+    @favorites = Favorite.where(user_id: @user.id)
+    @albums = []
+    @favorites.each do |fav|
+      @albums << fav.album
+    end
+    @title = @user.first_name + "さんがいいねした商品"
+    render 'albums/index'
   end
 
   private

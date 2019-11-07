@@ -109,12 +109,16 @@ a {
     background-color: #888;
 }
 
+.red-txt,
 .red-icon {
     color: red;
 }
 
 #error_explanation {
     color: red;
+}
+.bold {
+    font-weight: bold;
 }
 
 .field {
@@ -289,4 +293,18 @@ th {
 }
 .home-thanks-links .btn {
     margin-right: 20px;
+}
+.ranking-item {
+    margin-bottom: 10px;
+}
+.ranking-item-link {
+    align-items: center;
+}
+.ranking-item-link:hover p {
+    text-decoration-line: underline;
+}
+.ranking-content-img {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
 }

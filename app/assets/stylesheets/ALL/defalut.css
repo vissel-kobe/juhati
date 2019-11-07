@@ -242,7 +242,9 @@ a {
     background-color: #5cb85c!important;
 }
 .link_to-users-carts-btn {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 200px;
     height: 200px;
     position: fixed;
@@ -250,9 +252,7 @@ a {
     bottom: 50px;
     text-align: center;
     background-color: #dfd;
-}
-.link_to-users-carts-btn p {
-    line-height: 200px;
+    border-radius: 50px;
 }
 
 th {
@@ -264,6 +264,7 @@ th {
 .simple-item {
     width: 33.3%;
     padding: 0 5px 10px 0;
+    align-items: center;
 }
 .simple-item-name {
     display: block;

@@ -66,16 +66,17 @@ class SalesHistoriesController < ApplicationController
     end
   end
 
-  def change_status
-    history = SalesHistory.find(params[:id])
-    history.update(status: params[:sales_history][:status])
-    redirect_to histories_path
+  def update
+    @history = SalesHistory.find(params[:id])
+    @history.update(status: params[:sales_history][:status])
+    redirect_to sales_histories_path
+    # 非同期できませんでした...
   end
 
   def hidden
     history = SalesHistory.find(params[:id])
     history.update(deleted: "true")
-    redirect_to user_histories_path(user)
+    redirect_to user_histories_path(@user)
   end
 
   private

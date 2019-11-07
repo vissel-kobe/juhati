@@ -19,7 +19,7 @@
 			<div class="field">
 				<%= f.label :status, "ステータス", class: "label" %>
 				<div class="field-selectbox">
-					<%= f.select :status, Album.statuses.keys.map {|k| [I18n.t("enums.album.status.#{k}"), k]} %>
+					<%= f.select :status, Album.statuses.keys.to_a, {} %>
 				</div>
 			</div>
 			<div class="field">

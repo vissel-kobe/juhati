@@ -32,8 +32,9 @@ Rails.application.routes.draw do
   resources :genres, only:[:new, :index, :edit, :create, :update]
   resources :orders, only:[:create, :update, :destroy]
   # sales_histories
-  get 'sale_histories' => 'sales_histories#index', as: 'sales_histories'
-  patch 'sale_histories/:id' => 'sales_histories#change_status', as: 'change_status_sales_history'
+  get 'sales_histories' => 'sales_histories#index', as: 'sales_histories'
+  patch 'sales_histories/:id' => 'sales_histories#update', as: 'sales_history'
+  put 'sales_histories/:id' => 'sales_histories#update'
   get 'users/:user_id/histories' => 'sales_histories#index', as: 'user_histories'
   get 'users/:user_id/histories/new' => 'sales_histories#new', as: 'user_confirm_purchase'
   post 'users/:user_id/histories' => 'sales_histories#create', as: 'user_create_history'

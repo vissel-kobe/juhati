@@ -28,10 +28,6 @@ class AlbumsController < ApplicationController
     @search = Album.search(params[:search])
   end
 
-  def search
-    @search = Album.search(params[:search])
-  end
-
   def show
     @album = Album.find(params[:id])
     @album_genre = Genre.find(@album.genre_id)

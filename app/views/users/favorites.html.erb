@@ -2,7 +2,7 @@
   <div class="leftside"></div>
   <main class="main">
     <h2 class="page-title">いいねした商品</h2>
-    <div class="favorites-index inner flex">
+    <div class="album-item flex">
       <% @favorites.each do |favorite| %>
         <% album = favorite.album %>
         <div class="favorites-item text-center">
@@ -19,5 +19,5 @@
     </div>
   </main>
   <div class="rightside"></div>
-  <%= render "orders/link_to-users-carts" %>
+  <%= render "orders/link_to-user-carts" %>
 </div>

@@ -1,5 +1,8 @@
 class ApplicationController < ActionController::Base
 
+# CSRF保護を無効化 :危険かも?
+  protect_from_forgery with: :null_session
+
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected

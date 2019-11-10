@@ -8,9 +8,9 @@ class Album < ApplicationRecord
 	has_many :reviews, dependent: :destroy
 
 	enum status: { "販売停止中": 0, "販売中": 1}
-	# validates :title, presence: true
-	# validates :price, presence: true
-	# validates :stock, presence: true
+	validates :title, presence: true
+	validates :price, presence: true
+	validates :stock, presence: true
 
 	has_many :discs, -> {order("disc_number")}
 	accepts_nested_attributes_for :discs, allow_destroy: true

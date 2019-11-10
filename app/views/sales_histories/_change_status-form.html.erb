@@ -1,0 +1,5 @@
+<div class="status-box-for-history<%= history.id %>">
+	<%= form_with(model: history) do |f| %>
+		<%= f.select :status, SalesHistory.statuses.keys.to_a, {}, class: "select_status" %>
+	<% end %>
+</div>

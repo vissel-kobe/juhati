@@ -1,7 +1,7 @@
 <div class="leftside"></div>
 <main class="main">
 	<h2 class="page-title">商品追加</h2>
-	<div class="album-form">
+	<div class="album-form inner">
 		<%= form_for(album) do |f| %>
 			<%= render "template/error_messages", resource: @album %>
 			<div class="field">
@@ -19,7 +19,7 @@
 			<div class="field">
 				<%= f.label :status, "ステータス", class: "label" %>
 				<div class="field-selectbox">
-					<%= f.select :status, Album.statuses.keys.map {|k| [I18n.t("enums.album.status.#{k}"), k]} %>
+					<%= f.select :status, Album.statuses.keys.to_a, {} %>
 				</div>
 			</div>
 			<div class="field">
@@ -37,18 +37,18 @@
 			</div>
 			<div class="field">
 				<%= f.label :label_id, "レーベル", class: "label" %>
-				<div class="disc-field">
+				<div class="field-selectbox">
 					<%= f.collection_select :label_id, Label.all, :id, :name %>
 				</div>
 			</div>
 			<div class="field">
-				<span class="label">シングル/アルバム内</span>
-				<div class="field">
+				<span class="label">シングル/<br>アルバム内</span>
+				<div class="nest-forms-section flex">
 					<%= f.fields_for :discs do |disc| %>
 						<%= render "disc_fields", f: disc %>
 					<% end %>
 					<div class="links">
-						<%= link_to_add_association "+", f, :discs, class: "disc_btn" %>
+						<%= link_to_add_association "+", f, :discs, class: "nest_add-btn" %>
 					</div>
 				</div>
 			</div>

@@ -9,7 +9,7 @@
   const price = document.querySelector('#price');
   const stock = document.querySelector('#stock');
   const submit = document.querySelector('#submit');
-  title.addEventListener('keyup',function(){
+  document.addEventListener('keyup',function(){
   	if (title.value.length >= 1){
   		submit.disabled = false;
       $('#submit').removeClass("btn-cannot");

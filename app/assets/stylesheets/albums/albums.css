@@ -5,16 +5,48 @@
     width: 45px;
 }
 
-.disc_btn {
+.nest-forms-section {
+    width: 550px;
+    flex-wrap: wrap;
+}
+
+.nest_add-btn,
+.nest_remove-btn {
     background-color: red;
-    width:25px;
-    display:inline-block;
-    margin: 0 20px;
+    width: 25px;
+    display: block;
     text-align: center;
     border-radius: 5px;
+    color: #fff;
+}
+.nest_remove-btn {
+    background-color: green;
 }
 .submit-color {
     background-color: #5cb85c;
+}
+.disc_number-field,
+.song_number-field {
+    width: 30px;
+    margin-right: 10px;
+}
+.discs-labels {
+    justify-content: space-between;
+}
+.discs-labels label,
+.songs-labels label {
+    display: inline-block;
+    margin-right: 10px;
+}
+.disc-field {
+    width: 250px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    margin: 0 5px 10px 0;
+}
+.song-field {
+    margin-bottom: 5px;
+    justify-content: space-between;
 }
 
 
@@ -27,6 +59,9 @@
 .album-title {
     font-size: 24px;
 }
+.album-info {
+    width: 350px;
+}
 .fav-btn:hover {
     color: #faa;
 }
@@ -34,9 +69,25 @@
     margin-top: 30px;
 }
 .album-content-img {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
 }
+.album-discs-section {
+    flex-wrap: wrap;
+}
+.album-disc {
+    width: 170px;
+    margin: 0 10px 10px 0;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+.album-disc:nth-child(2n){
+    margin-right: 0;
+}
+
+
+
+
 .add-cart-btn {
     margin-top: 20px;
 }
@@ -45,5 +96,4 @@
     width: 150px;
     background-image: url("../cart-image.jpg");
     background-size: contain;
-
 }

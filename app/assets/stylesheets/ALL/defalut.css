@@ -109,12 +109,16 @@ a {
     background-color: #888;
 }
 
+.red-txt,
 .red-icon {
     color: red;
 }
 
 #error_explanation {
     color: red;
+}
+.bold {
+    font-weight: bold;
 }
 
 .field {
@@ -242,7 +246,9 @@ a {
     background-color: #5cb85c!important;
 }
 .link_to-users-carts-btn {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 200px;
     height: 200px;
     position: fixed;
@@ -250,9 +256,7 @@ a {
     bottom: 50px;
     text-align: center;
     background-color: #dfd;
-}
-.link_to-users-carts-btn p {
-    line-height: 200px;
+    border-radius: 50px;
 }
 
 th {
@@ -264,6 +268,7 @@ th {
 .simple-item {
     width: 33.3%;
     padding: 0 5px 10px 0;
+    align-items: center;
 }
 .simple-item-name {
     display: block;
@@ -288,4 +293,18 @@ th {
 }
 .home-thanks-links .btn {
     margin-right: 20px;
+}
+.ranking-item {
+    margin-bottom: 10px;
+}
+.ranking-item-link {
+    align-items: center;
+}
+.ranking-item-link:hover p {
+    text-decoration-line: underline;
+}
+.ranking-content-img {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
 }

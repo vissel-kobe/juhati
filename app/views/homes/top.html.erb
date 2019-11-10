@@ -1,18 +1,27 @@
 <div class="homes-top flex">
 	<div class="leftside"></div>
 	<main class="main">
-		ランキングの予定
-    <div class="album-index inner flex">
-    <% @ranking.each.with_index(1) do |r, i| %>
-      <div class="album-item text-center">
-        <%= link_to album_path(r) do %>
-          <%= attachment_image_tag r, :album_image, format:"jpeg", class:"album-item-image", size: "150x150", fallback:"no-image.jpg" %>
-          <p class ="album-item-txt"><%= r.title %></p>
-          <p class ="album-item-txt">アーティスト名</p>
-        <% end %>
-      </div>
-    <% end %>
-    </div>
+		<h2 class="page-title">いいね数ランキング</h2>
+		<div class="inner">
+			<% @ranking.each do |r| %>
+				<section class="ranking-item flex is-between">
+					<%= link_to album_path(r), class: "flex ranking-item-link" do %>
+						<%= attachment_image_tag r, :album_image, format:"jpeg", class: "ranking-content-img", fallback: "no-image.jpg" %>
+						<p><%= r.title %></p>
+					<% end %>
+					<div class="album-info">
+						<% if r.status == "販売停止中" %>
+							<p class="album-content-status red-txt bold"><%= r.status %></p>
+						<% else %>
+							<p class="album-content-status bold"><%= r.status %></p>
+						<% end %>
+						<p><%= r.price %> 円(税込み)</p>
+						<p>在庫: <%= r.stock %> 枚</p>
+						<p><i class="fas fa-heart red-icon" aria-hidden="true"></i><%= r.favorites.count %></p>
+					</div>
+				</section>
+			<% end %>
+		</div>
 	</main>
 	<div class="rightside"></div>
 </div>

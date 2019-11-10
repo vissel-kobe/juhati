@@ -26,14 +26,13 @@
 					<th>購入数</th>
 					<th>小計</th>
 					<th></th>
-					<th></th>
 				</tr>
 			</thead>
 			<tbody>
 				<% total = 500 %>
 				<% @cart_items.each do |cart_item| %>
 					<% cart_album = Album.find(cart_item.album_id) %>
-					<tr>
+					<tr class="cart_item-section">
 						<td>
 							<%= link_to album_path(cart_album.id), class: "cart_album-img-haslink flex" do %>
 								<%= attachment_image_tag cart_album, :album_image, format:"jpeg", class: "album-small-img", fallback: "no-image.jpg" %>
@@ -46,15 +45,12 @@
 							<td>
 								<%= f.number_field :number, min: 1, class: "number-field", id: "number" %>
 								<%= hidden_field_tag :album_id, cart_album.id %>
-							</td>
-							<td>
-								<p class="subtotal"><%= cart_item.subtotal %>円</p>
-								<% total += cart_item.subtotal %>
-							</td>
-							<td>
-								<%= f.submit "変更する", class: "btn submit-color" %>
-							</td>
-						<% end %>
+							<% end %>
+						</td>
+						<td>
+							<p class="subtotal"><%= cart_item.subtotal %>円</p>
+							<% total += cart_item.subtotal %>
+						</td>
 						<td><%= link_to "カートから削除する", album_orders_path(album_id: cart_album.id), class: "btn btn-danger", method: :delete, "data-confirm" => "カートから削除します。よろしいですか？" %>
 						</td>
 					</tr>

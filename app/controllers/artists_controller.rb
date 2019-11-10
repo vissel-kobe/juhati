@@ -4,19 +4,14 @@ class ArtistsController < ApplicationController
     @artists = Artist.all
   end
 
-  def create
-    @artist = Artist.new(artist_params)
-    if @artist.save
-      redirect_to artists_path
-    else
-      @title = "アーティスト新規追加"
-      @resource = @artist
-      @submit = "作成"
-      render "template/simple-form"
-    end
+  def new
+    @artist = Artist.new
   end
 
-  def new
+  def create
+    @artist = Artist.new(artist_params)
+    @artist.save!
+    redirect_to new_album_path
     @title = "アーティスト新規追加"
     @resource = Artist.new
     @submit = "作成"
@@ -52,3 +47,4 @@ class ArtistsController < ApplicationController
   end
 
 end
+

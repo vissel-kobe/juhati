@@ -1,0 +1,26 @@
+<div class="albums-edit flex">
+	<%= render "albums/album-form", album: @album, submit: "変更不能" %>
+</div>
+<script defer>
+  //nameが空のとき、submitを押せないようにする
+  //nameに何か入力されていたら、押せるようにする。
+  //submitはすでにdisabledなので、入力したらdisabledを解除すればいい
+  const title = document.querySelector('#title');
+  const price = document.querySelector('#price');
+  const stock = document.querySelector('#stock');
+  const submit = document.querySelector('#submit');
+  document.addEventListener('keyup',function(){
+  	if (title.value.length >= 1){
+  		submit.disabled = false;
+      $('#submit').removeClass("btn-cannot");
+  		$('#submit').addClass("submit_color");
+  		submit.value = "変更する";
+  	}else{
+  		submit.disabled = true;
+      $('#submit').addClass("btn-cannot");
+  		$('#submit').removeClass("submit_color");
+  		submit.value = "変更不能";
+  	};
+  });
+  console.log(title);
+</script>

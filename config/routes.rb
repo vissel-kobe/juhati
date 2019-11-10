@@ -15,14 +15,16 @@ Rails.application.routes.draw do
   root 'homes#top'
   get 'thanks' => 'homes#thanks', as: 'thanks'
   get 'albums/search' => 'albums#search', as: 'search'
-  resources :admins
-  get 'admin/users/:id/favorites', to: 'admins#favorites', as: 'admin_user_favorites'
-  resources :users, only:[:index, :show, :edit, :update]
-  get 'users/:id/favorites', to: 'users#favorites', as: 'user_favorites'
-  resources :albums do
-    resources :reviews, only:[:edit, :create, :update, :destroy]
-    resource :favorites, only:[:create, :destroy]
-    resource :orders, only:[:create, :update, :destroy]
+
+  resources:admins
+  get 'admin/users/:id/favorites', to: 'admins#favorites', as: 'admin_users_favorites'
+  resources:users, only:[:index, :show, :edit, :update]
+  get 'users/:id/favorites', to: 'users#favorites', as: 'users_favorites'
+  resources:artists, only:[:index, :edit, :create, :update, :destroy, :new]
+  resources:albums do
+    resources:reviews, only:[:edit, :create, :update, :destroy]
+    resource:favorites, only:[:create, :destroy]
+    resource:orders, only:[:create, :update, :destroy]
   end
   resources :users do
     resources :shipping_addresses

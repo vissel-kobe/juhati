@@ -36,7 +36,7 @@
                   <%= link_to "購入履歴", user_histories_path(current_user), class: "btn header-hidden-nav-btn" %>
                 </li>
                 <li class="">
-                  <%= link_to "いいねした商品", user_favorites_path(current_user.id), class: "btn header-hidden-nav-btn" %>
+                  <%= link_to "いいねした商品", users_favorites_path(current_user.id), class: "btn header-hidden-nav-btn" %>
                 </li>
                 <li class="">
                   <%= link_to "会員情報編集", edit_user_path(current_user.id), class: "btn header-hidden-nav-btn" %>

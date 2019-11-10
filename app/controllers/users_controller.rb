@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   def carts
     @user = User.find(params[:id])
     @orders = @user.orders.all
+    @sale = SalesHistory.new
   end
 
   def update

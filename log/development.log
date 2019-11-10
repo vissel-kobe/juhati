@@ -39866,3 +39866,2170 @@ Processing by AlbumsController#new as HTML
 Completed 200 OK in 370ms (Views: 349.3ms | ActiveRecord: 3.1ms)
 
 
+Started GET "/users" for 10.0.2.2 at 2019-09-28 06:45:24 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (21.1ms)
+  [1m[36mAdmin Load (1.9ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:46
+  Rendered template/_header.html.erb (16.7ms)
+  Rendered template/_footer.html.erb (0.4ms)
+Completed 200 OK in 4428ms (Views: 4395.5ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/users/1" for 10.0.2.2 at 2019-09-28 06:45:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAdmin Load (0.6ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:55
+  Rendered users/show.html.erb within layouts/application (4.2ms)
+  Rendered template/_header.html.erb (1.5ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 492ms (Views: 467.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/albums" for 10.0.2.2 at 2019-09-28 06:45:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.7ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/albums/index.html.erb:6
+  Rendered albums/index.html.erb within layouts/application (19.8ms)
+  [1m[36mAdmin Load (0.8ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:46
+  Rendered template/_header.html.erb (4.3ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 453ms (Views: 428.6ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/admins/1" for 10.0.2.2 at 2019-09-28 06:45:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (1.6ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins_controller.rb:7
+  Rendering admins/show.html.erb within layouts/application
+  Rendered admins/show.html.erb within layouts/application (0.6ms)
+  Rendered template/_header.html.erb (1.5ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 379ms (Views: 349.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-09-28 06:45:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/albums/new.html.erb:37
+  [1m[36mLabel Load (1.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/albums/new.html.erb:43
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/albums/_disc_fields.html.erb:7
+  Rendered albums/_disc_fields.html.erb (12.0ms)
+  [1m[36mCACHE Artist Load (0.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/albums/_disc_fields.html.erb:7
+  Rendered albums/_disc_fields.html.erb (1.8ms)
+  Rendered albums/new.html.erb within layouts/application (62.9ms)
+  [1m[36mAdmin Load (0.7ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:46
+  Rendered template/_header.html.erb (4.1ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 484ms (Views: 425.6ms | ActiveRecord: 18.5ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2019-09-28 06:45:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (2.7ms)
+  [1m[36mAdmin Load (0.7ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:46
+  Rendered template/_header.html.erb (3.9ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 458ms (Views: 433.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2019-09-28 06:45:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (2.5ms)
+  [1m[36mAdmin Load (0.6ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:46
+  Rendered template/_header.html.erb (3.9ms)
+  Rendered template/_footer.html.erb (0.2ms)
+Completed 200 OK in 410ms (Views: 379.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2019-09-28 06:45:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (3.5ms)
+  [1m[36mAdmin Load (0.6ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:46
+  Rendered template/_header.html.erb (3.7ms)
+  Rendered template/_footer.html.erb (0.2ms)
+Completed 200 OK in 451ms (Views: 425.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2019-09-28 06:45:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (2.1ms)
+Started GET "/users" for 10.0.2.2 at 2019-09-28 06:45:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (2.9ms)
+Started GET "/users" for 10.0.2.2 at 2019-09-28 06:45:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (4.6ms)
+  [1m[36mAdmin Load (0.9ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:46
+  Rendered template/_header.html.erb (4.9ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 612ms (Views: 591.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2019-09-28 06:45:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (4.5ms)
+  [1m[36mAdmin Load (0.6ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:46
+  Rendered template/_header.html.erb (3.6ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 707ms (Views: 693.1ms | ActiveRecord: 1.1ms)
+
+
+  [1m[36mAdmin Load (1.5ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:46
+  Rendered template/_header.html.erb (5.0ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 648ms (Views: 630.4ms | ActiveRecord: 2.0ms)
+
+
+  [1m[36mAdmin Load (0.7ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:46
+  Rendered template/_header.html.erb (4.3ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 655ms (Views: 631.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/albums" for 10.0.2.2 at 2019-09-28 06:45:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (1.1ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/albums/index.html.erb:6
+  Rendered albums/index.html.erb within layouts/application (14.0ms)
+  [1m[36mAdmin Load (1.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:46
+  Rendered template/_header.html.erb (4.6ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 492ms (Views: 459.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/admins/1" for 10.0.2.2 at 2019-09-28 06:45:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (2.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins_controller.rb:7
+  Rendering admins/show.html.erb within layouts/application
+  Rendered admins/show.html.erb within layouts/application (0.5ms)
+  Rendered template/_header.html.erb (2.1ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 461ms (Views: 422.1ms | ActiveRecord: 2.0ms)
+
+
+Started DELETE "/admins/sign_out" for 10.0.2.2 at 2019-09-28 06:47:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"qcA4Fgidlt7+Np87B1KHv2ck2DgVrFBQc7YFES9K2q/F+4t+miyPXe4eurXvxXewPQN1vGoLNMdokiELd5kH+w=="}
+  [1m[36mAdmin Load (0.7ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 29ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-09-28 06:47:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.4ms)
+  Rendered template/_header.html.erb (1.6ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 469ms (Views: 455.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2019-09-28 06:47:20 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (10.1ms)
+  Rendered template/_header.html.erb (1.6ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 466ms (Views: 464.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 10.0.2.2 at 2019-09-28 06:47:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/registrations/new.html.erb within layouts/application (2.7ms)
+  Rendered template/_header.html.erb (1.5ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 476ms (Views: 474.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 10.0.2.2 at 2019-09-28 06:47:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kcMfaOIQKE7lgKazjJ7vqrnX+RYDKJXsLbZablm99SovNEvyIF6FKpRo7J37nfinN77l83vnefmY62OVXsYbag==", "user"=>{"family_name"=>"a", "first_name"=>"a", "kana_family_name"=>"f", "kana_first_name"=>"g", "postcode"=>"111-1111", "address"=>"111", "telephone"=>"1111", "email"=>"a@a", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"新規登録"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "a@a"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/registrations/new.html.erb within layouts/application (2.8ms)
+  Rendered template/_header.html.erb (1.4ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 687ms (Views: 466.5ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/users" for 10.0.2.2 at 2019-09-28 06:47:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WlK7+EH4i6xyaePaOLkjFyUPhB5LqV3S+xKvf0g8gkhyRxDOJkIcef7R4oJlOhTe3bMyF5barPZpWYFrj2vVWw==", "user"=>{"family_name"=>"a", "first_name"=>"a", "kana_family_name"=>"f", "kana_first_name"=>"g", "postcode"=>"111-1111", "address"=>"111", "telephone"=>"1111", "email"=>"a@aff", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"新規登録"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "a@aff"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (4.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "family_name", "first_name", "kana_family_name", "kana_first_name", "postcode", "address", "telephone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "a@aff"], ["encrypted_password", "$2a$11$u6hDjzzYmhS4kfxKFxGj8.11FWkY0l.koNcFSyA6uFMHsnC3EsGe6"], ["family_name", "a"], ["first_name", "a"], ["kana_family_name", "f"], ["kana_first_name", "g"], ["postcode", "111-1111"], ["address", "111"], ["telephone", "1111"], ["created_at", "2019-09-28 06:47:59.470176"], ["updated_at", "2019-09-28 06:47:59.470176"]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (3.2ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", "2019-09-28 06:47:59.483294"], ["last_sign_in_at", "2019-09-28 06:47:59.483294"], ["current_sign_in_ip", "10.0.2.2"], ["last_sign_in_ip", "10.0.2.2"], ["updated_at", "2019-09-28 06:47:59.484726"], ["id", 6]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/users/6
+Completed 302 Found in 206ms (ActiveRecord: 14.2ms)
+
+
+Started GET "/users/6" for 10.0.2.2 at 2019-09-28 06:47:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:44
+  Rendered users/show.html.erb within layouts/application (3.8ms)
+  Rendered template/_header.html.erb (1.4ms)
+  Rendered template/_footer.html.erb (0.4ms)
+Completed 200 OK in 438ms (Views: 423.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/6/favorites" for 10.0.2.2 at 2019-09-28 06:48:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#favorites as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:42
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:43
+  Rendering users/favorites.html.erb within layouts/application
+  [1m[36mFavorite Load (1.6ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 6]]
+  ↳ app/views/users/favorites.html.erb:6
+  Rendered orders/_link_to-users-carts.html.erb (0.6ms)
+  Rendered users/favorites.html.erb within layouts/application (17.8ms)
+  Rendered template/_header.html.erb (1.4ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 441ms (Views: 390.5ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/albums" for 10.0.2.2 at 2019-09-28 06:48:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:15
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/albums/index.html.erb:6
+  Rendered orders/_link_to-users-carts.html.erb (0.6ms)
+  Rendered albums/index.html.erb within layouts/application (18.4ms)
+  Rendered template/_header.html.erb (1.4ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 386ms (Views: 369.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/albums/2" for 10.0.2.2 at 2019-09-28 06:48:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAlbum Load (2.1ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:23
+  [1m[36mGenre Load (1.7ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:24
+  [1m[36mLabel Load (1.5ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:25
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:26
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mFavorite Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."album_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["album_id", 2], ["user_id", 6], ["LIMIT", 1]]
+  ↳ app/models/album.rb:21
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/favorites/_favorite-btn.html.erb:9
+  Rendered favorites/_favorite-btn.html.erb (4.5ms)
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "discs" WHERE "discs"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/albums/show.html.erb:26
+  [1m[36mOrder Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "orders" WHERE "orders"."album_id" = ? AND "orders"."user_id" = ? AND "orders"."status" = ? LIMIT ?[0m  [["album_id", 2], ["user_id", 6], ["status", 0], ["LIMIT", 1]]
+  ↳ app/models/album.rb:25
+  Rendered orders/_cart-btn.html.erb (27.2ms)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/albums/show.html.erb:35
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/reviews/_review-section.html.erb:9
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:2
+  Rendered collection of reviews/_review.html.erb [1 times] (1.7ms)
+  Rendered reviews/_review-form.html.erb (1.2ms)
+  Rendered reviews/_review-section.html.erb (26.6ms)
+  Rendered orders/_link_to-users-carts.html.erb (0.4ms)
+  Rendered albums/show.html.erb within layouts/application (108.1ms)
+  Rendered template/_header.html.erb (1.3ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 453ms (Views: 411.3ms | ActiveRecord: 14.7ms)
+
+
+Started POST "/albums/2/orders" for 10.0.2.2 at 2019-09-28 06:48:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#create as HTML
+  Parameters: {"authenticity_token"=>"0yutJn3CPQvhk6Ejaa+SNE2e3ULaaaGUTnSJ2imEaWD7PgYQGniq3m0roHs0LKX9tSJrSwcaULDcP6fO7tM+cw==", "album_id"=>"2"}
+  [1m[36mAlbum Load (1.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:45
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:6
+  [1m[36mOrder Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "orders" WHERE "orders"."album_id" = ? AND "orders"."user_id" = ? AND "orders"."status" = ? LIMIT ?[0m  [["album_id", 2], ["user_id", 6], ["status", 0], ["LIMIT", 1]]
+  ↳ app/models/album.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:9
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:9
+  [1m[36mAlbum Load (0.1ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:9
+  [1m[36mOrder Create (3.9ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "album_id", "subtotal", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 6], ["album_id", 2], ["subtotal", 1234], ["created_at", "2019-09-28 06:48:29.156775"], ["updated_at", "2019-09-28 06:48:29.156775"]]
+  ↳ app/controllers/orders_controller.rb:9
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:9
+Redirected to http://localhost:3000/users/6/carts
+Completed 302 Found in 44ms (ActiveRecord: 19.3ms)
+
+
+Started GET "/users/6/carts" for 10.0.2.2 at 2019-09-28 06:48:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#carts as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/carts.html.erb within layouts/application
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = ?[0m  [["user_id", 6]]
+  ↳ app/views/users/carts.html.erb:19
+  [1m[36mAlbum Load (0.6ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/carts.html.erb:20
+  Rendered users/carts.html.erb within layouts/application (6.7ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:15
+  Rendered template/_header.html.erb (3.8ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 455ms (Views: 436.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/albums" for 10.0.2.2 at 2019-09-28 06:48:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:15
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.6ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/albums/index.html.erb:6
+  Rendered orders/_link_to-users-carts.html.erb (0.5ms)
+  Rendered albums/index.html.erb within layouts/application (21.7ms)
+  Rendered template/_header.html.erb (1.3ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 457ms (Views: 429.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/albums/3" for 10.0.2.2 at 2019-09-28 06:48:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAlbum Load (1.8ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:23
+  [1m[36mGenre Load (1.7ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:24
+  [1m[36mLabel Load (1.6ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:25
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:26
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mFavorite Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."album_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["album_id", 3], ["user_id", 6], ["LIMIT", 1]]
+  ↳ app/models/album.rb:21
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."album_id" = ?[0m  [["album_id", 3]]
+  ↳ app/views/favorites/_favorite-btn.html.erb:9
+  Rendered favorites/_favorite-btn.html.erb (4.4ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "discs" WHERE "discs"."album_id" = ?[0m  [["album_id", 3]]
+  ↳ app/views/albums/show.html.erb:26
+  [1m[36mOrder Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "orders" WHERE "orders"."album_id" = ? AND "orders"."user_id" = ? AND "orders"."status" = ? LIMIT ?[0m  [["album_id", 3], ["user_id", 6], ["status", 0], ["LIMIT", 1]]
+  ↳ app/models/album.rb:25
+  Rendered orders/_cart-btn.html.erb (2.4ms)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."album_id" = ?[0m  [["album_id", 3]]
+  ↳ app/views/albums/show.html.erb:35
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."album_id" = ?[0m  [["album_id", 3]]
+  ↳ app/views/reviews/_review-section.html.erb:9
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered reviews/_review-form.html.erb (0.9ms)
+  Rendered reviews/_review-section.html.erb (10.6ms)
+  Rendered orders/_link_to-users-carts.html.erb (0.5ms)
+  Rendered albums/show.html.erb within layouts/application (61.9ms)
+  Rendered template/_header.html.erb (1.4ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 415ms (Views: 374.9ms | ActiveRecord: 10.3ms)
+
+
+Started POST "/albums/3/orders" for 10.0.2.2 at 2019-09-28 06:48:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#create as HTML
+  Parameters: {"authenticity_token"=>"69rLH6mBD3tbTV/YR+a51gBCibAXiCmdTdvqcMbdG2rDz2ApzjuYrtf1XoAaZY4f+P4/ucr72LnfkMRkAYpMeQ==", "album_id"=>"3"}
+  [1m[36mAlbum Load (0.7ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:45
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:6
+  [1m[36mOrder Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "orders" WHERE "orders"."album_id" = ? AND "orders"."user_id" = ? AND "orders"."status" = ? LIMIT ?[0m  [["album_id", 3], ["user_id", 6], ["status", 0], ["LIMIT", 1]]
+  ↳ app/models/album.rb:25
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:9
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:9
+  [1m[36mAlbum Load (0.1ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:9
+  [1m[36mOrder Create (2.5ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "album_id", "subtotal", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 6], ["album_id", 3], ["subtotal", 9876], ["created_at", "2019-09-28 06:48:43.441543"], ["updated_at", "2019-09-28 06:48:43.441543"]]
+  ↳ app/controllers/orders_controller.rb:9
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:9
+Redirected to http://localhost:3000/users/6/carts
+Completed 302 Found in 25ms (ActiveRecord: 8.9ms)
+
+
+Started GET "/users/6/carts" for 10.0.2.2 at 2019-09-28 06:48:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#carts as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/carts.html.erb within layouts/application
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = ?[0m  [["user_id", 6]]
+  ↳ app/views/users/carts.html.erb:19
+  [1m[36mAlbum Load (0.6ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/carts.html.erb:20
+  [1m[36mAlbum Load (0.6ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/carts.html.erb:20
+  Rendered users/carts.html.erb within layouts/application (9.0ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:15
+  Rendered template/_header.html.erb (4.0ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 428ms (Views: 410.2ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/users/6/carts" for 10.0.2.2 at 2019-09-28 08:47:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#carts as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 12.8ms)
+
+
+  
+NameError (uninitialized constant UsersController::SaleHistories):
+  
+app/controllers/users_controller.rb:21:in `carts'
+Started GET "/users/6/carts" for 10.0.2.2 at 2019-09-28 08:48:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#carts as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 6.7ms)
+
+
+  
+NameError (uninitialized constant UsersController::SaleHistories):
+  
+app/controllers/users_controller.rb:21:in `carts'
+Started GET "/users/6/carts" for 10.0.2.2 at 2019-09-28 08:48:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#carts as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 7.7ms)
+
+
+  
+NameError (uninitialized constant UsersController::SaleHistory):
+  
+app/controllers/users_controller.rb:21:in `carts'
+Started GET "/users/6/carts" for 10.0.2.2 at 2019-09-28 08:48:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#carts as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 9.2ms)
+
+
+  
+NameError (uninitialized constant UsersController::SaleHistory):
+  
+app/controllers/users_controller.rb:21:in `carts'
+Started GET "/users/6/carts" for 10.0.2.2 at 2019-09-28 08:48:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#carts as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 2.1ms)
+
+
+  
+NameError (uninitialized constant UsersController::SaleHistory):
+  
+app/controllers/users_controller.rb:21:in `carts'
+Started GET "/users/6/carts" for 10.0.2.2 at 2019-09-28 08:49:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#carts as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 9.5ms)
+
+
+  
+NameError (uninitialized constant UsersController::SaleHistory):
+  
+app/controllers/users_controller.rb:21:in `carts'
+Started GET "/users/6/carts" for 10.0.2.2 at 2019-09-28 08:49:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#carts as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.4ms)
+
+
+  
+NameError (uninitialized constant UsersController::SaleHistory):
+  
+app/controllers/users_controller.rb:21:in `carts'
+Started GET "/users/6/carts" for 10.0.2.2 at 2019-09-28 08:49:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#carts as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/carts.html.erb within layouts/application
+  Rendered users/carts.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 111ms (ActiveRecord: 12.2ms)
+
+
+  
+SyntaxError (/vagrant/juhati/app/views/users/carts.html.erb:68: syntax error, unexpected tLABEL
+....append=  form_for(@sale), url: sale_histories_path do |f| @...
+...                           ^~~~):
+  
+app/views/users/carts.html.erb:68: syntax error, unexpected tLABEL
+Started GET "/users/6/carts" for 10.0.2.2 at 2019-09-28 08:49:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#carts as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/carts.html.erb within layouts/application
+  Rendered users/carts.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.8ms)
+
+
+  
+SyntaxError (/vagrant/juhati/app/views/users/carts.html.erb:68: syntax error, unexpected tLABEL
+....append=  form_for(@sale), url: sale_histories_path do |f| @...
+...                           ^~~~):
+  
+app/views/users/carts.html.erb:68: syntax error, unexpected tLABEL
+Started GET "/users/6/carts" for 10.0.2.2 at 2019-09-28 08:50:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#carts as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/carts.html.erb within layouts/application
+  Rendered users/carts.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 1.0ms)
+
+
+  
+SyntaxError (/vagrant/juhati/app/views/users/carts.html.erb:68: syntax error, unexpected tLABEL
+....append=  form_for(@sale), url: sale_histories_path do |f| @...
+...                           ^~~~):
+  
+app/views/users/carts.html.erb:68: syntax error, unexpected tLABEL
+Started GET "/users/6" for 10.0.2.2 at 2019-09-28 08:50:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:44
+  Rendered users/show.html.erb within layouts/application (3.5ms)
+  Rendered template/_header.html.erb (1.3ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 1465ms (Views: 1443.3ms | ActiveRecord: 2.9ms)
+
+
+Started DELETE "/users/sign_out" for 10.0.2.2 at 2019-09-28 08:50:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0wCXieCup/op+/BFIrWxAikbqv5/oc7C8XZzBIvlTpn7FTy/hxQwL6VD8R1/NobL0acc96LSP+ZjPV0QTLIZig=="}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 27ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-09-28 08:50:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.3ms)
+  Rendered template/_header.html.erb (1.4ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 415ms (Views: 403.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admins/sign_in" for 10.0.2.2 at 2019-09-28 08:50:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/sessions/new.html.erb within layouts/application (5.7ms)
+  Rendered template/_header.html.erb (1.4ms)
+  Rendered template/_footer.html.erb (0.4ms)
+Completed 200 OK in 442ms (Views: 427.0ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/admins/sign_in" for 10.0.2.2 at 2019-09-28 08:50:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0UtTGHLxAwR5Sdm3rSdyGwSgVwW0VQzwx8uqTZZl1nsM4NKj8T6HZ62AZ6JKMreXXBAyHmVzebt4LkGflc18Cg==", "admin"=>{"email"=>"admin@admin", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mAdmin Load (2.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."email" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["email", "admin@admin"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdmin Update (4.1ms)[0m  [1m[33mUPDATE "admins" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "admins"."id" = ?[0m  [["current_sign_in_at", "2019-09-28 08:50:49.118416"], ["last_sign_in_at", "2019-09-22 11:22:15.850807"], ["sign_in_count", 10], ["updated_at", "2019-09-28 08:50:49.119883"], ["id", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/admins/1
+Completed 302 Found in 180ms (ActiveRecord: 14.0ms)
+
+
+Started GET "/admins/1" for 10.0.2.2 at 2019-09-28 08:50:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (1.3ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins_controller.rb:7
+  Rendering admins/show.html.erb within layouts/application
+  Rendered admins/show.html.erb within layouts/application (0.7ms)
+  Rendered template/_header.html.erb (1.7ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 377ms (Views: 364.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-09-28 08:50:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/albums/new.html.erb:37
+  [1m[36mLabel Load (0.5ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/albums/new.html.erb:43
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/albums/_disc_fields.html.erb:7
+  Rendered albums/_disc_fields.html.erb (10.8ms)
+  [1m[36mCACHE Artist Load (0.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/albums/_disc_fields.html.erb:7
+  Rendered albums/_disc_fields.html.erb (2.0ms)
+  Rendered albums/new.html.erb within layouts/application (61.7ms)
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:46
+  Rendered template/_header.html.erb (3.6ms)
+  Rendered template/_footer.html.erb (0.6ms)
+Completed 200 OK in 483ms (Views: 415.5ms | ActiveRecord: 15.5ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2019-09-28 08:50:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (3.2ms)
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:46
+  Rendered template/_header.html.erb (3.3ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 356ms (Views: 323.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/albums" for 10.0.2.2 at 2019-09-28 08:50:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (1.2ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/albums/index.html.erb:6
+  Rendered albums/index.html.erb within layouts/application (11.4ms)
+  [1m[36mAdmin Load (0.8ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:46
+  Rendered template/_header.html.erb (4.5ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 435ms (Views: 413.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2019-09-28 08:50:54 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+  [1m[36mAdmin Load (1.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:46
+  Rendered template/_header.html.erb (4.6ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 327ms (Views: 303.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2019-09-28 08:50:55 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:46
+  Rendered template/_header.html.erb (3.3ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 328ms (Views: 309.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-09-28 08:50:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/albums/new.html.erb:37
+  [1m[36mLabel Load (0.8ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/albums/new.html.erb:43
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/albums/_disc_fields.html.erb:7
+  Rendered albums/_disc_fields.html.erb (2.2ms)
+  [1m[36mCACHE Artist Load (0.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/albums/_disc_fields.html.erb:7
+  Rendered albums/_disc_fields.html.erb (1.6ms)
+  Rendered albums/new.html.erb within layouts/application (26.2ms)
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:46
+  Rendered template/_header.html.erb (3.9ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 358ms (Views: 334.5ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/admins/1" for 10.0.2.2 at 2019-09-28 08:50:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (2.3ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins_controller.rb:7
+  Rendering admins/show.html.erb within layouts/application
+  Rendered admins/show.html.erb within layouts/application (0.6ms)
+  Rendered template/_header.html.erb (1.5ms)
+  Rendered template/_footer.html.erb (0.2ms)
+Completed 200 OK in 321ms (Views: 301.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/albums" for 10.0.2.2 at 2019-09-28 08:51:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.8ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/albums/index.html.erb:6
+  Rendered albums/index.html.erb within layouts/application (9.6ms)
+  [1m[36mAdmin Load (0.8ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:46
+  Rendered template/_header.html.erb (4.9ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 444ms (Views: 419.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-09-28 08:51:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/albums/new.html.erb:37
+  [1m[36mLabel Load (0.4ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/albums/new.html.erb:43
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/albums/_disc_fields.html.erb:7
+  Rendered albums/_disc_fields.html.erb (2.0ms)
+  [1m[36mCACHE Artist Load (0.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/albums/_disc_fields.html.erb:7
+  Rendered albums/_disc_fields.html.erb (1.6ms)
+  Rendered albums/new.html.erb within layouts/application (26.4ms)
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:46
+  Rendered template/_header.html.erb (3.6ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 375ms (Views: 343.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2019-09-28 08:51:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (2.4ms)
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:46
+  Rendered template/_header.html.erb (4.0ms)
+  Rendered template/_footer.html.erb (0.4ms)
+Completed 200 OK in 355ms (Views: 334.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/5" for 10.0.2.2 at 2019-09-28 08:51:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:55
+  Rendered users/show.html.erb within layouts/application (3.6ms)
+  Rendered template/_header.html.erb (1.5ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 331ms (Views: 310.7ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/albums/new" for 10.0.2.2 at 2019-09-28 08:51:09 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/albums/new.html.erb:37
+  [1m[36mLabel Load (0.9ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/albums/new.html.erb:43
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/albums/_disc_fields.html.erb:7
+  Rendered albums/_disc_fields.html.erb (2.0ms)
+  [1m[36mCACHE Artist Load (0.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/albums/_disc_fields.html.erb:7
+  Rendered albums/_disc_fields.html.erb (1.8ms)
+  Rendered albums/new.html.erb within layouts/application (26.5ms)
+  [1m[36mAdmin Load (0.6ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:46
+  Rendered template/_header.html.erb (4.1ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 377ms (Views: 347.1ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2019-09-28 08:51:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+  [1m[36mAdmin Load (0.9ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:46
+  Rendered template/_header.html.erb (4.3ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 420ms (Views: 398.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2019-09-28 08:51:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+  [1m[36mAdmin Load (1.5ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:46
+  Rendered template/_header.html.erb (4.6ms)
+  Rendered template/_footer.html.erb (0.2ms)
+Completed 200 OK in 334ms (Views: 316.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/admins/1" for 10.0.2.2 at 2019-09-28 08:51:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (1.9ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins_controller.rb:7
+  Rendering admins/show.html.erb within layouts/application
+  Rendered admins/show.html.erb within layouts/application (0.6ms)
+  Rendered template/_header.html.erb (1.7ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 365ms (Views: 344.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/albums" for 10.0.2.2 at 2019-09-28 08:51:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/albums/index.html.erb:6
+  Rendered albums/index.html.erb within layouts/application (8.8ms)
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:46
+  Rendered template/_header.html.erb (3.4ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 345ms (Views: 326.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/albums/2" for 10.0.2.2 at 2019-09-28 08:51:15 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAlbum Load (2.1ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:23
+  [1m[36mGenre Load (2.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:24
+  [1m[36mLabel Load (2.1ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:25
+  Rendering albums/show.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "discs" WHERE "discs"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/albums/show.html.erb:26
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/albums/show.html.erb:35
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/reviews/_review-section.html.erb:9
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:2
+  Rendered collection of reviews/_review.html.erb [1 times] (2.1ms)
+  Rendered reviews/_review-form.html.erb (1.2ms)
+  Rendered reviews/_review-section.html.erb (24.4ms)
+  Rendered albums/show.html.erb within layouts/application (82.7ms)
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:46
+  Rendered template/_header.html.erb (3.5ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 427ms (Views: 394.4ms | ActiveRecord: 13.5ms)
+
+
+Started GET "/admins/1" for 10.0.2.2 at 2019-09-28 08:51:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (1.3ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins_controller.rb:7
+  Rendering admins/show.html.erb within layouts/application
+  Rendered admins/show.html.erb within layouts/application (0.6ms)
+  Rendered template/_header.html.erb (1.7ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 427ms (Views: 396.0ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/admins/sign_out" for 10.0.2.2 at 2019-09-28 08:51:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"aCO96MYK2nKWSZKy4DI4LXuNKtvgLQQ3FHg43v+drLZHoYx1omZIEsrJYBqVyQ3CMJx+MghgYuSxx3ee8zNF7Q=="}
+  [1m[36mAdmin Load (1.6ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-09-28 08:51:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.3ms)
+  Rendered template/_header.html.erb (1.5ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 346ms (Views: 333.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2019-09-28 08:51:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (2.1ms)
+  Rendered template/_header.html.erb (1.5ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 336ms (Views: 335.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 10.0.2.2 at 2019-09-28 08:51:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oYWk+c+7g82h+7cbfjnTAD+3fUEZSvO0QJZstuLPCGjussjcgtzJOCuWnemREb0BfkqyYZB+omlz/1FlaWevYw==", "user"=>{"email"=>"a@a", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "a@a"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (3.2ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2019-09-28 08:51:36.023589"], ["sign_in_count", 2], ["updated_at", "2019-09-28 08:51:36.024898"], ["id", 3]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 178ms (ActiveRecord: 11.7ms)
+
+
+Started GET "/users/3" for 10.0.2.2 at 2019-09-28 08:51:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:44
+  Rendered users/show.html.erb within layouts/application (3.8ms)
+  Rendered template/_header.html.erb (1.4ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 366ms (Views: 351.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/3" for 10.0.2.2 at 2019-09-28 08:51:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:44
+  Rendered users/show.html.erb within layouts/application (3.8ms)
+  Rendered template/_header.html.erb (1.3ms)
+  Rendered template/_footer.html.erb (0.8ms)
+Completed 200 OK in 437ms (Views: 415.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/users/3" for 10.0.2.2 at 2019-09-28 08:51:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:44
+  Rendered users/show.html.erb within layouts/application (4.2ms)
+  Rendered template/_header.html.erb (1.4ms)
+  Rendered template/_footer.html.erb (0.4ms)
+Completed 200 OK in 363ms (Views: 338.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/users/3/favorites" for 10.0.2.2 at 2019-09-28 08:51:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#favorites as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:43
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44
+  Rendering users/favorites.html.erb within layouts/application
+  [1m[36mFavorite Load (0.5ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/favorites.html.erb:6
+  Rendered orders/_link_to-users-carts.html.erb (0.6ms)
+  Rendered users/favorites.html.erb within layouts/application (11.7ms)
+  Rendered template/_header.html.erb (1.4ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 359ms (Views: 324.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/albums" for 10.0.2.2 at 2019-09-28 08:51:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#index as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:15
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.6ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/albums/index.html.erb:6
+  Rendered orders/_link_to-users-carts.html.erb (0.6ms)
+  Rendered albums/index.html.erb within layouts/application (18.3ms)
+  Rendered template/_header.html.erb (1.3ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 381ms (Views: 359.4ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/albums/2" for 10.0.2.2 at 2019-09-28 08:51:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAlbum Load (2.0ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:23
+  [1m[36mGenre Load (2.8ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:24
+  [1m[36mLabel Load (2.3ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:25
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:26
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mFavorite Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."album_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["album_id", 2], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/models/album.rb:21
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/favorites/_favorite-btn.html.erb:9
+  Rendered favorites/_favorite-btn.html.erb (6.7ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "discs" WHERE "discs"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/albums/show.html.erb:26
+  [1m[36mOrder Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "orders" WHERE "orders"."album_id" = ? AND "orders"."user_id" = ? AND "orders"."status" = ? LIMIT ?[0m  [["album_id", 2], ["user_id", 3], ["status", 0], ["LIMIT", 1]]
+  ↳ app/models/album.rb:25
+  Rendered orders/_cart-btn.html.erb (13.4ms)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/albums/show.html.erb:35
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/reviews/_review-section.html.erb:9
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:2
+  Rendered collection of reviews/_review.html.erb [1 times] (2.1ms)
+  Rendered reviews/_review-form.html.erb (0.9ms)
+  Rendered reviews/_review-section.html.erb (23.2ms)
+  Rendered orders/_link_to-users-carts.html.erb (0.5ms)
+  Rendered albums/show.html.erb within layouts/application (93.4ms)
+  Rendered template/_header.html.erb (2.0ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 484ms (Views: 444.7ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/users/3/carts" for 10.0.2.2 at 2019-09-28 08:51:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#carts as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/carts.html.erb within layouts/application
+  Rendered users/carts.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 1.6ms)
+
+
+  
+SyntaxError (/vagrant/juhati/app/views/users/carts.html.erb:68: syntax error, unexpected tLABEL
+....append=  form_for(@sale), url: sale_histories_path do |f| @...
+...                           ^~~~):
+  
+app/views/users/carts.html.erb:68: syntax error, unexpected tLABEL
+Started GET "/users/3/carts" for 10.0.2.2 at 2019-09-28 08:52:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#carts as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/carts.html.erb within layouts/application
+  Rendered users/carts.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 1.1ms)
+
+
+  
+SyntaxError (/vagrant/juhati/app/views/users/carts.html.erb:68: syntax error, unexpected ',', expecting keyword_end
+'.freeze;		 form_for(@sale), url: sale_histories_path do ...
+         		                ^):
+  
+app/views/users/carts.html.erb:68: syntax error, unexpected ',', expecting keyword_end
+Started GET "/users/3/carts" for 10.0.2.2 at 2019-09-28 08:52:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#carts as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/carts.html.erb within layouts/application
+  Rendered users/carts.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 0.9ms)
+
+
+  
+SyntaxError (/vagrant/juhati/app/views/users/carts.html.erb:68: syntax error, unexpected tLABEL
+....append=  form_for(@sale), url: sale_histories_path do |f| @...
+...                           ^~~~):
+  
+app/views/users/carts.html.erb:68: syntax error, unexpected tLABEL
+Started GET "/users/3/carts" for 10.0.2.2 at 2019-09-28 08:52:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#carts as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/carts.html.erb within layouts/application
+  Rendered users/carts.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 1.3ms)
+
+
+  
+SyntaxError (/vagrant/juhati/app/views/users/carts.html.erb:68: syntax error, unexpected tLABEL
+....append=  form_for(@sale), url: sale_histories_path do |f| @...
+...                           ^~~~):
+  
+app/views/users/carts.html.erb:68: syntax error, unexpected tLABEL
+Started GET "/users/3/carts" for 10.0.2.2 at 2019-09-28 08:54:54 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#carts as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/carts.html.erb within layouts/application
+  [1m[36mOrder Load (2.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/carts.html.erb:19
+  Rendered users/carts.html.erb within layouts/application (6.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:15
+  Rendered template/_header.html.erb (4.0ms)
+  Rendered template/_footer.html.erb (0.6ms)
+Completed 200 OK in 2045ms (Views: 1970.1ms | ActiveRecord: 15.8ms)
+
+
+Started GET "/albums" for 10.0.2.2 at 2019-09-28 08:55:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:15
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.8ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/albums/index.html.erb:6
+  Rendered orders/_link_to-users-carts.html.erb (0.5ms)
+  Rendered albums/index.html.erb within layouts/application (35.0ms)
+  Rendered template/_header.html.erb (1.3ms)
+  Rendered template/_footer.html.erb (0.2ms)
+Completed 200 OK in 475ms (Views: 451.9ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/albums/2" for 10.0.2.2 at 2019-09-28 08:55:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAlbum Load (4.4ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:23
+  [1m[36mGenre Load (1.7ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:24
+  [1m[36mLabel Load (0.7ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:25
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:26
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mFavorite Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."album_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["album_id", 2], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/models/album.rb:21
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/favorites/_favorite-btn.html.erb:9
+  Rendered favorites/_favorite-btn.html.erb (9.8ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "discs" WHERE "discs"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/albums/show.html.erb:26
+  [1m[36mOrder Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "orders" WHERE "orders"."album_id" = ? AND "orders"."user_id" = ? AND "orders"."status" = ? LIMIT ?[0m  [["album_id", 2], ["user_id", 3], ["status", 0], ["LIMIT", 1]]
+  ↳ app/models/album.rb:25
+  Rendered orders/_cart-btn.html.erb (3.4ms)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/albums/show.html.erb:35
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/reviews/_review-section.html.erb:9
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/_review.html.erb:2
+  Rendered collection of reviews/_review.html.erb [1 times] (3.1ms)
+  Rendered reviews/_review-form.html.erb (3.6ms)
+  Rendered reviews/_review-section.html.erb (48.6ms)
+  Rendered orders/_link_to-users-carts.html.erb (0.6ms)
+  Rendered albums/show.html.erb within layouts/application (131.4ms)
+  Rendered template/_header.html.erb (1.4ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 616ms (Views: 542.7ms | ActiveRecord: 27.3ms)
+
+
+Started POST "/albums/2/orders" for 10.0.2.2 at 2019-09-28 08:55:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#create as HTML
+  Parameters: {"authenticity_token"=>"GUb6MZZ/wBY9vAbzf2HhUkl/kHzIECNc3t0Tdh6Swlv+rtJtXiMfIGD8cZCaSsfq9Io4uR19ry41X903gTd3PQ==", "album_id"=>"2"}
+  [1m[36mAlbum Load (1.2ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:45
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:6
+  [1m[36mOrder Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "orders" WHERE "orders"."album_id" = ? AND "orders"."user_id" = ? AND "orders"."status" = ? LIMIT ?[0m  [["album_id", 2], ["user_id", 3], ["status", 0], ["LIMIT", 1]]
+  ↳ app/models/album.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:9
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:9
+  [1m[36mAlbum Load (0.1ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:9
+  [1m[36mOrder Create (4.3ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "album_id", "subtotal", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["album_id", 2], ["subtotal", 1234], ["created_at", "2019-09-28 08:55:41.368228"], ["updated_at", "2019-09-28 08:55:41.368228"]]
+  ↳ app/controllers/orders_controller.rb:9
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:9
+Redirected to http://localhost:3000/users/3/carts
+Completed 302 Found in 45ms (ActiveRecord: 19.6ms)
+
+
+Started GET "/users/3/carts" for 10.0.2.2 at 2019-09-28 08:55:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#carts as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/carts.html.erb within layouts/application
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/carts.html.erb:19
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/carts.html.erb:20
+  Rendered users/carts.html.erb within layouts/application (6.6ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:15
+  Rendered template/_header.html.erb (4.0ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 461ms (Views: 439.7ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/sale_histories" for 10.0.2.2 at 2019-09-28 08:55:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SaleHistoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s541SGyWP46bQzmzR1wTK3CcDTBNzrgRfm1PF+vLwqZUdh0UpMrguMYDTtCidzWTzWml9ZijNGOV74FWdG53wA==", "commit"=>"購入確定"}
+  [1m[36mOrder Load (1.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = ?[0m  [["user_id", nil]]
+  ↳ app/controllers/sale_histories_controller.rb:14
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.3ms)
+
+
+  
+NameError (uninitialized constant SaleHistoriesController::SippingAddress):
+  
+app/controllers/sale_histories_controller.rb:18:in `create'
+Started GET "/users/3/carts" for 10.0.2.2 at 2019-09-28 08:56:09 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#carts as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/carts.html.erb within layouts/application
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/carts.html.erb:19
+  [1m[36mAlbum Load (1.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/carts.html.erb:20
+  Rendered users/carts.html.erb within layouts/application (42.2ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:15
+  Rendered template/_header.html.erb (4.1ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 1677ms (Views: 1576.8ms | ActiveRecord: 23.0ms)
+
+
+Started POST "/sale_histories" for 10.0.2.2 at 2019-09-28 08:56:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SaleHistoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Nkh4Y2TdPuIlZkDquxdlDeu18dqCAyX0eIroKbU09xLRoFA/rIHh1HgmN4lePEO1VkBZH1duqYaTCCZoKpFCdA==", "commit"=>"購入確定"}
+  [1m[36mOrder Load (2.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = ?[0m  [["user_id", nil]]
+  ↳ app/controllers/sale_histories_controller.rb:13
+Completed 500 Internal Server Error in 30652ms (ActiveRecord: 2.2ms)
+
+
+  
+NameError (uninitialized constant SaleHistoriesController::SippingAddress):
+  
+app/controllers/sale_histories_controller.rb:19:in `create'
+Started POST "/sale_histories" for 10.0.2.2 at 2019-09-28 08:56:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SaleHistoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Nkh4Y2TdPuIlZkDquxdlDeu18dqCAyX0eIroKbU09xLRoFA/rIHh1HgmN4lePEO1VkBZH1duqYaTCCZoKpFCdA==", "commit"=>"購入確定"}
+  [1m[36mOrder Load (2.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" IS NULL[0m
+  ↳ app/controllers/sale_histories_controller.rb:13
+Completed 500 Internal Server Error in 24918ms (ActiveRecord: 10.0ms)
+
+
+  
+NameError (uninitialized constant SaleHistoriesController::SippingAddress):
+  
+app/controllers/sale_histories_controller.rb:19:in `create'
+Started POST "/sale_histories" for 10.0.2.2 at 2019-09-28 08:57:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SaleHistoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Nkh4Y2TdPuIlZkDquxdlDeu18dqCAyX0eIroKbU09xLRoFA/rIHh1HgmN4lePEO1VkBZH1duqYaTCCZoKpFCdA==", "commit"=>"購入確定"}
+  [1m[36mOrder Load (2.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/sale_histories_controller.rb:13
+Completed 500 Internal Server Error in 12200ms (ActiveRecord: 11.6ms)
+
+
+  
+NameError (uninitialized constant SaleHistoriesController::SippingAddress):
+  
+app/controllers/sale_histories_controller.rb:19:in `create'
+Started POST "/sale_histories" for 10.0.2.2 at 2019-09-28 08:57:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SaleHistoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Nkh4Y2TdPuIlZkDquxdlDeu18dqCAyX0eIroKbU09xLRoFA/rIHh1HgmN4lePEO1VkBZH1duqYaTCCZoKpFCdA==", "commit"=>"購入確定"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sale_histories_controller.rb:11
+  [1m[36mOrder Load (2.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/sale_histories_controller.rb:13
+Started GET "/albums" for 10.0.2.2 at 2019-09-28 08:57:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#index as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:15
+Completed 500 Internal Server Error in 8201ms (ActiveRecord: 30.8ms)
+
+
+  
+NameError (uninitialized constant SaleHistoriesController::SippingAddress):
+  
+app/controllers/sale_histories_controller.rb:19:in `create'
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (1.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/albums/index.html.erb:6
+  Rendered orders/_link_to-users-carts.html.erb (0.5ms)
+  Rendered albums/index.html.erb within layouts/application (601.7ms)
+  Rendered template/_header.html.erb (1.5ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 1602ms (Views: 1524.2ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/albums" for 10.0.2.2 at 2019-09-28 08:57:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#index as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:15
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.8ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/albums/index.html.erb:6
+  Rendered orders/_link_to-users-carts.html.erb (0.7ms)
+  Rendered albums/index.html.erb within layouts/application (23.2ms)
+  Rendered template/_header.html.erb (1.8ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 506ms (Views: 472.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/albums" for 10.0.2.2 at 2019-09-28 08:57:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:15
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/albums/index.html.erb:6
+  Rendered orders/_link_to-users-carts.html.erb (0.6ms)
+  Rendered albums/index.html.erb within layouts/application (20.3ms)
+  Rendered template/_header.html.erb (1.5ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 477ms (Views: 456.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/albums/3" for 10.0.2.2 at 2019-09-28 08:57:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAlbum Load (1.9ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:23
+  [1m[36mGenre Load (1.9ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:24
+  [1m[36mLabel Load (1.0ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:25
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:26
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mFavorite Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."album_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["album_id", 3], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/models/album.rb:21
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."album_id" = ?[0m  [["album_id", 3]]
+  ↳ app/views/favorites/_favorite-btn.html.erb:9
+  Rendered favorites/_favorite-btn.html.erb (17.7ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "discs" WHERE "discs"."album_id" = ?[0m  [["album_id", 3]]
+  ↳ app/views/albums/show.html.erb:26
+  [1m[36mOrder Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "orders" WHERE "orders"."album_id" = ? AND "orders"."user_id" = ? AND "orders"."status" = ? LIMIT ?[0m  [["album_id", 3], ["user_id", 3], ["status", 0], ["LIMIT", 1]]
+  ↳ app/models/album.rb:25
+  Rendered orders/_cart-btn.html.erb (3.8ms)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."album_id" = ?[0m  [["album_id", 3]]
+  ↳ app/views/albums/show.html.erb:35
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."album_id" = ?[0m  [["album_id", 3]]
+  ↳ app/views/reviews/_review-section.html.erb:9
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered reviews/_review-form.html.erb (3.3ms)
+  Rendered reviews/_review-section.html.erb (14.5ms)
+  Rendered orders/_link_to-users-carts.html.erb (0.6ms)
+  Rendered albums/show.html.erb within layouts/application (97.5ms)
+  Rendered template/_header.html.erb (1.4ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 503ms (Views: 431.6ms | ActiveRecord: 30.0ms)
+
+
+Started POST "/albums/3/orders" for 10.0.2.2 at 2019-09-28 08:58:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#create as HTML
+  Parameters: {"authenticity_token"=>"De7NGq4RX4asjdH+ciK12p1ga27R4bpq2xQB1hpsj/TqBuVGZk2AsPHNpp2XCZNiIJXDqwSMNhgwls+Xhck6kg==", "album_id"=>"3"}
+  [1m[36mAlbum Load (0.7ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:45
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:6
+  [1m[36mOrder Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "orders" WHERE "orders"."album_id" = ? AND "orders"."user_id" = ? AND "orders"."status" = ? LIMIT ?[0m  [["album_id", 3], ["user_id", 3], ["status", 0], ["LIMIT", 1]]
+  ↳ app/models/album.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:9
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:9
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:9
+  [1m[36mOrder Create (4.0ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "album_id", "subtotal", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["album_id", 3], ["subtotal", 9876], ["created_at", "2019-09-28 08:58:00.164440"], ["updated_at", "2019-09-28 08:58:00.164440"]]
+  ↳ app/controllers/orders_controller.rb:9
+  [1m[35m (8.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:9
+Redirected to http://localhost:3000/users/3/carts
+Completed 302 Found in 44ms (ActiveRecord: 16.0ms)
+
+
+Started GET "/users/3/carts" for 10.0.2.2 at 2019-09-28 08:58:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#carts as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/carts.html.erb within layouts/application
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/carts.html.erb:19
+  [1m[36mAlbum Load (0.8ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/carts.html.erb:20
+  [1m[36mAlbum Load (0.6ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/carts.html.erb:20
+  Rendered users/carts.html.erb within layouts/application (10.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:15
+  Rendered template/_header.html.erb (4.7ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 430ms (Views: 409.2ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/sale_histories" for 10.0.2.2 at 2019-09-28 08:58:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SaleHistoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rVi4XRb0zv5zbYBSiJDHWvCsZhDii/Klbu/SJQ89E29KsJAB3qgRyC4t9zFtu+HiTVnO1TfmfteFbRxkkJimCQ==", "commit"=>"購入確定"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sale_histories_controller.rb:11
+  [1m[36mOrder Load (2.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/sale_histories_controller.rb:13
+Completed 500 Internal Server Error in 5767ms (ActiveRecord: 3.9ms)
+
+
+  
+NameError (uninitialized constant SaleHistoriesController::SippingAddress):
+  
+app/controllers/sale_histories_controller.rb:19:in `create'
+Started GET "/users/3/carts" for 10.0.2.2 at 2019-09-28 09:04:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#carts as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/carts.html.erb within layouts/application
+  [1m[36mOrder Load (1.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/carts.html.erb:19
+  [1m[36mAlbum Load (1.9ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/carts.html.erb:20
+  [1m[36mAlbum Load (1.7ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/carts.html.erb:20
+  Rendered users/carts.html.erb within layouts/application (50.3ms)
+Started GET "/users/3/carts" for 10.0.2.2 at 2019-09-28 09:04:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#carts as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/carts.html.erb within layouts/application
+  [1m[36mOrder Load (1.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/carts.html.erb:19
+  [1m[36mAlbum Load (1.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/carts.html.erb:20
+  [1m[36mAlbum Load (1.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/carts.html.erb:20
+  Rendered users/carts.html.erb within layouts/application (14.6ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:15
+  Rendered template/_header.html.erb (3.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered template/_footer.html.erb (0.2ms)
+  ↳ app/views/template/_header.html.erb:15
+Completed 200 OK in 1903ms (Views: 1823.0ms | ActiveRecord: 25.0ms)
+
+
+  Rendered template/_header.html.erb (4.5ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 862ms (Views: 838.2ms | ActiveRecord: 5.8ms)
+
+
+Started POST "/sale_histories" for 10.0.2.2 at 2019-09-28 09:04:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SaleHistoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7SvIbRrr2ZJc2J1sAU2f0M2QO0hCrKsSHK/oTtVYQXMKw+Ax0rcGpAGY6g/kZrlocGWTjZfBJ2D3LSYPSv30FQ==", "commit"=>"購入確定"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sale_histories_controller.rb:11
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/sale_histories_controller.rb:14
+Completed 500 Internal Server Error in 4413828ms (ActiveRecord: 2.1ms)
+
+
+  
+NameError (uninitialized constant SaleHistoriesController::SippingAddress):
+  
+app/controllers/sale_histories_controller.rb:19:in `create'
+Started POST "/sale_histories" for 10.0.2.2 at 2019-09-28 11:03:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SaleHistoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7SvIbRrr2ZJc2J1sAU2f0M2QO0hCrKsSHK/oTtVYQXMKw+Ax0rcGpAGY6g/kZrlocGWTjZfBJ2D3LSYPSv30FQ==", "commit"=>"購入確定"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sale_histories_controller.rb:11
+  [1m[36mOrder Load (1.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/sale_histories_controller.rb:14
+Started GET "/users/3/carts" for 10.0.2.2 at 2019-09-28 11:04:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Completed 500 Internal Server Error in 49596ms (ActiveRecord: 13.6ms)
+
+
+  
+NameError (uninitialized constant SaleHistoriesController::SippingAddress):
+  
+app/controllers/sale_histories_controller.rb:19:in `create'
+Processing by UsersController#carts as HTML
+Started POST "/sale_histories" for 10.0.2.2 at 2019-09-28 11:04:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+Processing by SaleHistoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7SvIbRrr2ZJc2J1sAU2f0M2QO0hCrKsSHK/oTtVYQXMKw+Ax0rcGpAGY6g/kZrlocGWTjZfBJ2D3LSYPSv30FQ==", "commit"=>"購入確定"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sale_histories_controller.rb:11
+  [1m[36mOrder Load (1.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/sale_histories_controller.rb:14
+  Rendering users/carts.html.erb within layouts/application
+  [1m[36mOrder Load (1.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/carts.html.erb:19
+Completed 500 Internal Server Error in 895ms (ActiveRecord: 2.7ms)
+
+
+  
+NameError (uninitialized constant SaleHistoriesController::SippingAddress):
+  
+app/controllers/sale_histories_controller.rb:19:in `create'
+  [1m[36mAlbum Load (1.0ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/carts.html.erb:20
+  [1m[36mAlbum Load (1.9ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/carts.html.erb:20
+  Rendered users/carts.html.erb within layouts/application (930.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:15
+  Rendered template/_header.html.erb (4.2ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 2404ms (Views: 2343.2ms | ActiveRecord: 13.5ms)
+
+
+Started POST "/sale_histories" for 10.0.2.2 at 2019-09-28 11:06:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SaleHistoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7SvIbRrr2ZJc2J1sAU2f0M2QO0hCrKsSHK/oTtVYQXMKw+Ax0rcGpAGY6g/kZrlocGWTjZfBJ2D3LSYPSv30FQ==", "commit"=>"購入確定"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sale_histories_controller.rb:11
+  [1m[36mOrder Load (1.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/sale_histories_controller.rb:14
+Completed 500 Internal Server Error in 6884ms (ActiveRecord: 18.4ms)
+
+
+  
+NameError (uninitialized constant SaleHistoriesController::SippingAddress):
+  
+app/controllers/sale_histories_controller.rb:20:in `create'
+Started GET "/users/3/carts" for 10.0.2.2 at 2019-09-28 11:06:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#carts as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/carts.html.erb within layouts/application
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/carts.html.erb:19
+  [1m[36mAlbum Load (1.0ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/carts.html.erb:20
+  [1m[36mAlbum Load (1.6ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/carts.html.erb:20
+  Rendered users/carts.html.erb within layouts/application (50.5ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:15
+  Rendered template/_header.html.erb (4.3ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 1557ms (Views: 1515.7ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/users/3/carts" for 10.0.2.2 at 2019-09-28 11:06:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#carts as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/carts.html.erb within layouts/application
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/carts.html.erb:19
+  [1m[36mAlbum Load (0.9ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/carts.html.erb:20
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/carts.html.erb:20
+  Rendered users/carts.html.erb within layouts/application (7.6ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:15
+  Rendered template/_header.html.erb (4.7ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 418ms (Views: 390.7ms | ActiveRecord: 5.4ms)
+
+
+Started POST "/sale_histories" for 10.0.2.2 at 2019-09-28 11:06:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SaleHistoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CzRdx6+qzWBfaOur4zim5S9TNRW+AjP3ESszeyE3N04acagoMw3aJkP/C81BC6YFzIUI59ptfrRKiAFf6fjskg==", "commit"=>"購入確定"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sale_histories_controller.rb:11
+  [1m[36mOrder Load (1.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/sale_histories_controller.rb:14
+Completed 500 Internal Server Error in 3396ms (ActiveRecord: 2.5ms)
+
+
+  
+NameError (uninitialized constant SaleHistoriesController::SippingAddress):
+  
+app/controllers/sale_histories_controller.rb:20:in `create'
+Started POST "/sale_histories" for 10.0.2.2 at 2019-09-28 11:07:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SaleHistoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yje6KfLd1wY9DgOZoiJj00a3ZsCq3VyJWokkWKDI5gAt35J1OoEIMGBOdPpHCUVr+0LOBX+w0PuxC+oZP21TZg==", "commit"=>"購入確定"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sale_histories_controller.rb:11
+  [1m[36mOrder Load (1.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/sale_histories_controller.rb:14
+Completed 500 Internal Server Error in 3682ms (ActiveRecord: 16.9ms)
+
+
+  
+NameError (uninitialized constant SaleHistoriesController::SippingAddresses):
+  
+app/controllers/sale_histories_controller.rb:20:in `create'
+Started POST "/sale_histories" for 10.0.2.2 at 2019-09-28 11:07:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SaleHistoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yje6KfLd1wY9DgOZoiJj00a3ZsCq3VyJWokkWKDI5gAt35J1OoEIMGBOdPpHCUVr+0LOBX+w0PuxC+oZP21TZg==", "commit"=>"購入確定"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sale_histories_controller.rb:11
+  [1m[36mOrder Load (1.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/sale_histories_controller.rb:14
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 13.6ms)
+
+
+  
+NameError (uninitialized constant SaleHistoriesController::SippingAddresse):
+  
+app/controllers/sale_histories_controller.rb:19:in `create'
+Started POST "/sale_histories" for 10.0.2.2 at 2019-09-28 11:08:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SaleHistoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yje6KfLd1wY9DgOZoiJj00a3ZsCq3VyJWokkWKDI5gAt35J1OoEIMGBOdPpHCUVr+0LOBX+w0PuxC+oZP21TZg==", "commit"=>"購入確定"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sale_histories_controller.rb:11
+  [1m[36mOrder Load (1.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/sale_histories_controller.rb:14
+  [1m[36mShippingAddress Load (0.9ms)[0m  [1m[34mSELECT  "shipping_addresses".* FROM "shipping_addresses" WHERE "shipping_addresses"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sale_histories_controller.rb:19
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 14.8ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/sale_histories_controller.rb:19:in `create'
+Started GET "/users/3/carts" for 10.0.2.2 at 2019-09-28 11:08:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#carts as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/carts.html.erb within layouts/application
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/carts.html.erb:19
+  [1m[36mAlbum Load (0.6ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/carts.html.erb:20
+  [1m[36mAlbum Load (1.2ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/carts.html.erb:20
+  Rendered users/carts.html.erb within layouts/application (38.6ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:15
+  Rendered template/_header.html.erb (4.3ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 1445ms (Views: 1371.4ms | ActiveRecord: 20.3ms)
+
+
+Started POST "/sale_histories" for 10.0.2.2 at 2019-09-28 11:09:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SaleHistoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l9u02/5v10kwRlXFQUcP/sUyqbn3M2uxbDFvxatt9wdwM5yHNjMIf20GIqakbClGeMcBfCJe58OHs6GENMhCYQ==", "commit"=>"購入確定"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sale_histories_controller.rb:11
+  [1m[36mOrder Load (1.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/sale_histories_controller.rb:14
+  [1m[36mShippingAddress Load (1.1ms)[0m  [1m[34mSELECT  "shipping_addresses".* FROM "shipping_addresses" WHERE "shipping_addresses"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sale_histories_controller.rb:19
+  [1m[36mShippingAddress Load (1.5ms)[0m  [1m[34mSELECT "shipping_addresses".* FROM "shipping_addresses"[0m
+  ↳ app/controllers/sale_histories_controller.rb:21
+Started GET "/users/3" for 10.0.2.2 at 2019-09-28 11:10:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (7.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:44
+  Rendered users/show.html.erb within layouts/application (27.1ms)
+  Rendered template/_header.html.erb (17.1ms)
+  Rendered template/_footer.html.erb (1.0ms)
+Completed 200 OK in 1404ms (Views: 1363.4ms | ActiveRecord: 10.1ms)
+
+
+Completed 500 Internal Server Error in 69459ms (ActiveRecord: 9.5ms)
+
+
+  
+NoMethodError (undefined method `id' for #<Order::ActiveRecord_Relation:0x00007fe6d809d4b0>):
+  
+app/controllers/sale_histories_controller.rb:21:in `create'
+Started GET "/users/3" for 10.0.2.2 at 2019-09-28 11:10:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:44
+  Rendered users/show.html.erb within layouts/application (4.5ms)
+  Rendered template/_header.html.erb (1.3ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 1402ms (Views: 1363.4ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/users/3/shipping_addresses" for 10.0.2.2 at 2019-09-28 11:10:34 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ShippingAddressesController#index as HTML
+  Parameters: {"user_id"=>"3"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:31
+  Rendering shipping_addresses/index.html.erb within layouts/application
+  [1m[36mShippingAddress Load (0.6ms)[0m  [1m[34mSELECT "shipping_addresses".* FROM "shipping_addresses" WHERE "shipping_addresses"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/shipping_addresses/index.html.erb:15
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shipping_addresses/index.html.erb:28
+  Rendered shipping_addresses/index.html.erb within layouts/application (7.8ms)
+  Rendered template/_header.html.erb (1.3ms)
+  Rendered template/_footer.html.erb (0.2ms)
+Completed 200 OK in 453ms (Views: 414.5ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/albums" for 10.0.2.2 at 2019-09-28 11:10:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AlbumsController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:15
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (1.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/albums/index.html.erb:6
+  Rendered orders/_link_to-users-carts.html.erb (0.5ms)
+  Rendered albums/index.html.erb within layouts/application (34.4ms)
+  Rendered template/_header.html.erb (1.3ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 452ms (Views: 419.6ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/users/3" for 10.0.2.2 at 2019-09-28 11:10:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:44
+  Rendered users/show.html.erb within layouts/application (3.0ms)
+  Rendered template/_header.html.erb (1.8ms)
+  Rendered template/_footer.html.erb (0.2ms)
+Completed 200 OK in 396ms (Views: 374.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/users/3/shipping_addresses" for 10.0.2.2 at 2019-09-28 11:10:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ShippingAddressesController#index as HTML
+  Parameters: {"user_id"=>"3"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:31
+  Rendering shipping_addresses/index.html.erb within layouts/application
+  [1m[36mShippingAddress Load (0.6ms)[0m  [1m[34mSELECT "shipping_addresses".* FROM "shipping_addresses" WHERE "shipping_addresses"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/shipping_addresses/index.html.erb:15
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shipping_addresses/index.html.erb:28
+  Rendered shipping_addresses/index.html.erb within layouts/application (3.9ms)
+  Rendered template/_header.html.erb (1.4ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 407ms (Views: 378.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/users/3/shipping_addresses/new" for 10.0.2.2 at 2019-09-28 11:10:54 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ShippingAddressesController#new as HTML
+  Parameters: {"user_id"=>"3"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:31
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:6
+  Rendering shipping_addresses/new.html.erb within layouts/application
+  Rendered shipping_addresses/new.html.erb within layouts/application (4.0ms)
+  Rendered template/_header.html.erb (1.4ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 481ms (Views: 410.2ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/users/3/shipping_addresses" for 10.0.2.2 at 2019-09-28 11:11:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ShippingAddressesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nNMKnu4/TIn86Tdri3cgycDHb+XhC9OUE9X99Oxm4/1sn8BGSehjsL2ZE2QhEhBdRgm73bovU6UQmHW30Ka8FQ==", "shipping_address"=>{"postcode"=>"100-1111", "address"=>"12e3123"}, "commit"=>"作成", "user_id"=>"3"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:31
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/shipping_addresses_controller.rb:15
+  [1m[36mShippingAddress Create (4.5ms)[0m  [1m[32mINSERT INTO "shipping_addresses" ("user_id", "postcode", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["postcode", "100-1111"], ["address", "12e3123"], ["created_at", "2019-09-28 11:11:08.848792"], ["updated_at", "2019-09-28 11:11:08.848792"]]
+  ↳ app/controllers/shipping_addresses_controller.rb:15
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/shipping_addresses_controller.rb:15
+Redirected to http://localhost:3000/users/3/shipping_addresses
+Completed 302 Found in 18ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/users/3/shipping_addresses" for 10.0.2.2 at 2019-09-28 11:11:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ShippingAddressesController#index as HTML
+  Parameters: {"user_id"=>"3"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/shipping_addresses_controller.rb:31
+  Rendering shipping_addresses/index.html.erb within layouts/application
+  [1m[36mShippingAddress Load (0.4ms)[0m  [1m[34mSELECT "shipping_addresses".* FROM "shipping_addresses" WHERE "shipping_addresses"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/shipping_addresses/index.html.erb:15
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shipping_addresses/index.html.erb:20
+  Rendered shipping_addresses/index.html.erb within layouts/application (3.8ms)
+  Rendered template/_header.html.erb (1.7ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 375ms (Views: 362.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/3" for 10.0.2.2 at 2019-09-28 11:11:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:44
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+  Rendered template/_header.html.erb (1.3ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 381ms (Views: 357.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/3" for 10.0.2.2 at 2019-09-28 11:11:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:44
+  Rendered users/show.html.erb within layouts/application (5.1ms)
+Started GET "/albums" for 10.0.2.2 at 2019-09-28 11:11:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  Rendered template/_header.html.erb (1.4ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 1477ms (Views: 1438.8ms | ActiveRecord: 8.7ms)
+
+
+Processing by AlbumsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:15
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (1.3ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/albums/index.html.erb:6
+  Rendered orders/_link_to-users-carts.html.erb (0.4ms)
+  Rendered albums/index.html.erb within layouts/application (33.5ms)
+  Rendered template/_header.html.erb (1.4ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 454ms (Views: 427.4ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/users/3/carts" for 10.0.2.2 at 2019-09-28 11:11:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#carts as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/carts.html.erb within layouts/application
+  [1m[36mOrder Load (1.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/carts.html.erb:19
+  [1m[36mAlbum Load (1.2ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/carts.html.erb:20
+  [1m[36mAlbum Load (1.2ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/carts.html.erb:20
+  Rendered users/carts.html.erb within layouts/application (24.0ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/template/_header.html.erb:15
+  Rendered template/_header.html.erb (4.0ms)
+  Rendered template/_footer.html.erb (0.3ms)
+Completed 200 OK in 506ms (Views: 446.5ms | ActiveRecord: 14.1ms)
+
+
+Started POST "/sale_histories" for 10.0.2.2 at 2019-09-28 11:11:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SaleHistoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wSLoHAvWrreP3ifcqHTIQWHQtnufUtDB9rIC8Aobp1zQZx3zl3G58ZNJx7oKR8ihggaLifs9nYKtETDUwtR8gA==", "commit"=>"購入確定"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sale_histories_controller.rb:11
+  [1m[36mOrder Load (1.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/sale_histories_controller.rb:14
+  [1m[36mShippingAddress Load (1.2ms)[0m  [1m[34mSELECT  "shipping_addresses".* FROM "shipping_addresses" WHERE "shipping_addresses"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sale_histories_controller.rb:19
+Completed 500 Internal Server Error in 19274ms (ActiveRecord: 9.6ms)
+
+
+  
+NoMethodError (undefined method `id' for #<Order::ActiveRecord_Relation:0x00007f4b00563b58>):
+  
+app/controllers/sale_histories_controller.rb:21:in `create'
+Started POST "/sale_histories" for 10.0.2.2 at 2019-09-28 11:12:54 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SaleHistoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wSLoHAvWrreP3ifcqHTIQWHQtnufUtDB9rIC8Aobp1zQZx3zl3G58ZNJx7oKR8ihggaLifs9nYKtETDUwtR8gA==", "commit"=>"購入確定"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sale_histories_controller.rb:11
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/sale_histories_controller.rb:14
+  [1m[36mShippingAddress Load (0.9ms)[0m  [1m[34mSELECT  "shipping_addresses".* FROM "shipping_addresses" WHERE "shipping_addresses"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sale_histories_controller.rb:19
+  [1m[36mShippingAddress Load (0.9ms)[0m  [1m[34mSELECT "shipping_addresses".* FROM "shipping_addresses"[0m
+  ↳ app/controllers/sale_histories_controller.rb:21
+  [1m[36mOrder Load (1.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/sale_histories_controller.rb:21
+  [1m[36mCACHE Order Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/sale_histories_controller.rb:21
+Completed 500 Internal Server Error in 3231588ms (ActiveRecord: 6.0ms)
+
+
+  
+NoMethodError (undefined method `id' for #<Order::ActiveRecord_Relation:0x00007f4b002378d0>):
+  
+app/controllers/sale_histories_controller.rb:21:in `create'

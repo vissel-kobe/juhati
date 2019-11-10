@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   root 'homes#top'
   get 'thanks' => 'homes#thanks', as: 'thanks'
   get 'albums/search' => 'albums#search', as: 'search'
-<<<<<<< HEAD
+
   resources:admins
   get 'admin/users/:id/favorites', to: 'admins#favorites', as: 'admin_users_favorites'
   resources:users, only:[:index, :show, :edit, :update]
@@ -25,16 +25,6 @@ Rails.application.routes.draw do
     resources:reviews, only:[:edit, :create, :update, :destroy]
     resource:favorites, only:[:create, :destroy]
     resource:orders, only:[:create, :update, :destroy]
-=======
-  resources :admins
-  get 'admin/users/:id/favorites', to: 'admins#favorites', as: 'admin_user_favorites'
-  resources :users, only:[:index, :show, :edit, :update]
-  get 'users/:id/favorites', to: 'users#favorites', as: 'user_favorites'
-  resources :albums do
-    resources :reviews, only:[:edit, :create, :update, :destroy]
-    resource :favorites, only:[:create, :destroy]
-    resource :orders, only:[:create, :update, :destroy]
->>>>>>> 54b0d580437cdc3432416496365555c5e145797f
   end
   resources :users do
     resources :shipping_addresses

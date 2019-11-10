@@ -1,0 +1,7 @@
+<%= form_for [album, review] do |f| %>
+    <div class="review-field clearfix">
+      <span class="label review-label">レビュー内容</span>
+      <%= f.text_area :body, class: "review-form-body" %>
+      <%= f.submit "OK!", class: "btn btn-success review-submit" %>
+    </div>
+<% end %>

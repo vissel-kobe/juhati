@@ -1,25 +1,22 @@
-<div class="albums-index flex">
+<div class="albums-search flex">
 	<div class="leftside"></div>
 	<main class="main">
-		<h2 class="page-title"><%= @title %></h2>
+		<h2 class="page-title">商品一覧</h2>
 		<div class="album-index inner flex">
-			<% @albums.each do |album| %>
+			<% @search.each do |album| %>
 				<div class="album-item text-center">
 				<%= link_to album_path(album) do %>
 					<%= attachment_image_tag album, :album_image, format:"jpeg", class: "album-item-img", fallback: "no-image.jpg" %>
 					<p class="album-item-txt"><%= album.title %></p>
-					<p class="album-item-txt"><%= album.discs[0].artist.name %></p>
+					<!-- album_firstdisc = album.discs[0] -->
+					<!-- album_mainartist = Artist.find_by(id: album_firstdisc.artist_id) -->
+					<p class="album-item-txt">アーティスト名</p>
+					<!-- album_mainartist.name -->
 				<% end %>
 				</div>
 			<% end %>
 		</div>
-		<% if params[:id] == nil %>
-			<%= paginate @albums %>
-		<% end %>
+		<p class="text-center"> &lt; 1 2 3 &gt;</p>
 	</main>
 	<div class="rightside"></div>
-
-	<% if user_signed_in? %>
-		<%= render "orders/link_to-user-carts" %>
-	<% end %>
 </div>

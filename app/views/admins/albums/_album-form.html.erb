@@ -1,9 +1,9 @@
 <div class="leftside"></div>
 <main class="main">
-	<h2 class="page-title">商品追加</h2>
+	<h2 class="page-title"><%= page_title %></h2>
 	<div class="album-form inner">
-		<%= form_for(album) do |f| %>
-			<%= render "template/error_messages", resource: @album %>
+		<%= form_for album, url: form_url, method: method_name do |f| %>
+			<%= render "template/error_messages", resource: album %>
 			<div class="field">
 				<%= f.label :title, "タイトル", class: "label" %>
 				<div class="field-textbox">

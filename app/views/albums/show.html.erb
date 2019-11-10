@@ -5,15 +5,9 @@
 		<div class="inner">
 			<div class="album-content-first flex is-between">
 				<p class="album-title"><%= @album.title %></p>
-				<% if user_signed_in? %>
-					<div class="fav-btn">
-						<%= render "favorites/favorite-btn", album: @album %>
-					</div>
-				<% elsif %>
-					<div class="edit-btn">
-						<%= link_to "編集する", edit_album_path(@album.id) %>
-					</div>
-				<% end %>
+				<div class="fav-btn">
+					<%= render "favorites/favorite-btn", album: @album %>
+				</div>
 			</div>
 			<div class="album-content-second flex is-between">
 				<%= attachment_image_tag @album, :album_image, format:"jpeg", class: "album-content-img", fallback: "no-image.jpg" %>
@@ -26,15 +20,15 @@
 					</p>
 					<p><%= @album.price %> 円(税込み)</p>
 					<p>在庫: <%= @album.stock %> 枚</p>
-					<p>ジャンル: <%= @album_genre.name %></p>
-					<p>レーベル名: <%= @album_label.name %></p>
+					<p>ジャンル: <%= link_to @album.genre.name, genre_albums_path(@album.genre.id) %></p>
+					<p>レーベル名: <%= link_to @album.label.name, label_albums_path(@album.label.id) %></p>
 					<p>ディスク数: <%= @album.discs.count %></p>
 					<div class="album-discs-section flex">
 						<% @album.discs.each do |disc| %>
 							<div class="album-disc">
 								<p class="bold">ディスク<%= disc.disc_number %></p>
 								<p>[アーティスト]</p>
-								<p><%= disc.artist.name %></p>
+								<p><%= link_to disc.artist.name, artist_albums_path(disc.artist.id) %></p>
 								<p>[収録曲]
 								<% disc.songs.each do |song| %>
 									<p><%= song.song_number %>. <%= song.title %></p>
@@ -44,9 +38,9 @@
 					</div>
 				</div>
 				<div class="second-left text-center">
-				<% if user_signed_in? %>
-					<%= render "orders/cart-btn", album: @album %>
-				<% end %>
+					<% if user_signed_in? %>
+						<%= render "orders/cart-btn", album: @album %>
+					<% end %>
 				</div>
 			</div>
 			<div style="margin:30px 0;">
@@ -60,6 +54,6 @@
 	<div class="rightside"></div>
 
 	<% if user_signed_in? %>
-		<%= render "orders/link_to-users-carts" %>
+		<%= render "orders/link_to-user-carts" %>
 	<% end %>
 </div>

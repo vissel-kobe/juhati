@@ -42,9 +42,8 @@
 						<td class="text-center"><%= cart_album.price %>円</td>
 						<td class="text-center"><%= cart_album.stock %>個</td>
 						<td>
-							<%= form_for(cart_item) do |f| %>
+							<%= form_for cart_item, url: album_orders_path(album_id: cart_album.id, id: cart_item.id), method: :patch do |f| %>
 								<%= f.number_field :number, class: "number-field", id: "number" %>
-								<%= hidden_field_tag :album_id, cart_album.id %>
 							<% end %>
 						</td>
 						<td>

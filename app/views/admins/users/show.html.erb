@@ -1,7 +1,7 @@
 <div class="users-show flex">
   <div class="leftside"></div>
   <main class="main clearfix">
-    <h2 class="page-title">会員情報</h2>
+    <h2 class="page-title"><%= @user.family_name %> <%= @user.first_name %>さんの会員情報</h2>
     <div class="field">
       <span class="label">氏名</span>
       <label>（姓）</label>
@@ -29,7 +29,7 @@
       <%= @user.email %>
     </div>
     <div class="submit">
-      <%= link_to "編集する", edit_user_path(current_user.id), class: "actions btn btn-success" %>
+      <%= link_to "編集する", edit_admins_user_path(@user.id), class: "actions btn btn-success" %>
     </div>
   </main>
   <div class="rightside"></div>

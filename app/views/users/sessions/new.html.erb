@@ -2,9 +2,6 @@
   <div class="leftside"></div>
   <main class="main">
     <h2 class="page-title">ログイン</h2>
-    <% if flash[:danger] %>
-      <p class="flash-danger"><%= flash[:danger] %></p>
-    <% end %>
 
     <div class="users-login-form clearfix">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>

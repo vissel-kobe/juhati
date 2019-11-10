@@ -1,3 +1,9 @@
-<footer class="footer">
-  <p class="footer-txt">Footer</p>
-</footer>
+<% if admin_signed_in? %>
+	<footer class="footer admin-footer">
+		<%= link_to "ADMIN", admin_path(current_admin), class: "" %>
+	</footer>
+<% else %>
+	<footer class="footer">
+	  <p class="footer-txt">Footer</p>
+	</footer>
+<% end %>

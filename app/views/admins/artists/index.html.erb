@@ -6,13 +6,13 @@
       <div class="simple-index flex">
         <% @artists.each do |artist| %>
           <div class="simple-item flex">
-            <%= link_to artist.name, edit_artist_path(artist), class: "simple-item-name" %>
-            <%= link_to "削除", artist_path(artist), method: :delete, "data-confirm" => "本当に消しますか？", class: "btn btn-danger" %>
+            <%= link_to artist.name, edit_admins_artist_path(artist), class: "simple-item-name" %>
+            <%= link_to "削除", admins_artist_path(artist), method: :delete, "data-confirm" => "本当に消しますか？", class: "btn btn-danger" %>
           </div>
         <% end %>
       </div>
       <div class="simple-add-link">
-        <%= link_to "アーティストを追加する✔️", new_artist_path, class: "link_to-signup-btn" %>
+        <%= link_to "アーティストを追加する✔️", new_admins_artist_path, class: "link_to-signup-btn" %>
       </div>
     </div>
   </main>

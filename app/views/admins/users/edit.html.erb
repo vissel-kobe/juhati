@@ -1,11 +1,9 @@
 <div class="users-regisitations-new flex">
   <div class="leftside"></div>
   <main class="main">
-    <h2 class="page-title">新規登録</h2>
+    <h2 class="page-title">会員情報編集</h2>
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
-
+    <%= form_for @user, url: admins_user_path(@user), method: :patch do |f| %>
       <div class="field">
         <span class="label">氏名</span>
         <%= f.label :（姓） %>
@@ -50,25 +48,13 @@
         </div>
       </div>
 
-      <div class="field">
-        <span class="label">パスワード</span>
-        <div class="field-textbox ml54px">
-          <%= f.password_field :password, autocomplete: "off" %>
-        </div>
+      <div class="flex">
+        <%= f.submit "保存する", class: "actions btn btn-success" %>
+        <%= link_to "退会させる", admins_delete_user_path(@user),"data-confirm" => "本当にこの会員を退会させますか？", method: :delete %>
       </div>
-
-      <div class="field">
-        <span class="label">パスワード（確認用）</span>
-        <div class="field-textbox ml54px">
-          <%= f.password_field :password_confirmation, autocomplete: "off" %>
-        </div>
-      </div>
-
-      <%= f.submit "新規登録", class: "actions btn btn-success" %>
 
     <% end %>
 
   </main>
   <div class="rightside"></div>
 </div>
-

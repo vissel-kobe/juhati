@@ -3,7 +3,13 @@
 	<main class="main">
 		<h2 class="page-title"><%= @album.title %>のレビュー編集</h2>
 		<div class="review-edit-form">
-			<%= render "reviews/review-form", album: @album, review: @review %>
+			<%= form_for @review, url: admins_album_review_path(album_id: @album.id, id: @review.id), method: :patch do |f| %>
+		    <div class="review-field clearfix">
+		      <span class="label review-label">レビュー内容</span>
+		      <%= f.text_area :body, class: "review-form-body" %>
+		      <%= f.submit "OK!", class: "btn btn-success review-submit" %>
+		    </div>
+			<% end %>
 		</div>
 	</main>
 	<div class="rightside"></div>

@@ -1,26 +1,19 @@
 <div class="sales_histories-index flex">
 	<div class="leftside"></div>
 	<main class="main">
-		<h2 class="page-title"><%= @title %>履歴</h2>
+		<h2 class="page-title">購入履歴</h2>
 		<div class="inner">
 			<div class="history-section-thead flex">
-				<% if @user == nil %>
-					<div class="customer-box">購入者</div>
-				<% end %>
-				<div class="created_at-box"><%= @title %>日時</div>
+				<div class="created_at-box">購入日時</div>
 				<div class="album_title-box">商品名</div>
 				<div class="album_price-box">単価(税込)</div>
-				<div class="quantity-box"><%= @title %>数</div>
+				<div class="quantity-box">購入数</div>
 				<div class="subtotal-box">小計(税込)</div>
 				<div class="total-box">総計(税込)</div>
 				<div class="status-box">ステータス</div>
 			</div>
 			<% @histories.each do |history| %>
 				<section class="history-section flex">
-					<% if @user == nil %>
-						<% customer = history.user %>
-						<div class="customer-box"><%= link_to customer.first_name,user_path(customer.id) %></div>
-					<% end %>
 					<div class="created_at-box">
 						<%= history.created_at.strftime("%Y-%m-%d %H:%M") %>
 					</div>
@@ -35,17 +28,8 @@
 						<% end %>
 					</div>
 					<div class="total-box"><%= history.total %>円</div>
-					<% if @user %>
-						<div class="status-box"><%= history.status %></div>
-						<%= link_to "削除する", user_hidden_history_path(user_id: @user.id, id: history.id), method: :patch, class: "btn btn-danger", "data-confirm" => "削除します。よろしいですか?" %>
-					<% else %>
-						<div class="status-box-for-history<%= history.id %>">
-							<%= form_for(history) do |f| %>
-								<%= f.select :status, SalesHistory.statuses.keys.to_a, {}, class: "select_status" %>
-							<% end %>
-						</div>
-						<!-- render "sales_histories/change_status-form", history: history -->
-					<% end %>
+					<div class="status-box"><%= history.status %></div>
+					<%= link_to "削除する", user_hidden_history_path(user_id: @user.id, id: history.id), method: :patch, class: "btn btn-danger", "data-confirm" => "削除します。よろしいですか?" %>
 				</section>
 			<% end %>
 			<%= paginate @histories %>

@@ -6,13 +6,13 @@
       <div class="simple-index flex">
         <% @genres.each do |genre| %>
           <div class="simple-item flex">
-            <%= link_to genre.name, edit_genre_path(genre), class: "simple-item-name" %>
-            <%= link_to "削除", genre_path(genre), method: :delete, "data-confirm" => "本当に消しますか？", class: "btn btn-danger" %>
+            <%= link_to genre.name, edit_admins_genre_path(genre), class: "simple-item-name" %>
+            <%= link_to "削除", admin_genre_path(genre), method: :delete, "data-confirm" => "本当に消しますか？", class: "btn btn-danger" %>
           </div>
         <% end %>
       </div>
       <div class="simple-add-link">
-        <%= link_to "ジャンルを追加する✔️", new_genre_path, class: "link_to-signup-btn" %>
+        <%= link_to "ジャンルを追加する✔️", new_admins_genre_path, class: "link_to-signup-btn" %>
       </div>
     </div>
   </main>

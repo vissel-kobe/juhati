@@ -6,9 +6,8 @@
 		<th class="th-review-deletebtn"></th>
 	</thead>
 	<tbody>
-		<%= render reviews %>
+		<% reviews.each do |r| %>
+			<%= render "admins/reviews/review", review: r %>
+		<% end %>
 	</tbody>
-
 </table>
-
-<%= render "reviews/review-form", album: album, review: review %>

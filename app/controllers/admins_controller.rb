@@ -1,25 +1,27 @@
 class AdminsController < ApplicationController
-  def edit
-  	@admin = current_admin
-  end
+
+  before_action :set_admin
 
   def show
-  	@admin = current_admin
+  end
+
+  def edit
   end
 
   def update
   	@admin = current_admin
-  	@admin.update(params_admin)
+  	@admin.update(admin_params)
   	redirect_to admin_path(@admin)
   end
 
-  def favorites
-    @user = User.find(params[:id])
-    @favorites = Favorite.where(user_id: @user.id)
+  private
+
+  def set_admin
+    @admin = current_admin
   end
 
-  private
-  def params_admin
+  def admin_params
   	params.require(:admin).permit(:email)
   end
+
 end

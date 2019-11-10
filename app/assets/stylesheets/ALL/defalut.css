@@ -158,7 +158,7 @@ a {
     background-color: rgba(255,255,255,0.7);
 }
 .header-right {
-    width: 400px;
+  width: 80%;
 }
 .header-nav ul {
     list-style: none;
@@ -167,11 +167,13 @@ a {
 }
 .header-nav-btn,
 .header-hidden-nav-btn {
-    display: block;
-    width: 120px;
-    padding: 10px 0;
-    background-color: rgba(235,235,235,0.7);
-    color: #333;
+
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100px;
+  color: #333;
+  background-color: rgba(235,235,235,0.7);
 }
 .header-hidden-nav {
     padding-bottom: 10px;

@@ -47,3 +47,14 @@
   margin:0 auto;
 }
 
+.edit-btn {
+  background-color: pink;
+  width:80px;
+  display:inline-block;
+  margin: 0 20px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 5px;
+  border:solid 1px black;
+}
+

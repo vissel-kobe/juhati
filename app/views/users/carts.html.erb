@@ -76,9 +76,15 @@
 				</tr>
 			<tbody>
 		</table>
+<<<<<<< HEAD
+		<%= form_for @sale, url: sale_histories_path do |f| %>
+			<%= f.submit '購入確定' %>
+		<% end %>
+=======
 		<div class="submit">
 			<%= link_to "購入確認へ進む", user_confirm_purchase_path(user_id: @user.id), class: "actions btn btn-success" %>
 		</div>
+>>>>>>> 54b0d580437cdc3432416496365555c5e145797f
 	</main>
 	<div class="rightside"></div>
 </div>

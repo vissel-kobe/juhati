@@ -5,9 +5,15 @@
 		<div class="inner">
 			<div class="album-content-first flex is-between">
 				<p class="album-title"><%= @album.title %></p>
-				<div class="fav-btn">
-					<%= render "favorites/favorite-btn", album: @album %>
-				</div>
+				<% if user_signed_in? %>
+					<div class="fav-btn">
+						<%= render "favorites/favorite-btn", album: @album %>
+					</div>
+				<% elsif %>
+					<div class="edit-btn">
+						<%= link_to "編集する", edit_album_path(@album.id) %>
+					</div>
+				<% end %>
 			</div>
 			<div class="album-content-second flex is-between">
 				<%= attachment_image_tag @album, :album_image, format:"jpeg", class: "album-content-img", fallback: "no-image.jpg" %>
@@ -23,6 +29,8 @@
 					<p>ジャンル: <%= @album_genre.name %></p>
 					<p>レーベル名: <%= @album_label.name %></p>
 					<p>ディスク数: <%= @album.discs.count %></p>
+<<<<<<< HEAD
+=======
 					<div class="album-discs-section flex">
 						<% @album.discs.each do |disc| %>
 							<div class="album-disc">
@@ -36,9 +44,12 @@
 							</div>
 						<% end %>
 					</div>
+>>>>>>> 54b0d580437cdc3432416496365555c5e145797f
 				</div>
 				<div class="second-left text-center">
+				<% if user_signed_in? %>
 					<%= render "orders/cart-btn", album: @album %>
+				<% end %>
 				</div>
 			</div>
 			<div style="margin:30px 0;">
@@ -50,5 +61,11 @@
 		</div>
 	</main>
 	<div class="rightside"></div>
+<<<<<<< HEAD
+	<% if user_signed_in? %>
+		<%= render "orders/link_to-users-carts" %>
+	<% end %>
+=======
 	<%= render "orders/link_to-user-carts" %>
+>>>>>>> 54b0d580437cdc3432416496365555c5e145797f
 </div>

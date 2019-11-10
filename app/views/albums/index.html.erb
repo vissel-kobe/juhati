@@ -18,5 +18,8 @@
 		<% end %>
 	</main>
 	<div class="rightside"></div>
-	<%= render "orders/link_to-user-carts" %>
+
+	<% if user_signed_in? %>
+		<%= render "orders/link_to-user-carts" %>
+	<% end %>
 </div>

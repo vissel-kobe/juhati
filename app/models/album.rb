@@ -33,4 +33,12 @@ class Album < ApplicationRecord
 		end
 	end
 
+  def self.search(search)
+    if search
+      Album.where(['title LIKE ?', "%#{search}%"])
+    else
+      Album.all
+    end
+  end
+
 end

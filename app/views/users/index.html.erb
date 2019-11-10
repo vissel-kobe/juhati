@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="admins-index flex">
 	<div class="leftside"></div>
 	<main class="main">
@@ -5,24 +6,40 @@
 		<div class="content">
 			<h2 class="title">会員一覧</h2>
 			<table>
+=======
+<div class="users-edit flex">
+  <div class="leftside"></div>
+  <main class="main">
+    <h2 class="page-title">会員一覧</h2>
+			<table class="inner">
+>>>>>>> 54b0d580437cdc3432416496365555c5e145797f
 				<tbody>
 					<tr>
 						<td class="text-center">会員ID</td>
 						<td class="text-center table-margin">氏名</td>
 						<td class="text-center table-margin">購入回数</td>
 						<td class="text-center table-margin"></td>
+						<td class="text-center table-margin"></td>
 					</tr>
 					<% @users.each do |user| %>
 						<tr class="table-margin">
-							<td  class="text-center"><%= user.id %></td>
-							<td  class="text-center table-margin"><%= user.first_name %> <%= user.family_name %></td>
-							<td  class="text-center table-margin">1</td>
+							<td class="text-center"><%= user.id %></td>
+							<td class="text-center table-margin"><%= user.first_name %> <%= user.family_name %></td>
+							<td class="text-center table-margin"><%= user.sales_histories.count %></td>
+							<td class="text-center table-margin">
+								<% if user.deleted == "true" %>
+									退会済
+								<% end %>
+							</td>
 							<td  class="text-center table-margin"><%= link_to "詳細 →", user_path(user) %></td>
 						</tr>
 					<% end %>
 				</tbody>
 			</table>
+<<<<<<< HEAD
 		</div>
+=======
+>>>>>>> 54b0d580437cdc3432416496365555c5e145797f
 	</main>
 	<div class="rightside"></div>
 </div>

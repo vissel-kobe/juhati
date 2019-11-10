@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_24_091151) do
+ActiveRecord::Schema.define(version: 2019_10_31_040555) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -69,6 +69,16 @@ ActiveRecord::Schema.define(version: 2019_08_24_091151) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "history_items", force: :cascade do |t|
+    t.integer "sales_history_id"
+    t.integer "album_id"
+    t.string "album_title"
+    t.integer "album_price"
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "labels", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -80,7 +90,6 @@ ActiveRecord::Schema.define(version: 2019_08_24_091151) do
     t.integer "album_id"
     t.integer "number", limit: 1, default: 1, null: false
     t.integer "subtotal"
-    t.integer "status", limit: 1, default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -94,11 +103,11 @@ ActiveRecord::Schema.define(version: 2019_08_24_091151) do
   end
 
   create_table "sales_histories", force: :cascade do |t|
+    t.integer "user_id"
     t.integer "shipping_address_id"
-    t.integer "order_id"
     t.integer "total"
-    t.string "deleted"
     t.integer "status", limit: 1, default: 0, null: false
+    t.string "deleted"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

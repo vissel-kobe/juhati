@@ -1,2 +1,21 @@
-<h1>Labels#index</h1>
-<p>Find me in app/views/labels/index.html.erb</p>
+<div class="labels-index flex">
+  <div class="leftside"></div>
+  <main class="main">
+    <h2 class="page-title">レーベル一覧</h2>
+    <div class="flex">
+      <div class="simple-index flex">
+        <% @labels.each do |label| %>
+          <div class="simple-item flex">
+            <%= link_to label.name, edit_label_path(label), class: "simple-item-name" %>
+            <%= link_to "削除", label_path(label), method: :delete, "data-confirm" => "本当に消しますか？", class: "btn btn-danger" %>
+          </div>
+        <% end %>
+      </div>
+      <div class="simple-add-link">
+        <%= link_to "レーベルを追加する✔️", new_label_path, class: "link_to-signup-btn" %>
+      </div>
+    </div>
+  </main>
+  <div class="rightside"></div>
+</div>
+

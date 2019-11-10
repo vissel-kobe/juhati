@@ -12,18 +12,23 @@
 //
 //= require rails-ujs
 //= require activestorage
- //= require turbolinks
- //= require jquery
- //= require cocoon
- //= require_tree .
+//= require turbolinks
+//= require jquery
+//= require cocoon
+//= require_tree .
 
 $(function(){
-  
-$(document).on('ajax:success', '#new_review', function(e){
-  console.log(e);
-  $('#review_body').val('');
-  $('.review_box').prepend('<p>' + e.detail[0]['body'] + '</p>');
-  
-})
-   
+	$(document).on('ajax:success', '#new_review', function(e){
+		console.log(e);
+		$('#review_body').val('');
+		$('.review_box').prepend('<p>' + e.detail[0]['body'] + '</p>');
+	});
+	jQuery(document).bind('ready ajaxComplete', function() {
+		$('.select_status').change(function() {
+			$(this).parent().submit();
+		});
+		$('.cart_item-section .number-field').change(function() {
+			$(this).parent().submit();
+		});
+	});
 })

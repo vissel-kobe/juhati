@@ -1,10 +1,7 @@
 class ArtistsController < ApplicationController
+
   def index
     @artists = Artist.all
-  end
-
-  def edit
-    @artist = Artist.find(params[:id])
   end
 
   def new
@@ -15,13 +12,33 @@ class ArtistsController < ApplicationController
     @artist = Artist.new(artist_params)
     @artist.save!
     redirect_to new_album_path
+    @title = "アーティスト新規追加"
+    @resource = Artist.new
+    @submit = "作成"
+    render "template/simple-form"
+  end
+
+  def edit
+    @title = "アーティスト編集"
+    @resource = Artist.find(params[:id])
+    @submit = "更新"
+    render "template/simple-form"
   end
 
   def update
+    @artist = Artist.find(params[:id])
+    if @artist.update(artist_params)
+      redirect_to artists_path
+    else
+      @title = "アーティスト編集"
+      @resource = @artist
+      @submit = "更新"
+      render "template/simple-form"
+    end
   end
 
-  def destroy
-  end
+  # def destroy
+  # end
 
   private
 
@@ -30,3 +47,4 @@ class ArtistsController < ApplicationController
   end
 
 end
+

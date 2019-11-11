@@ -2,7 +2,7 @@ class AlbumsController < ApplicationController
 
   def index
     @albums = Album.page(params[:page]).per(12).reverse_order
-    @title = "商品一覧"
+    @page_title = "商品一覧"
   end
 
   def search

@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :ensure_correct_user, {only: [:edit, :carts, :update, :unsubscribe, :destroy]}
-  before_action :set_user, {only: [:show, :favorites]}
+  before_action :ensure_correct_user, {only: [:show, :edit, :carts, :update, :favorites, :unsubscribe, :destroy]}
 
   def show
   end
@@ -36,11 +35,12 @@ class UsersController < ApplicationController
 
   def favorites
     @favorites = Favorite.where(user_id: @user.id)
-    @albums = []
+    @album_ids = []
     @favorites.each do |fav|
-      @albums << fav.album
+      @album_ids << fav.album_id
     end
-    @title = @user.first_name + "さんがいいねした商品"
+    @albums = Album.where(id: @album_ids).page(params[:page]).per(12).reverse_order
+    @page_title = "いいねした商品"
     render 'albums/index'
   end
 
@@ -51,10 +51,6 @@ class UsersController < ApplicationController
     if @user != current_user
       redirect_to user_path(current_user)
     end
-  end
-
-  def set_user
-    @user = User.find(params[:id])
   end
 
   def user_params

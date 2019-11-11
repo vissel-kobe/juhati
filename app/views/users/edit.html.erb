@@ -48,7 +48,10 @@
         </div>
       </div>
 
-      <%= f.submit "保存する", class: "actions btn btn-success" %>
+      <div class="flex is-between">
+        <%= f.submit "保存する", class: "actions btn btn-success" %>
+        <%= link_to "退会する", unsubscribe_user_path(@user), class: "btn btn-danger" %>
+      </div>
 
     <% end %>
 

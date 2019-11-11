@@ -2,20 +2,22 @@
   <div class="leftside"></div>
   <main class="main">
     <h2 class="page-title">ログイン</h2>
-
+    <% if flash[:danger] %>
+      <p class="flash-danger"><%= flash[:danger] %></p>
+    <% end %>
     <div class="users-login-form clearfix">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field">
-          <span class="label">メールアドレス</span>
+          <%= f.label :email, "メールアドレス", class: "label" %>
           <div class="field-textbox">
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"email-box" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "email-box" %>
           </div>
         </div>
 
         <div class="field">
-          <span class="label">パスワード</span>
+          <%= f.label :password, "パスワード", class: "label" %>
           <div class="field-textbox">
-            <%= f.password_field :password, autocomplete: "off", class:"password-box" %>
+            <%= f.password_field :password, autocomplete: "off", class: "password-box" %>
           </div>
         </div>
 

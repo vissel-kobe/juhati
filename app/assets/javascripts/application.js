@@ -23,12 +23,10 @@ $(function(){
 		$('#review_body').val('');
 		$('.review_box').prepend('<p>' + e.detail[0]['body'] + '</p>');
 	});
-	jQuery(document).bind('ready ajaxComplete', function() {
-		$('.select_status').change(function() {
-			$(this).parent().submit();
-		});
-		$('.cart_item-section .number-field').change(function() {
-			$(this).parent().submit();
-		});
+	$('.select_status').change(function() {
+		$(this).parent().submit();
 	});
-})
+	$('.cart_item-section .number-field').change(function() {
+		$(this).parent().submit();
+	});
+});

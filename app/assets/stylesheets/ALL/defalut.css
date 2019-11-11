@@ -276,7 +276,8 @@ th {
     text-align: center;
 }
 .simple-index {
-    width: 77%;
+    width: 74%;
+    flex-wrap: wrap;
 }
 .simple-item {
     width: 33.3%;
@@ -292,7 +293,7 @@ th {
     height: 28px;
 }
 .simple-add-link {
-    width: 23%;
+    width: 26%;
 }
 
 .thanks-txt {

@@ -8,60 +8,47 @@
 
       <div class="field">
         <span class="label">氏名</span>
-        <%= f.label :（姓） %>
+        <%= f.label :family_name, "(姓)", class: "label-sub" %>
         <%= f.text_field :family_name, autofocus: true, autocomplete: "family_name" %>
-        <%= f.label :（名） %>
+        <%= f.label :first_name, "(名)", class: "label-sub" %>
         <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
       </div>
 
       <div class="field">
         <span class="label">氏名(フリガナ)</span>
-        <%= f.label :（姓） %>
+        <%= f.label :kana_family_name, "(姓)", class: "label-sub" %>
         <%= f.text_field :kana_family_name, autofocus: true, autocomplete: "kana_family_name" %>
-        <%= f.label :（名） %>
+        <%= f.label :kana_first_name, "(名)", class: "label-sub" %>
         <%= f.text_field :kana_first_name, autofocus: true, autocomplete: "kana_first_name" %>
       </div>
 
       <div class="field">
-        <span class="label">郵便番号</span>
-        <div class="field-textbox ml54px">
-          <%= f.text_field :postcode, autofocus: true, autocomplete: "postcode" %>
-        </div>
+        <%= f.label :postcode, "郵便番号", class: "large-label" %>
+        <%= f.text_field :postcode, autofocus: true, autocomplete: "postcode", class: "" %>
       </div>
 
       <div class="field">
-        <span class="label">住所</span>
-        <div class="field-textbox ml54px">
-          <%= f.text_field :address, autofocus: true, autocomplete: "address" %>
-        </div>
+        <%= f.label :address, "住所", class: "large-label" %>
+        <%= f.text_field :address, autofocus: true, autocomplete: "address" %>
       </div>
 
       <div class="field">
-        <span class="label">電話番号</span>
-        <div class="field-textbox ml54px">
-          <%= f.text_field :telephone, autofocus: true, autocomplete: "telephone" %>
-        </div>
+        <%= f.label :telephone, "電話番号", class: "large-label" %>
+        <%= f.text_field :telephone, autofocus: true, autocomplete: "telephone" %>
       </div>
 
       <div class="field">
-        <span class="label">メールアドレス</span>
-        <div class="field-textbox ml54px">
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-        </div>
+        <%= f.label :email, "メールアドレス", class: "large-label" %>
+          <%= f.email_field :email %>
       </div>
 
       <div class="field">
-        <span class="label">パスワード</span>
-        <div class="field-textbox ml54px">
-          <%= f.password_field :password, autocomplete: "off" %>
-        </div>
+        <%= f.label :password, "パスワード(" + @minimum_password_length +"文字以上)", class: "large-label" %>
+        <%= f.password_field :password, autocomplete: "new-password", class: "" %>
       </div>
-
       <div class="field">
-        <span class="label">パスワード（確認用）</span>
-        <div class="field-textbox ml54px">
-          <%= f.password_field :password_confirmation, autocomplete: "off" %>
-        </div>
+        <%= f.label :password_confirmation, "パスワード(確認用)", class: "large-label" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "" %>
       </div>
 
       <%= f.submit "新規登録", class: "actions btn btn-success" %>

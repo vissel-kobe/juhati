@@ -30,9 +30,9 @@ class Admins::UsersController < ApplicationController
     @favorites = Favorite.where(user_id: @user.id)
     @album_ids = []
     @favorites.each do |fav|
-      @album_ids << fav.album.id
+      @album_ids << fav.album_id
     end
-    @album = Album.where(id: @album_ids).page(params[:page]).per(12).reverse_order
+    @albums = Album.where(id: @album_ids).page(params[:page]).per(12).reverse_order
     @page_title = @user.first_name + "さんがいいねした商品"
     render 'admins/albums/index'
   end

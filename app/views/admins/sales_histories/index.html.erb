@@ -49,15 +49,3 @@
 	</main>
 	<div class="rightside"></div>
 </div>
-<script>
-	$(function(){
-		jQuery(document).bind('ready ajaxComplete', function() {
-			$('.select_status').change(function() {
-				$(this).parent().submit();
-			});
-			$('.cart_item-section .number-field').change(function() {
-				$(this).parent().submit();
-			});
-		});
-	})
-</script>

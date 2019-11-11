@@ -9,12 +9,18 @@
 					<td class="text-center table-margin">氏名</td>
 					<td class="text-center table-margin">購入回数</td>
 					<td class="text-center table-margin"></td>
+					<td class="text-center table-margin"></td>
 				</tr>
 				<% @users.each do |user| %>
 					<tr class="table-margin">
 						<td  class="text-center"><%= user.id %></td>
 						<td  class="text-center table-margin"><%= user.family_name %> <%= user.first_name %></td>
 						<td  class="text-center table-margin"><%= user.sales_histories.count %></td>
+						<td class="text-center table-margin">
+							<% if user.deleted == "true" %>
+								退会済
+							<% end %>
+						</td>
 						<td  class="text-center table-margin"><%= link_to "詳細 →", admins_user_path(user) %></td>
 					</tr>
 				<% end %>

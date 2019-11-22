@@ -12,7 +12,7 @@ class Album < ApplicationRecord
 	validates :price, presence: true
 	validates :stock, presence: true
 
-	has_many :discs, -> {order("disc_number")}
+	has_many :discs, dependent: :destroy
 	accepts_nested_attributes_for :discs, allow_destroy: true
 
 	attachment :album_image

@@ -1,3 +1,6 @@
+.image-field {
+    position: relative;
+}
 .price-field {
     width: 50px;
 }
@@ -96,4 +99,15 @@
     width: 150px;
     background-image: url("../cart-image.jpg");
     background-size: contain;
+}
+
+#img_prev {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: -70px;
+    left: 300px;
+}
+.img_prev-hide {
+    display: none;
 }

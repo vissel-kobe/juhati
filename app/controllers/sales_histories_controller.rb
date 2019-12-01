@@ -4,14 +4,8 @@ class SalesHistoriesController < ApplicationController
   before_action :set_correct_cart, {only: [:new]}
 
   def index
-    if params[:user_id]
-      @user = User.find(params[:user_id])
-      @histories = SalesHistory.where(user_id: params[:user_id], deleted: nil).page(params[:page]).reverse_order
-      @title = "購入"
-    else
-      @histories = SalesHistory.page(params[:page]).reverse_order
-      @title = "販売"
-    end
+    @user = User.find(params[:user_id])
+    @histories = SalesHistory.where(user_id: params[:user_id], deleted: nil).page(params[:page]).reverse_order
   end
 
   def new
@@ -64,13 +58,6 @@ class SalesHistoriesController < ApplicationController
         end
       end
     end
-  end
-
-  def update
-    @history = SalesHistory.find(params[:id])
-    @history.update(status: params[:sales_history][:status])
-    redirect_to sales_histories_path
-    # 非同期できませんでした...
   end
 
   def hidden

@@ -1,5 +1,5 @@
 class Admins::GenresController < ApplicationController
-	
+
   def index
     @genres = Genre.all
   end
@@ -7,10 +7,12 @@ class Admins::GenresController < ApplicationController
   def create
     @genre = Genre.new(genre_params)
     if @genre.save
-      redirect_to genres_path
+      redirect_to admins_genres_path
     else
       @title = "ジャンル新規追加"
       @resource = @genre
+      @url = admins_genres_path
+      @method = :post
       @submit = "作成"
       render "template/simple-form"
     end
@@ -19,6 +21,8 @@ class Admins::GenresController < ApplicationController
   def new
     @title = "ジャンル新規追加"
     @resource = Genre.new
+    @url = admins_genres_path
+    @method = :post
     @submit = "作成"
     render "template/simple-form"
   end
@@ -26,6 +30,8 @@ class Admins::GenresController < ApplicationController
   def edit
     @title = 'ジャンル編集'
     @resource = Genre.find(params[:id])
+    @url = admins_genre_path(@resource.id)
+    @method = :patch
     @submit = '更新'
     render 'template/simple-form'
   end
@@ -33,10 +39,12 @@ class Admins::GenresController < ApplicationController
   def update
     @genre = Genre.find(params[:id])
     if @genre.update(genre_params)
-      redirect_to genres_path
+      redirect_to admins_genres_path
     else
       @title = 'ジャンル編集'
       @resource = @genre
+      @url = admins_genre_path(@resource.id)
+      @method = :patch
       @submit = '更新'
       render 'template/simple-form'
     end

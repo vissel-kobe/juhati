@@ -3,7 +3,7 @@
 	<main class="main">
 		<h2 class="page-title"><%= @title %></h2>
 		<div class="simple-form">
-			<%= form_for @resource do |f| %>
+			<%= form_for @resource, url: @url, method: @method do |f| %>
 			<%= render "template/error_messages", resource: @resource %>
 				<%= f.text_field :name %>
 				<%= f.submit @submit %>

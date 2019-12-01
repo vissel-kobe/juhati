@@ -1,14 +1,11 @@
 <div class="albums-edit flex">
-	<%= render "albums/album-form", album: @album, submit: "変更不能" %>
+	<%= render "admins/albums/album-form", album: @album, page_title: "商品編集", form_url: admins_album_path(@album), method_name: :patch, submit: "変更不能" %>
 </div>
 <script defer>
-  //nameが空のとき、submitを押せないようにする
-  //nameに何か入力されていたら、押せるようにする。
-  //submitはすでにdisabledなので、入力したらdisabledを解除すればいい
   const title = document.querySelector('#title');
-  const price = document.querySelector('#price');
-  const stock = document.querySelector('#stock');
-  const submit = document.querySelector('#submit');
+  // const price = document.querySelector('#price');
+  // const stock = document.querySelector('#stock');
+  // const submit = document.querySelector('#submit');
   document.addEventListener('keyup',function(){
   	if (title.value.length >= 1){
   		submit.disabled = false;

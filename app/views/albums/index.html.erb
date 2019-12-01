@@ -1,7 +1,7 @@
 <div class="albums-index flex">
 	<div class="leftside"></div>
 	<main class="main">
-		<h2 class="page-title"><%= @title %></h2>
+		<h2 class="page-title"><%= @page_title %></h2>
 		<div class="album-index inner flex">
 			<% @albums.each do |album| %>
 				<div class="album-item text-center">
@@ -13,12 +13,8 @@
 				</div>
 			<% end %>
 		</div>
-		<% if params[:id] == nil %>
-			<%= paginate @albums %>
-		<% end %>
+		<%= paginate @albums %>
 	</main>
 	<div class="rightside"></div>
-	<% if user_signed_in? %>
-		<%= render "orders/link_to-user-carts" %>
-	<% end %>
+	<%= render "orders/link_to-user-carts" %>
 </div>

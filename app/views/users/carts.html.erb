@@ -41,10 +41,16 @@
 						</td>
 						<td class="text-center"><%= cart_album.price %>円</td>
 						<td class="text-center"><%= cart_album.stock %>個</td>
+<<<<<<< HEAD
 						<%= form_for(cart_item) do |f| %>
 							<td>
 								<%= f.number_field :number, min: 1, class: "number-field", id: "number" %>
 								<%= hidden_field_tag :album_id, cart_album.id %>
+=======
+						<td>
+							<%= form_for cart_item, url: album_orders_path(album_id: cart_album.id, id: cart_item.id), method: :patch do |f| %>
+								<%= f.number_field :number, class: "number-field", id: "number" %>
+>>>>>>> 72c0e40ae30235d506802b2386dc8019890020df
 							<% end %>
 						</td>
 						<td>
@@ -78,7 +84,7 @@
 		</table>
 
 		<div class="submit">
-			<%= link_to "購入確認へ進む", user_confirm_purchase_path(user_id: @user.id), class: "actions btn btn-success" %>
+			<%= link_to "購入確認へ進む", new_user_sales_history_path(user_id: @user.id), class: "actions btn btn-success" %>
 		</div>
 
 	</main>

@@ -1,7 +1,6 @@
 class Admins::UsersController < ApplicationController
-	
-  before_action :ensure_correct_user, {only: [:edit, :carts, :update, :unsubscribe, :destroy]}
-  before_action :set_user, {only: [:show, :favorites]}
+
+  before_action :set_user, {only: [:show, :edit, :update, :favorites, :unsubscribe, :destroy]}
 
   def index
     @users = User.all
@@ -13,17 +12,9 @@ class Admins::UsersController < ApplicationController
   def edit
   end
 
-  def carts
-    @user = User.find(params[:id])
-    @orders = @user.orders.all
-    @sale = SalesHistory.new
-    @cart_items = @user.orders.all
-
-  end
-
   def update
     @user.update(user_params)
-    redirect_to user_path(@user)
+    redirect_to admins_user_path(@user)
   end
 
   def unsubscribe
@@ -32,30 +23,21 @@ class Admins::UsersController < ApplicationController
 # deleteにしたかったけどエラーでたので一旦
   def destroy
     @user.update(deleted: "true")
-    current_user = nil
-    @current_user = nil
-    reset_session
-    redirect_to root_path
+    redirect_to admins_users_path
   end
 
   def favorites
     @favorites = Favorite.where(user_id: @user.id)
-    @albums = []
+    @album_ids = []
     @favorites.each do |fav|
-      @albums << fav.album
+      @album_ids << fav.album_id
     end
-    @title = @user.first_name + "さんがいいねした商品"
-    render 'albums/index'
+    @albums = Album.where(id: @album_ids).page(params[:page]).per(12).reverse_order
+    @page_title = @user.first_name + "さんがいいねした商品"
+    render 'admins/albums/index'
   end
 
   private
-
-  def ensure_correct_user
-    @user  = User.find(params[:id])
-    if @user != current_user
-      redirect_to user_path(current_user)
-    end
-  end
 
   def set_user
     @user = User.find(params[:id])

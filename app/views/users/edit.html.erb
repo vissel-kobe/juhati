@@ -2,50 +2,58 @@
   <div class="leftside"></div>
   <main class="main">
     <h2 class="page-title">会員情報編集</h2>
+
     <%= form_for(@user) do |f| %>
-      <%= render "template/error_messages", resource: @user %>
       <div class="field">
         <span class="label">氏名</span>
-        <%= f.label :family_name, "(姓)", class: "label-sub" %>
+        <%= f.label :（姓） %>
         <%= f.text_field :family_name, autofocus: true, autocomplete: "family_name" %>
-        <%= f.label :first_name, "(名)", class: "label-sub" %>
+        <%= f.label :（名） %>
         <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
       </div>
 
       <div class="field">
         <span class="label">氏名(フリガナ)</span>
-        <%= f.label :kana_family_name, "(姓)", class: "label-sub" %>
+        <%= f.label :（姓） %>
         <%= f.text_field :kana_family_name, autofocus: true, autocomplete: "kana_family_name" %>
-        <%= f.label :kana_first_name, "(名)", class: "label-sub" %>
+        <%= f.label :（名） %>
         <%= f.text_field :kana_first_name, autofocus: true, autocomplete: "kana_first_name" %>
       </div>
 
       <div class="field">
-        <%= f.label :postcode, "郵便番号", class: "large-label" %>
-        <%= f.text_field :postcode, autofocus: true, autocomplete: "postcode", class: "" %>
+        <span class="label">郵便番号</span>
+        <div class="field-textbox ml54px">
+          <%= f.text_field :postcode, autofocus: true, autocomplete: "postcode" %>
+        </div>
       </div>
 
       <div class="field">
-        <%= f.label :address, "住所", class: "large-label" %>
-        <%= f.text_field :address, autofocus: true, autocomplete: "address" %>
+        <span class="label">住所</span>
+        <div class="field-textbox ml54px">
+          <%= f.text_field :address, autofocus: true, autocomplete: "address" %>
+        </div>
       </div>
 
       <div class="field">
-        <%= f.label :telephone, "電話番号", class: "large-label" %>
-        <%= f.text_field :telephone, autofocus: true, autocomplete: "telephone" %>
+        <span class="label">電話番号</span>
+        <div class="field-textbox ml54px">
+          <%= f.text_field :telephone, autofocus: true, autocomplete: "telephone" %>
+        </div>
       </div>
+
       <div class="field">
-          <%= f.label :email, "メールアドレス", class: "large-label" %>
-          <%= f.email_field :email %>
+        <span class="label">メールアドレス</span>
+        <div class="field-textbox ml54px">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
       </div>
-      <div class="submit">
+
+      <div class="flex is-between">
         <%= f.submit "保存する", class: "actions btn btn-success" %>
+        <%= link_to "退会する", unsubscribe_user_path(@user), class: "btn btn-danger" %>
       </div>
 
     <% end %>
-    <div class="submit">
-      <%= link_to "戻る", user_path(@user) %>
-    </div>
 
   </main>
   <div class="rightside"></div>

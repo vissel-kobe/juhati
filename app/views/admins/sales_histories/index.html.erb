@@ -1,33 +1,35 @@
 <div class="sales_histories-index flex">
 	<div class="leftside"></div>
 	<main class="main">
-		<h2 class="page-title"><%= @title %>履歴</h2>
+		<h2 class="page-title">
+			<% if @user %>
+				<%= @user.family_name %> <%= @user.first_name %>さんの購入履歴
+			<% else %>
+				販売履歴
+			<% end %>
+		</h2>
 		<div class="inner">
 			<div class="history-section-thead flex">
-				<% if @user == nil %>
-					<div class="customer-box">購入者</div>
-				<% end %>
-				<div class="created_at-box"><%= @title %>日時</div>
+				<div class="customer-box">購入者</div>
+				<div class="created_at-box">販売日時</div>
 				<div class="album_title-box">商品名</div>
 				<div class="album_price-box">単価(税込)</div>
-				<div class="quantity-box"><%= @title %>数</div>
+				<div class="quantity-box">販売数</div>
 				<div class="subtotal-box">小計(税込)</div>
 				<div class="total-box">総計(税込)</div>
 				<div class="status-box">ステータス</div>
 			</div>
 			<% @histories.each do |history| %>
 				<section class="history-section flex">
-					<% if @user == nil %>
-						<% customer = history.user %>
-						<div class="customer-box"><%= link_to customer.first_name,user_path(customer.id) %></div>
-					<% end %>
+					<% customer = history.user %>
+					<div class="customer-box"><%= link_to customer.first_name,admins_user_path(customer.id) %></div>
 					<div class="created_at-box">
 						<%= history.created_at.strftime("%Y-%m-%d %H:%M") %>
 					</div>
 					<div class="history_items flex">
 						<% history.history_items.each do |item| %>
 							<div class="history_item-section flex">
-								<div class="album_title-box"><%= link_to item.album_title, album_path(item.album_id) %></div>
+								<div class="album_title-box"><%= link_to item.album_title, admins_album_path(item.album_id) %></div>
 								<div class="album_price-box"><%= item.album_price %>円</div>
 								<div class="quantity-box"><%= item.quantity %>個</div>
 								<div class="subtotal-box"><%= (item.album_price * item.quantity).to_i %>円</div>
@@ -35,17 +37,11 @@
 						<% end %>
 					</div>
 					<div class="total-box"><%= history.total %>円</div>
-					<% if @user %>
-						<div class="status-box"><%= history.status %></div>
-						<%= link_to "削除する", user_hidden_history_path(user_id: @user.id, id: history.id), method: :patch, class: "btn btn-danger", "data-confirm" => "削除します。よろしいですか?" %>
-					<% else %>
-						<div class="status-box-for-history<%= history.id %>">
-							<%= form_for(history) do |f| %>
-								<%= f.select :status, SalesHistory.statuses.keys.to_a, {}, class: "select_status" %>
-							<% end %>
-						</div>
-						<!-- render "sales_histories/change_status-form", history: history -->
-					<% end %>
+					<div class="status-box-for-history<%= history.id %>">
+						<%= form_for history, url: admins_sales_history_path(history.id), method: :patch do |f| %>
+							<%= f.select :status, SalesHistory.statuses.keys.to_a, {}, class: "select_status" %>
+						<% end %>
+					</div>
 				</section>
 			<% end %>
 			<%= paginate @histories %>

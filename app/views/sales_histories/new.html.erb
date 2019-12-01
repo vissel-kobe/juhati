@@ -51,7 +51,7 @@
 				</tr>
 			</tbody>
 		</table>
-		<%= form_for @sales_history, url: user_create_history_path(user_id: @user.id) do |f| %>
+		<%= form_for @sales_history, url: user_sales_histories_path(user_id: @user.id), method: :post do |f| %>
 			<% @user.shipping_addresses.each do |ship_a| %>
 				<div class="flex">
 					<p class="shipping_address_radio"><%= f.radio_button :shipping_address_id, ship_a.id %></p>

@@ -1,7 +1,7 @@
 <div class="albums-index flex">
 	<div class="leftside"></div>
 	<main class="main">
-		<h2 class="page-title"><%= @title %></h2>
+		<h2 class="page-title"><%= @page_title %></h2>
 		<div class="album-index inner flex">
 			<% @albums.each do |album| %>
 				<div class="album-item text-center">
@@ -18,8 +18,4 @@
 		<% end %>
 	</main>
 	<div class="rightside"></div>
-
-	<% if user_signed_in? %>
-		<%= render "views/orders/link_to-users-carts" %>
-	<% end %>
 </div>

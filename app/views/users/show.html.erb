@@ -16,21 +16,9 @@
       <label>（名）</label>
       <%= @user.kana_first_name %>
     </div>
-    <div class="flex">
-      <div class="leftbox">
-        <div class="field">
-          <span class="label">郵便番号</span>
-          <%= @user.postcode %>
-        </div>
-        <div class="field">
-          <span class="label">住所</span>
-          <%= @user.address %>
-        </div>
-      </div>
-      <div class="rightbox">
-        <%= link_to "配送先一覧", user_shipping_addresses_path(user_id: @user.id), class: "actions btn btn-primary"%>
-        <%= link_to "配送先追加", new_user_shipping_address_path(user_id: @user.id), class: "actions btn btn-success"%>
-      </div>
+    <div class="field">
+      <span class="label">郵便番号</span>
+      <%= @user.postcode %>
     </div>
     <div class="field">
       <span class="label">電話番号</span>
@@ -40,23 +28,9 @@
       <span  class="label">メールアドレス</span>
       <%= @user.email %>
     </div>
-    <%= @user.deleted %>
-    <% if @user == current_user %>
-      <div class="submit">
-        <%= link_to "編集する", edit_user_path(@user.id), class: "actions btn btn-success" %>
-        <%= link_to "退会する", unsubscribe_user_path(@user.id), class: "actions btn btn-danger" %>
-      </div>
-    <% end %>
-<<<<<<< HEAD
-=======
-
->>>>>>> bb9416addec9c001f097809bf00b7b6e080029de
+    <div class="submit">
+      <%= link_to "編集する", edit_user_path(current_user.id), class: "actions btn btn-success" %>
+    </div>
   </main>
-  <div class="rightside">
-    <% if user_signed_in? %>
-      <%= link_to "いいねした商品", user_favorites_path(@user) %>
-    <% elsif admin_signed_in? %>
-      <%= link_to "いいねした商品", admin_users_favorites_path(@user) %>
-    <% end %>
-  </div>
+  <div class="rightside"></div>
 </div>

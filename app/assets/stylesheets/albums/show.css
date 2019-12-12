@@ -22,20 +22,13 @@
 }
 
 .status {
-  width:50%;  
-}
-
-.stock {
-  
+  width:50%;
 }
 
 .genre {
   margin:15px 0;
 }
 
-.label {
-    
-}
 
 .cart-box {
   width:30%;
@@ -57,4 +50,3 @@
   border-radius: 5px;
   border:solid 1px black;
 }
-

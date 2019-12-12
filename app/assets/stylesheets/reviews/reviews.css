@@ -45,8 +45,13 @@
 	width: 15%;
 }
 .space-between-name {
+	display: inline-block;
 	width: 14px;
 }
 .review-table .td-username{
-	padding-top: 4px;
+	padding-top: 10px;
+}
+
+.review-tr td{
+  margin-bottom: 10px;
 }

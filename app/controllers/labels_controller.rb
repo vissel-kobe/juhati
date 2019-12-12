@@ -7,7 +7,7 @@ class LabelsController < ApplicationController
   def albums
   	@label = Label.find(params[:id])
   	@albums = @label.albums.page(params[:page]).per(12).reverse_order
-  	@title = "レーベル > " + @label.name + " の商品一覧"
+  	@page_title = "レーベル > " + @label.name + " の商品一覧"
   	render "albums/index"
   end
 

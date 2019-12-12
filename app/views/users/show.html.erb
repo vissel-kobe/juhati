@@ -30,6 +30,7 @@
     </div>
     <div class="submit">
       <%= link_to "編集する", edit_user_path(current_user.id), class: "actions btn btn-success" %>
+      <%= link_to "配送先一覧", user_shipping_addresses_path(current_user.id), class: "btn btn-primary" %>
     </div>
   </main>
   <div class="rightside"></div>

@@ -48,7 +48,7 @@
 								<%= hidden_field_tag :album_id, cart_album.id %>
 =======
 						<td>
-							<%= form_for cart_item, url: album_orders_path(album_id: cart_album.id, id: cart_item.id), method: :patch do |f| %>
+							<%= form_for cart_item, url: album_order_path(album_id: cart_album.id, id: cart_item.id), method: :patch do |f| %>
 								<%= f.number_field :number, class: "number-field", id: "number" %>
 >>>>>>> 72c0e40ae30235d506802b2386dc8019890020df
 							<% end %>

@@ -8,7 +8,7 @@
 				<%= link_to admins_album_path(album) do %>
 					<%= attachment_image_tag album, :album_image, format:"jpeg", class: "album-item-img", fallback: "no-image.jpg" %>
 					<p class="album-item-txt"><%= album.title %></p>
-					<% if album.discs[0] %>
+					<% if album.discs %>
 						<p class="album-item-txt"><%= album.discs[0].artist.name %></p>
 					<% end %>
 				<% end %>

@@ -11,6 +11,7 @@ class ReviewsController < ApplicationController
       redirect_to album_path(@album)
     else
       render 'albums/show'
+    end
   end
 
   def edit

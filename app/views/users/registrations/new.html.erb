@@ -43,7 +43,7 @@
       </div>
 
       <div class="field">
-        <%= f.label :password, "パスワード(" + @minimum_password_length +"文字以上)", class: "large-label" %>
+        <%= f.label :password, "パスワード(#{@minimum_password_length}文字以上)", class: "large-label" %>
         <%= f.password_field :password, autocomplete: "new-password", class: "" %>
       </div>
       <div class="field">

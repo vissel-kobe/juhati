@@ -5,9 +5,16 @@
 		<div class="inner">
 			<% @ranking.each do |r| %>
 				<section class="ranking-item flex is-between">
-					<%= link_to album_path(r), class: "flex ranking-item-link" do %>
-						<%= attachment_image_tag r, :album_image, format:"jpeg", class: "ranking-content-img", fallback: "no-image.jpg" %>
-						<p><%= r.title %></p>
+          <% if admin_signed_in? %>
+						<%= link_to admins_album_path(r), class: "flex ranking-item-link" do %>
+							<%= attachment_image_tag r, :album_image, format:"jpeg", class: "ranking-content-img", fallback: "no-image.jpg" %>
+							<p><%= r.title %></p>
+						<% end %>
+          <% else %>
+						<%= link_to album_path(r), class: "flex ranking-item-link" do %>
+							<%= attachment_image_tag r, :album_image, format:"jpeg", class: "ranking-content-img", fallback: "no-image.jpg" %>
+							<p><%= r.title %></p>
+						<% end %>
 					<% end %>
 					<div class="album-info">
 						<% if r.status == "販売停止中" %>

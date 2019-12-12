@@ -1,36 +1,78 @@
 <div class="users-show flex">
   <div class="leftside"></div>
   <main class="main clearfix">
-    <h2 class="page-title">会員情報</h2>
-    <div class="field">
-      <span class="label">氏名</span>
-      <label>（姓）</label>
-      <%= @user.family_name %>
-      <label>（名）</label>
-      <%= @user.first_name %>
-    </div>
-    <div class="field">
-      <span class="label">氏名（フリガナ）</span>
-      <label>（姓）</label>
-      <%= @user.kana_family_name %>
-      <label>（名）</label>
-      <%= @user.kana_first_name %>
-    </div>
-    <div class="field">
-      <span class="label">郵便番号</span>
-      <%= @user.postcode %>
-    </div>
-    <div class="field">
-      <span class="label">電話番号</span>
-      <%= @user.telephone %>
-    </div>
-    <div class="field">
-      <span  class="label">メールアドレス</span>
-      <%= @user.email %>
-    </div>
-    <div class="submit">
-      <%= link_to "編集する", edit_user_path(current_user.id), class: "actions btn btn-success" %>
-      <%= link_to "配送先一覧", user_shipping_addresses_path(current_user.id), class: "btn btn-primary" %>
+    <div class="flex">
+      <div class="users-show-left">
+        <h2 class="page-title">会員情報</h2>
+        <div class="field">
+          <span class="label">氏名</span>
+          <label>（姓）</label>
+          <%= @user.family_name %>
+          <label>（名）</label>
+          <%= @user.first_name %>
+        </div>
+        <div class="field">
+          <span class="label">氏名（フリガナ）</span>
+          <label>（姓）</label>
+          <%= @user.kana_family_name %>
+          <label>（名）</label>
+          <%= @user.kana_first_name %>
+        </div>
+        <div class="field">
+          <span class="label">郵便番号</span>
+          <%= @user.postcode %>
+        </div>
+        <div class="field">
+          <span class="label">電話番号</span>
+          <%= @user.telephone %>
+        </div>
+        <div class="field">
+          <span  class="label">メールアドレス</span>
+          <%= @user.email %>
+        </div>
+        <div class="submit">
+          <%= link_to "編集する", edit_user_path(@user.id), class: "actions btn btn-success" %>
+        </div>
+      </div>
+      <div class="users-show-right">
+        <h2 class="page-title back-purple">配送先一覧</h2>
+        <table>
+          <thead>
+            <th class="th-number"></th>
+            <th class="th-postcode"></th>
+            <th class="th-address"></th>
+            <th class="th-editbtn"></th>
+          </thead>
+          <tbody>
+            <% i = 1 %>
+            <% @user.shipping_addresses.each do |sa| %>
+              <tr class="shipping_address-item">
+                <td><%= i %></td>
+                <td><%= sa.postcode %></td>
+                <td><%= sa.address %></td>
+                <td><%= link_to "編集する", edit_user_shipping_address_path(user_id: @user.id, id: sa.id), class: "btn btn-success" %></td>
+                <% i = i + 1 %>
+              </div>
+            <% end %>
+          </tr>
+        </table>
+        <h2 class="page-title back-orange">配送先追加</h2>
+          <div class="shipping_addresses-new-form">
+            <%= form_for [@user, ShippingAddress.new] do |f| %>
+              <div class="field">
+                <%= f.label :postcode, "郵便番号", class: "large-label" %>
+                <%= f.text_field :postcode, autofocus: true, autocomplete: "postcode", class: "" %>
+              </div>
+
+              <div class="field">
+                <%= f.label :address, "住所", class: "large-label" %>
+                <%= f.text_field :address, autofocus: true, autocomplete: "address" %>
+              </div>
+
+              <%= f.submit "作成", class: "actions btn" %>
+            <% end %>
+          </div>
+      </div>
     </div>
   </main>
   <div class="rightside"></div>

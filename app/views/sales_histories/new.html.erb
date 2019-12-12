@@ -52,13 +52,18 @@
 			</tbody>
 		</table>
 		<%= form_for @sales_history, url: user_sales_histories_path(user_id: @user.id), method: :post do |f| %>
-			<% @user.shipping_addresses.each do |ship_a| %>
-				<div class="flex">
-					<p class="shipping_address_radio"><%= f.radio_button :shipping_address_id, ship_a.id %></p>
-					<%= ship_a.postcode %>
-					<%= ship_a.address %>
+			<div class="flex is-between">
+				<div>
+					<% @user.shipping_addresses.each do |ship_a| %>
+						<div class="flex">
+							<p class="shipping_address_radio"><%= f.radio_button :shipping_address_id, ship_a.id %></p>
+							<%= ship_a.postcode %>
+							<%= ship_a.address %>
+						</div>
+					<% end %>
 				</div>
-			<% end %>
+				<%= link_to "マイページへ", user_path(@user), class: "btn btn-primary to-mypage-btn" %>
+			</div>
 			<%= f.hidden_field :user_id, :value => @user.id %>
 			<%= f.hidden_field :total, :value => @total %>
 			<div class="submit">

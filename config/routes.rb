@@ -43,7 +43,7 @@ Rails.application.routes.draw do
     resources :orders, only:[:create, :update, :destroy]
   end
   resources :users, only:[:show, :edit, :update] do
-    resources :shipping_addresses
+    resources :shipping_addresses, only: [:create, :edit, :update]
     resources :sales_histories, only:[:new, :index, :create]
   end
   resources :artists, only:[:index]

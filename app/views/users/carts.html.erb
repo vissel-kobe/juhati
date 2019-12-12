@@ -54,7 +54,7 @@
 								<p class="subtotal"><%= cart_item.subtotal %>円</p>
 								<% total += cart_item.subtotal %>
 							</td>
-							<td><%= link_to "カートから削除する", album_orders_path(album_id: cart_album.id), class: "btn btn-danger", method: :delete, "data-confirm" => "カートから削除します。よろしいですか？" %>
+							<td><%= link_to "カートから削除する", album_order_path(album_id: cart_album.id, id: cart_item.id), class: "btn btn-danger", method: :delete, "data-confirm" => "カートから削除します。よろしいですか？" %>
 							</td>
 						</tr>
 					<% end %>

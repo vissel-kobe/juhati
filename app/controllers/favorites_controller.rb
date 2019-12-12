@@ -11,7 +11,7 @@ class FavoritesController < ApplicationController
   def destroy
     @favorite = current_user.favorites.find_by(album_id: @album.id)
     @favorite.destroy
-    redirect_to album_path(@album)
+    redirect_to album_path(@album.id)
   end
 
   private

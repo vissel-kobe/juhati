@@ -11,7 +11,12 @@
 					<th class="th-editbtn"></th>
 				</thead>
 				<tbody>
-					<% i = 1 %>
+          <div class="flex">
+          <p>1</p>
+          <p class="left"><%= current_user.postcode %>
+          <p class="left"><%= current_user.address %></p>
+					</div>
+          <% i = 2 %>
 					<% @shipping_addresses.each do |sa| %>
 						<tr class="shipping_address-item">
 							<td><%= i %></td>

@@ -14,6 +14,11 @@
 				<%= f.label :album_image, "画像", class: "label" %>
 				<div class="image-field">
 					<%= f.attachment_field :album_image, id: "album_image" %>
+					<% if album.id %>
+						<%= attachment_image_tag album, :album_image, format:"jpeg", id: "img_prev", fallback: "no-image.jpg", size: "100x100" %>
+					<% else %>
+						<img src="" id="img_prev" class="img_prev-hide">
+					<% end %>
 				</div>
 			</div>
 			<div class="field">

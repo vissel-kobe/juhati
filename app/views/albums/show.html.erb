@@ -24,13 +24,13 @@
 					<p>レーベル名: <%= link_to @album.label.name, label_albums_path(@album.label.id) %></p>
 					<p>ディスク数: <%= @album.discs.count %></p>
 					<div class="album-discs-section flex">
-						<% @album.discs.each do |disc| %>
+						<% @album.discs.order("disc_number").each do |disc| %>
 							<div class="album-disc">
 								<p class="bold">ディスク<%= disc.disc_number %></p>
 								<p>[アーティスト]</p>
 								<p><%= link_to disc.artist.name, artist_albums_path(disc.artist.id) %></p>
 								<p>[収録曲]
-								<% disc.songs.each do |song| %>
+								<% disc.songs.order("song_number").each do |song| %>
 									<p><%= song.song_number %>. <%= song.title %></p>
 								<% end %>
 							</div>

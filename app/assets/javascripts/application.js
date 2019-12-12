@@ -29,4 +29,17 @@ $(function(){
 	$('.cart_item-section .number-field').change(function() {
 		$(this).parent().submit();
 	});
+	 function readURL(input) {
+	   if (input.files && input.files[0]) {
+	     var reader = new FileReader();
+	     reader.onload = function (e) {
+	       $('#img_prev').attr('src', e.target.result);
+	     }
+	     reader.readAsDataURL(input.files[0]);
+	   }
+	 }
+	 $("#album_image").change(function(){
+	   readURL(this);
+	   $('#img_prev').removeClass("img_prev-hide");
+	 });
 });

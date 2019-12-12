@@ -16,7 +16,7 @@
 
 				<div class="flex is-between">
 					<%= f.submit "更新", class: "actions btn btn-success" %>
-					<%= link_to "戻る", user_shipping_addresses_path(user_id: @user.id), class: "actions btn btn-back" %>
+					<%= link_to "戻る", user_path(@user), class: "actions btn btn-back" %>
 				</div>
 			<% end %>
 		</div>

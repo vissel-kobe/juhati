@@ -1,15 +1,26 @@
 class SalesHistoriesController < ApplicationController
 
-  before_action :ensure_correct_user, {only: [:hidden]}
-  before_action :set_correct_cart, {only: [:new]}
-
   def index
     @user = User.find(params[:user_id])
     @histories = SalesHistory.where(user_id: params[:user_id], deleted: nil).page(params[:page]).reverse_order
   end
 
   def new
-    @sales_history = SalesHistory.new
+    @user  = User.find(params[:user_id])
+    if @user != current_user
+      redirect_to user_path(current_user)
+    else
+      @cart_items = @user.orders.all
+      if @cart_items == []
+        redirect_to user_carts_path(current_user)
+      else
+        @sales_history = SalesHistory.new
+        @total = 500
+        @cart_items.each do |cart_item|
+          @total += cart_item.subtotal
+        end
+      end
+    end
   end
 
   def create
@@ -61,32 +72,17 @@ class SalesHistoriesController < ApplicationController
   end
 
   def hidden
-    history = SalesHistory.find(params[:id])
-    history.update(deleted: "true")
-    redirect_to user_histories_path(@user)
-  end
-
-  private
-
-  def ensure_correct_user
-    @user  = User.find(params[:user_id])
-    if @user != current_user
-      redirect_to user_path(current_user)
-    end
-  end
-
-  def set_correct_cart
     @user  = User.find(params[:user_id])
     if @user != current_user
       redirect_to user_path(current_user)
     else
-      @cart_items = @user.orders.all
-      @total = 500
-      @cart_items.each do |cart_item|
-        @total += cart_item.subtotal
-      end
+      history = SalesHistory.find(params[:id])
+      history.update(deleted: "true")
+      redirect_to user_histories_path(@user)
     end
   end
+
+  private
 
   def sales_history_params
     params.require(:sales_history).permit(:user_id, :shipping_address_id, :total)

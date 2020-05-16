@@ -10,14 +10,10 @@ class Admins::AlbumsController < ApplicationController
 
   def create
     @album = Album.new(album_params)
-    respond_to do |format|
-      if @album.save
-        format.html { redirect_to admins_albums_path}
-        format.json { render :show, status: :created, location: @album }
-      else
-        format.html { render :new }
-        format.json { render json: @album.errors, status: :unprocessable_entity }
-      end
+    if @album.save
+      redirect_to admins_albums_path
+    else
+      render :new
     end
   end
 

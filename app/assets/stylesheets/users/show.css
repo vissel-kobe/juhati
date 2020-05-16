@@ -1,19 +1,46 @@
 .users-show {
-  display:flex;
+  display: flex;
 }
 
 .user-content {
-  padding-top:50px;
-  text-align:center;
-  width:600px;
-  margin-left:300px;
-  border-right:solid 1px black;
-  border-left:solid 1px black;
+  width: 600px;
+  margin-left: 300px;
+  padding-top: 50px;
+  text-align: center;
+  border-right: solid 1px black;
+  border-left: solid 1px black;
 }
 
 
 .side-bar {
-  text-align:center;
-  line-height:320px;
-  margin-left:30px;
+  margin-left: 30px;
+  line-height: 320px;
+  text-align: center;
+}
+.users-show-left,
+.users-show-right {
+  width: 50%;
+}
+.back-purple {
+  background-color: purple;
+}
+.back-orange {
+  background-color: orange;
+}
+.users-show-right table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.th-number {
+  width: 5%;
+}
+.th-postcode,
+.th-editbtn {
+  width: 15%;
+}
+.th-address {
+  width: 65%;
+}
+.shipping_addresses-new-form .btn {
+  background-color: skyblue;
 }

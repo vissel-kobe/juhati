@@ -43,13 +43,12 @@ Rails.application.routes.draw do
     resources :orders, only:[:create, :update, :destroy]
   end
   resources :users, only:[:show, :edit, :update] do
-    resources :shipping_addresses
+    resources :shipping_addresses, only: [:create, :edit, :update]
     resources :sales_histories, only:[:new, :index, :create]
   end
   resources :artists, only:[:index]
   resources :labels, only:[:index]
   resources :genres, only:[:index]
-  resources :orders, only:[:create, :update, :destroy]
   # sales_histories
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

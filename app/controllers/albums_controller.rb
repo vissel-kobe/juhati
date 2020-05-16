@@ -13,6 +13,4 @@ class AlbumsController < ApplicationController
     @album = Album.find(params[:id])
   end
 
-  private
-
 end

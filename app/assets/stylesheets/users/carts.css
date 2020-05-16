@@ -32,3 +32,8 @@
 	display: inline-block;
 	margin-left: 15px;
 }
+.no-items-txt {
+	display: block;
+	font-size: 20px;
+	margin: 20px 0 30px;
+}
